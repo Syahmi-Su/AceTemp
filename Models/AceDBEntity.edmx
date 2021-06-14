@@ -16,7 +16,7 @@
           <Key>
             <PropertyRef Name="O_ID" />
           </Key>
-          <Property Name="O_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="O_ID" Type="int" Nullable="false" />
           <Property Name="O_month" Type="date" Nullable="false" />
           <Property Name="O_pID" Type="nvarchar" MaxLength="14" Nullable="false" />
           <Property Name="O_fees" Type="float" Nullable="false" />
@@ -27,9 +27,10 @@
           <Key>
             <PropertyRef Name="package_id" />
           </Key>
-          <Property Name="package_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="package_id" Type="int" Nullable="false" />
           <Property Name="package_desc" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="package_category" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="total_subject" Type="int" Nullable="false" />
           <Property Name="package_price" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="Parents">
@@ -47,7 +48,7 @@
           <Key>
             <PropertyRef Name="confirmation_id" />
           </Key>
-          <Property Name="confirmation_id" Type="int" Nullable="false" />
+          <Property Name="confirmation_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="student_ic" Type="nvarchar" MaxLength="14" Nullable="false" />
           <Property Name="parent_ic" Type="nvarchar" MaxLength="14" Nullable="false" />
           <Property Name="payment_fee" Type="float" Nullable="false" />
@@ -58,7 +59,6 @@
           <Property Name="payment_detail" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="payment_feedetails" Type="nvarchar" MaxLength="100" />
           <Property Name="filename" Type="nvarchar" MaxLength="100" />
-          <Property Name="package_id" Type="int" />
         </EntityType>
         <EntityType Name="Status">
           <Key>
@@ -81,6 +81,19 @@
           <Property Name="student_year" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="parent_ic" Type="nvarchar" MaxLength="14" Nullable="false" />
         </EntityType>
+        <EntityType Name="studRegister">
+          <Key>
+            <PropertyRef Name="studreg_ic" />
+          </Key>
+          <Property Name="studreg_ic" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="subject_1" Type="nvarchar" MaxLength="50" />
+          <Property Name="subject_2" Type="nvarchar" MaxLength="50" />
+          <Property Name="subject_3" Type="nvarchar" MaxLength="50" />
+          <Property Name="subject_4" Type="nvarchar" MaxLength="50" />
+          <Property Name="subject_5" Type="nvarchar" MaxLength="50" />
+          <Property Name="subject_6" Type="nvarchar" MaxLength="50" />
+          <Property Name="subject_7" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="Subject">
           <Key>
             <PropertyRef Name="subject_code" />
@@ -88,7 +101,6 @@
           <Property Name="subject_code" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="subject_name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="subject_type" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="subject_year" Type="nvarchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityContainer Name="AceDBModelStoreContainer">
           <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
@@ -98,6 +110,7 @@
           <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="studRegister" EntityType="Self.studRegister" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Subject" EntityType="Self.Subject" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -111,14 +124,16 @@
           <Property Name="admin_id" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="admin_pass" Type="String" MaxLength="258" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityType Name="Package">
+        <EntityType Name="Outstanding">
           <Key>
-            <PropertyRef Name="package_id" />
+            <PropertyRef Name="O_ID" />
           </Key>
-          <Property Name="package_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="package_desc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="package_category" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="package_price" Type="Double" Nullable="false" />
+          <Property Name="O_ID" Type="Int32" Nullable="false" />
+          <Property Name="O_month" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="O_pID" Type="String" MaxLength="14" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="O_fees" Type="Double" Nullable="false" />
+          <Property Name="O_remark" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="O_status" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Parent">
           <Key>
@@ -138,39 +153,54 @@
           <Property Name="status_id" Type="Int32" Nullable="false" />
           <Property Name="status_desc" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
+        <EntityContainer Name="AceDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Admins" EntityType="Self.Admin" />
+          <EntitySet Name="Outstandings" EntityType="Self.Outstanding" />
+          <EntitySet Name="Parents" EntityType="Self.Parent" />
+          <EntitySet Name="Status" EntityType="Self.Status" />
+          <EntitySet Name="Packages" EntityType="AceDBModel.Package" />
+          <EntitySet Name="Students" EntityType="AceDBModel.Student" />
+          <EntitySet Name="studRegisters" EntityType="AceDBModel.studRegister" />
+          <EntitySet Name="Payments" EntityType="AceDBModel.Payment" />
+          <EntitySet Name="Subjects" EntityType="AceDBModel.Subject" />
+        </EntityContainer>
+        <EntityType Name="Package">
+          <Key>
+            <PropertyRef Name="package_id" />
+          </Key>
+          <Property Name="package_id" Type="Int32" Nullable="false" />
+          <Property Name="package_desc" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="package_category" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="total_subject" Type="Int32" Nullable="false" />
+          <Property Name="package_price" Type="Double" Nullable="false" />
+        </EntityType>
         <EntityType Name="Student">
           <Key>
             <PropertyRef Name="student_ic" />
           </Key>
-          <Property Name="student_ic" Type="String" MaxLength="14" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="student_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="student_ic" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="student_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="student_cname" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="student_package" Type="Int32" Nullable="false" />
           <Property Name="student_dob" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="student_gender" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="student_category" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="student_year" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="parent_ic" Type="String" MaxLength="14" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="student_gender" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="student_category" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="student_year" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="parent_ic" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Subject">
+        <EntityType Name="studRegister">
           <Key>
-            <PropertyRef Name="subject_code" />
+            <PropertyRef Name="studreg_ic" />
           </Key>
-          <Property Name="subject_code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="subject_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="subject_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="subject_year" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="studreg_ic" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="subject_1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="subject_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="subject_3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="subject_4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="subject_5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="subject_6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="subject_7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="AceDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Admins" EntityType="Self.Admin" />
-          <EntitySet Name="Packages" EntityType="Self.Package" />
-          <EntitySet Name="Parents" EntityType="Self.Parent" />
-          <EntitySet Name="Status" EntityType="Self.Status" />
-          <EntitySet Name="Students" EntityType="Self.Student" />
-          <EntitySet Name="Subjects" EntityType="Self.Subject" />
-          <EntitySet Name="Payments" EntityType="AceDBModel.Payment" />
-          <EntitySet Name="Outstandings" EntityType="AceDBModel.Outstanding" />
-        </EntityContainer>
         <EntityType Name="Payment">
           <Key>
             <PropertyRef Name="confirmation_id" />
@@ -186,18 +216,14 @@
           <Property Name="payment_detail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="payment_feedetails" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="filename" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="package_id" Type="Int32" />
         </EntityType>
-        <EntityType Name="Outstanding">
+        <EntityType Name="Subject">
           <Key>
-            <PropertyRef Name="O_ID" />
+            <PropertyRef Name="subject_code" />
           </Key>
-          <Property Name="O_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="O_month" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="O_pID" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
-          <Property Name="O_fees" Type="Double" Nullable="false" />
-          <Property Name="O_remark" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="O_status" Type="Int32" Nullable="false" />
+          <Property Name="subject_code" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="subject_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="subject_type" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -213,13 +239,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Packages">
-            <EntityTypeMapping TypeName="AceDBModel.Package">
-              <MappingFragment StoreEntitySet="Package">
-                <ScalarProperty Name="package_id" ColumnName="package_id" />
-                <ScalarProperty Name="package_desc" ColumnName="package_desc" />
-                <ScalarProperty Name="package_category" ColumnName="package_category" />
-                <ScalarProperty Name="package_price" ColumnName="package_price" />
+          <EntitySetMapping Name="Outstandings">
+            <EntityTypeMapping TypeName="AceDBModel.Outstanding">
+              <MappingFragment StoreEntitySet="Outstanding">
+                <ScalarProperty Name="O_ID" ColumnName="O_ID" />
+                <ScalarProperty Name="O_month" ColumnName="O_month" />
+                <ScalarProperty Name="O_pID" ColumnName="O_pID" />
+                <ScalarProperty Name="O_fees" ColumnName="O_fees" />
+                <ScalarProperty Name="O_remark" ColumnName="O_remark" />
+                <ScalarProperty Name="O_status" ColumnName="O_status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -243,35 +271,49 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Students">
-            <EntityTypeMapping TypeName="AceDBModel.Student">
-              <MappingFragment StoreEntitySet="Student">
-                <ScalarProperty Name="student_ic" ColumnName="student_ic" />
-                <ScalarProperty Name="student_name" ColumnName="student_name" />
-                <ScalarProperty Name="student_cname" ColumnName="student_cname" />
-                <ScalarProperty Name="student_package" ColumnName="student_package" />
-                <ScalarProperty Name="student_dob" ColumnName="student_dob" />
-                <ScalarProperty Name="student_gender" ColumnName="student_gender" />
-                <ScalarProperty Name="student_category" ColumnName="student_category" />
-                <ScalarProperty Name="student_year" ColumnName="student_year" />
-                <ScalarProperty Name="parent_ic" ColumnName="parent_ic" />
+          <EntitySetMapping Name="Packages">
+            <EntityTypeMapping TypeName="AceDBModel.Package">
+              <MappingFragment StoreEntitySet="Package">
+                <ScalarProperty Name="package_price" ColumnName="package_price" />
+                <ScalarProperty Name="total_subject" ColumnName="total_subject" />
+                <ScalarProperty Name="package_category" ColumnName="package_category" />
+                <ScalarProperty Name="package_desc" ColumnName="package_desc" />
+                <ScalarProperty Name="package_id" ColumnName="package_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Subjects">
-            <EntityTypeMapping TypeName="AceDBModel.Subject">
-              <MappingFragment StoreEntitySet="Subject">
-                <ScalarProperty Name="subject_code" ColumnName="subject_code" />
-                <ScalarProperty Name="subject_name" ColumnName="subject_name" />
-                <ScalarProperty Name="subject_type" ColumnName="subject_type" />
-                <ScalarProperty Name="subject_year" ColumnName="subject_year" />
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="AceDBModel.Student">
+              <MappingFragment StoreEntitySet="Student">
+                <ScalarProperty Name="parent_ic" ColumnName="parent_ic" />
+                <ScalarProperty Name="student_year" ColumnName="student_year" />
+                <ScalarProperty Name="student_category" ColumnName="student_category" />
+                <ScalarProperty Name="student_gender" ColumnName="student_gender" />
+                <ScalarProperty Name="student_dob" ColumnName="student_dob" />
+                <ScalarProperty Name="student_package" ColumnName="student_package" />
+                <ScalarProperty Name="student_cname" ColumnName="student_cname" />
+                <ScalarProperty Name="student_name" ColumnName="student_name" />
+                <ScalarProperty Name="student_ic" ColumnName="student_ic" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="studRegisters">
+            <EntityTypeMapping TypeName="AceDBModel.studRegister">
+              <MappingFragment StoreEntitySet="studRegister">
+                <ScalarProperty Name="subject_7" ColumnName="subject_7" />
+                <ScalarProperty Name="subject_6" ColumnName="subject_6" />
+                <ScalarProperty Name="subject_5" ColumnName="subject_5" />
+                <ScalarProperty Name="subject_4" ColumnName="subject_4" />
+                <ScalarProperty Name="subject_3" ColumnName="subject_3" />
+                <ScalarProperty Name="subject_2" ColumnName="subject_2" />
+                <ScalarProperty Name="subject_1" ColumnName="subject_1" />
+                <ScalarProperty Name="studreg_ic" ColumnName="studreg_ic" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Payments">
             <EntityTypeMapping TypeName="AceDBModel.Payment">
               <MappingFragment StoreEntitySet="Payment">
-                <ScalarProperty Name="package_id" ColumnName="package_id" />
                 <ScalarProperty Name="filename" ColumnName="filename" />
                 <ScalarProperty Name="payment_feedetails" ColumnName="payment_feedetails" />
                 <ScalarProperty Name="payment_detail" ColumnName="payment_detail" />
@@ -286,15 +328,12 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Outstandings">
-            <EntityTypeMapping TypeName="AceDBModel.Outstanding">
-              <MappingFragment StoreEntitySet="Outstanding">
-                <ScalarProperty Name="O_status" ColumnName="O_status" />
-                <ScalarProperty Name="O_remark" ColumnName="O_remark" />
-                <ScalarProperty Name="O_fees" ColumnName="O_fees" />
-                <ScalarProperty Name="O_pID" ColumnName="O_pID" />
-                <ScalarProperty Name="O_month" ColumnName="O_month" />
-                <ScalarProperty Name="O_ID" ColumnName="O_ID" />
+          <EntitySetMapping Name="Subjects">
+            <EntityTypeMapping TypeName="AceDBModel.Subject">
+              <MappingFragment StoreEntitySet="Subject">
+                <ScalarProperty Name="subject_type" ColumnName="subject_type" />
+                <ScalarProperty Name="subject_name" ColumnName="subject_name" />
+                <ScalarProperty Name="subject_code" ColumnName="subject_code" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -5,13 +5,6 @@
 @{
     ViewBag.Title = "Slip";
 
-    if (Session["parents_ic"] == null)
-    {
-        Response.Redirect("~/Login/Index");
-    }
-
-    var ses = Session["parents_ic"];
-
 }
 
 <!DOCTYPE html>
@@ -51,7 +44,7 @@
 
                             <img src="~/Content/assets/images/ACElogo-triangle.png" style="width:200px;height:130px;" data-holder-rendered="true" />
 
-                        </div>
+                        </div>                                                                                                                                                                                
                         <div class="col company-details">
                             <h2 class="name">Ace Education</h2>
                             <div>455 Foggy Heights, AZ 85004, US</div>
@@ -89,7 +82,7 @@
                                     <th class="text-left"><strong>PAYMENT DATE</strong></th>
                                     <th class="text-left"><strong>CHILDREN NAME</strong></th>
                                     <th class="text-left"><strong>CHILDREN NAME(CHINESE)</strong></th>
-                                    <th class="text-left"><strong>SUBJECT NAME</strong></th>
+                                    <th class="text-left"><strong>REMARK</strong></th>
                                     <th class="text-left"><strong>TOTAL</strong></th>
                                 </tr>
                             </thead>

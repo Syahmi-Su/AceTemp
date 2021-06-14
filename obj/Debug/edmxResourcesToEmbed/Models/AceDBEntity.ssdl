@@ -11,7 +11,7 @@
     <Key>
       <PropertyRef Name="O_ID" />
     </Key>
-    <Property Name="O_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="O_ID" Type="int" Nullable="false" />
     <Property Name="O_month" Type="date" Nullable="false" />
     <Property Name="O_pID" Type="nvarchar" MaxLength="14" Nullable="false" />
     <Property Name="O_fees" Type="float" Nullable="false" />
@@ -22,9 +22,10 @@
     <Key>
       <PropertyRef Name="package_id" />
     </Key>
-    <Property Name="package_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="package_id" Type="int" Nullable="false" />
     <Property Name="package_desc" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="package_category" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="total_subject" Type="int" Nullable="false" />
     <Property Name="package_price" Type="float" Nullable="false" />
   </EntityType>
   <EntityType Name="Parents">
@@ -42,7 +43,7 @@
     <Key>
       <PropertyRef Name="confirmation_id" />
     </Key>
-    <Property Name="confirmation_id" Type="int" Nullable="false" />
+    <Property Name="confirmation_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="student_ic" Type="nvarchar" MaxLength="14" Nullable="false" />
     <Property Name="parent_ic" Type="nvarchar" MaxLength="14" Nullable="false" />
     <Property Name="payment_fee" Type="float" Nullable="false" />
@@ -53,7 +54,6 @@
     <Property Name="payment_detail" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="payment_feedetails" Type="nvarchar" MaxLength="100" />
     <Property Name="filename" Type="nvarchar" MaxLength="100" />
-    <Property Name="package_id" Type="int" />
   </EntityType>
   <EntityType Name="Status">
     <Key>
@@ -76,6 +76,19 @@
     <Property Name="student_year" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="parent_ic" Type="nvarchar" MaxLength="14" Nullable="false" />
   </EntityType>
+  <EntityType Name="studRegister">
+    <Key>
+      <PropertyRef Name="studreg_ic" />
+    </Key>
+    <Property Name="studreg_ic" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="subject_1" Type="nvarchar" MaxLength="50" />
+    <Property Name="subject_2" Type="nvarchar" MaxLength="50" />
+    <Property Name="subject_3" Type="nvarchar" MaxLength="50" />
+    <Property Name="subject_4" Type="nvarchar" MaxLength="50" />
+    <Property Name="subject_5" Type="nvarchar" MaxLength="50" />
+    <Property Name="subject_6" Type="nvarchar" MaxLength="50" />
+    <Property Name="subject_7" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="Subject">
     <Key>
       <PropertyRef Name="subject_code" />
@@ -83,7 +96,6 @@
     <Property Name="subject_code" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="subject_name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="subject_type" Type="nvarchar" MaxLength="30" Nullable="false" />
-    <Property Name="subject_year" Type="nvarchar" MaxLength="20" Nullable="false" />
   </EntityType>
   <EntityContainer Name="AceDBModelStoreContainer">
     <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
@@ -93,6 +105,7 @@
     <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="studRegister" EntityType="Self.studRegister" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Subject" EntityType="Self.Subject" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

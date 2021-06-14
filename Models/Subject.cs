@@ -17,6 +17,5 @@ namespace AceTC.Models
         public string subject_code { get; set; }
         public string subject_name { get; set; }
         public string subject_type { get; set; }
-        public string subject_year { get; set; }
     }
 }

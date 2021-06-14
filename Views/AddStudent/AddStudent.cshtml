@@ -157,7 +157,7 @@
                     <a href="#"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Outstanding</span></a>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="/Outstanding/Index">Manage <br />Outstanding <br />Payment</a>
+                            <a href="/Oustanding/AddOutstanding">Manage <br />Outstanding <br />Payment</a>
                         </li>
                     </ul>
                 </li>
@@ -245,9 +245,6 @@
                                             <div class="form-group">
                                                 @Html.LabelFor(model => model.student_gender, "Gender", htmlAttributes: new { @class = "control-label col-md-2" })
                                                 <div class="col-md-10">
-                                                    @*@Html.EditorFor(model => model.subject_type, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.subject_type, "", new { @class = "text-danger" })*@
-
                                                     @Html.DropDownListFor(model => model.student_gender, new SelectList(new[] { "Male", "Female" }))
                                                 </div>
                                             </div>
@@ -255,9 +252,6 @@
                                             <div class="form-group">
                                                 @Html.LabelFor(model => model.student_dob, "Date of Birth", htmlAttributes: new { @class = "control-label col-md-2" })
                                                 <div class="col-md-10">
-                                                    @*@Html.EditorFor(model => model.subject_type, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.subject_type, "", new { @class = "text-danger" })*@
-
                                                     @Html.EditorFor(model => model.student_dob, "{0:dd/MM/yyyy}", new { htmlAttributes = new { @class = "form-control", @type = "date" } })
                                                 </div>
                                             </div>
@@ -265,9 +259,6 @@
                                             <div class="form-group">
                                                 @Html.LabelFor(model => model.student_category, "Category", htmlAttributes: new { @class = "control-label col-md-2" })
                                                 <div class="col-md-10">
-                                                    @*@Html.EditorFor(model => model.subject_type, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.subject_type, "", new { @class = "text-danger" })*@
-
                                                     @Html.DropDownListFor(model => model.student_category, new SelectList(new[] { "Primary", "Secondary" }))
                                                 </div>
                                             </div>
@@ -275,9 +266,6 @@
                                             <div class="form-group">
                                                 @Html.LabelFor(model => model.student_year, "Study Year", htmlAttributes: new { @class = "control-label col-md-2" })
                                                 <div class="col-md-10">
-                                                    @*@Html.EditorFor(model => model.subject_type, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.subject_type, "", new { @class = "text-danger" })*@
-
                                                     @Html.DropDownListFor(model => model.student_year, new SelectList(new[] { "Primary 1", "Primary 2", "Primary 3", "Primary 4", "Primary 5", "Primary 6", "Form 1", "Form 2", "Form 3", "Form 4", "Form 5" }))
                                                 </div>
                                             </div>
@@ -311,7 +299,6 @@
                     </div>
                 </div>
             </div>
-            <a style="float:left;" class="btn btn-outline-purple btn-sm" href="@Url.Action("StudentList", "Admin")">BACK TO LIST</a>
         </div>
     </div>
     <!-- Basic Tables end -->

@@ -11,6 +11,7 @@
     }
 
     var ses = Session["parents_ic"];
+
 }
 
 <!DOCTYPE html>
@@ -192,25 +193,41 @@
                                                     <th>Date Issued</th>
                                                     <th>Status</th>
                                                     <th>Payment Date</th>
-                                                    <th>Fee</th>
+                                                    <th>Fee (RM)</th>
                                                     <th>Payment Proof</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 @foreach (var student in Model)
                                                 {
-                                                    <tr>
-                                                        <td>@student.paymentdetails.ref_num</td>
-                                                        <td>@student.paymentdetails.confirmation_date</td>
-                                                        <td>@student.statusdetails.status_desc</td>
-                                                        <td>@student.paymentdetails.payment_date</td>
-                                                        <td>@student.paymentdetails.payment_fee</td>
-                                                        <td>@Html.ActionLink("Upload", "Upload", new { id = student.paymentdetails.confirmation_id }, new { @class = "btn btn-info" })'</td>
-                                                        @*                                                    <td><a class='btn btn-info' href='@Url.Action("Upload", "Parent", new { id = student.paymentdetails.confirmation_id })'>Upload</a></td>
-                                                        *@
-                                                    </tr>
+                                                    DateTime todayDate = DateTime.Now;
+                                                    DateTime payDate = new DateTime(todayDate.Year, todayDate.Month, 14);
+                                                    int result = DateTime.Compare(todayDate, payDate);
+                                                    if (student.statusdetails.status_id == 1)
+                                                    {
+                                                <tr>
+                                                    <td>@student.paymentdetails.ref_num</td>
+                                                    <td>@student.paymentdetails.confirmation_date.ToShortDateString()</td>
+                                                    <td>@student.statusdetails.status_desc</td>
+                                                    <td>@student.paymentdetails.payment_date.ToShortDateString()</td>
+                                                    @if (result < 0 || result == 0)
+                                                    {
+                                                        double price = student.paymentdetails.payment_fee - 20;
+                                                        <td>@price</td>
+                                                    }
+                                                    else
+                                                    {
+                                                        double price = student.paymentdetails.payment_fee;
+                                                        <td>@price</td>
+                                                    }
+
+                                                    <td>@Html.ActionLink("Upload", "Upload", new { id = student.paymentdetails.confirmation_id }, new { @class = "btn btn-info" })'</td>
+                                                    @*                                                    <td><a class='btn btn-info' href='@Url.Action("Upload", "Parent", new { id = student.paymentdetails.confirmation_id })'>Upload</a></td>
+                                                    *@
+                                                </tr>
 
 
+                                                    }
                                                 }
 
                                             </tbody>

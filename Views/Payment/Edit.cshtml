@@ -1,0 +1,127 @@
+﻿@model AceTC.Models.Payment
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/navBar.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Payment</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.confirmation_id)
+    @Html.HiddenFor(model => model.status_id)
+    @Html.HiddenFor(model => model.payment_feedetails)
+    @Html.HiddenFor(model => model.filename)
+    @Html.HiddenFor(model => model.confirmation_date)
+    @Html.HiddenFor(model => model.payment_date)
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.student_ic, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.student_ic, new { @readonly = "readonly", @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.student_ic, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.parent_ic, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.parent_ic, new { @readonly = "readonly", @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.parent_ic, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.payment_fee, "Package Fee", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.payment_fee, new { @readonly = "readonly", @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.payment_fee, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ref_num, "Reference Number", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ref_num, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ref_num, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.payment_detail, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.payment_detail, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.payment_detail, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.meal_fee, "Meal Fees", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            Include &nbsp;
+            @Html.RadioButtonFor(model => model.meal_fee, "100") &nbsp;&nbsp;&nbsp;
+            Not Include
+            @Html.RadioButtonFor(model => model.meal_fee, "0")
+            @Html.ValidationMessageFor(model => model.meal_fee, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.transport_fee, "Transportation Fees", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @{
+                <select @Html.EditorFor(model => model.transport_fee, new { htmlAttributes = new { @class = "form-control", id = "exampleFormControlSelect1" } })>
+                    @{
+                        <option value="0" disabled hidden selected>Select</option>
+                        <option value="20">RM20 / Month</option>
+                        <option value="40">RM40 / Month</option>
+                        <option value="60">RM60 / Month</option>
+                        <option value="80">RM80 / Month</option>
+                        <option value="100">RM100 / Month</option>
+
+                    }
+                </select>
+                @Html.ValidationMessageFor(model => model.transport_fee, "", new { @class = "text-danger" })
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.first_register, "First Time Register?", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            Yes &nbsp;
+            @Html.RadioButtonFor(model => model.first_register, "30") &nbsp;&nbsp;&nbsp;
+            No
+            @Html.RadioButtonFor(model => model.first_register, "0")
+            @Html.ValidationMessageFor(model => model.first_register, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.lower_discount, "Discount for lower Income family (5-10%)", htmlAttributes: new { @class = "control-label col-md-5" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.lower_discount, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.lower_discount, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

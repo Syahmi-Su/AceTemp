@@ -297,7 +297,7 @@
                         <div class="col-12">
                             <div class="card mb-3">
                                 <div class="card-header">
-                                    <h2 style="color:red"> WARNING </h2>
+                                    <h2 style="color:red"><i class="fas fa-exclamation"></i> WARNING </h2>
                                 </div>
 
                                 <div class="card-body">
@@ -526,7 +526,7 @@
                     <br />
                     <a href="/Admin/AdminDashboard"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a>
                 </li>
-                <li class="active">
+                <li class="nav-item">
                     <a href="#"><i class="la la-female"></i><span class="menu-title" data-i18n="">Parents</span></a>
                     <ul class="list-unstyled">
                         <li>
@@ -543,7 +543,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item">
+                <li class="active">
                     <a href="#"><i class="la la-leanpub"></i><span class="menu-title" data-i18n="">Subjects</span></a>
                     <ul class="list-unstyled">
                         <li>
@@ -581,7 +581,7 @@
                     <a href="#"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Outstanding</span></a>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="/Outstanding/Index">Manage <br />Outstanding <br />Payment</a>
+                            <a href="/Oustanding/AddOutstanding">Manage <br />Outstanding <br />Payment</a>
                         </li>
                     </ul>
                 </li>
@@ -595,17 +595,17 @@
             <div class="content-wrapper-before"></div>
             <div class="content-header row">
                 <div class="content-header-left col-md-4 col-12 mb-2">
-                    <h3 class="content-header-title">Parents</h3>
+                    <h3 class="content-header-title">Subjects</h3>
                 </div>
                 <div class="content-header-right col-md-8 col-12">
                     <div class="breadcrumbs-top float-md-right">
                         <div class="breadcrumb-wrapper mr-1">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
-                                    <a href="/Admin/ParentList">Parents</a>
+                                    <a href="/Admin/SubjectList">Subjects</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Manage Parents <i class="la la-long-arrow-right"></i> Delete Parent
+                                    Manage Subjects <i class="la la-long-arrow-right"></i> Edit Subject
                                 </li>
                             </ol>
                         </div>
@@ -614,86 +614,92 @@
             </div>
             <div class="content-body">
                 <!-- Basic Tables start -->
-
                 <div class="row">
-
                     <div class="col-12">
-
                         <div class="card">
                             <div class="card-header">
+                                <h4 class="card-title">Edit Subjects Details</h4>
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                 <div class="heading-elements">
                                     <ul class="list-inline mb-0">
                                         <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
                                         <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
                                         <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+
                                     </ul>
                                 </div>
                             </div>
 
-
+                            <div class="card-header">
+                            </div>
                             <div class="card-content collapse show">
                                 <div class="card-body">
-                                    <div>
-                                        <!--PARENT DETAILS-->
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="card mb-3">
-                                                    <div class="card-header">
-                                                        <h2 style="color:red"> WARNING </h2>
-                                                        <h4 style="color:red">Are you sure want to DELETE this parent?</h4>
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <h3><i class="fas fa-user-friends"></i> Parents Details</h3>
-                                                        <hr />
-                                                        <dl>
-                                                            <dd>
-                                                                <b>PARENT IC </b> : @Html.DisplayFor(model => model.parents_ic)
-                                                            </dd>
-                                                            <dd>
-                                                                <b>PARENT NAME </b> : @Html.DisplayFor(model => model.parents_name)
-                                                            </dd>
-                                                            <dd>
-                                                                <b>EMAIL </b> : @Html.DisplayFor(model => model.parents_email)
-                                                            </dd>
-                                                            <dd>
-                                                                <b>PHONE NUMBER </b> : @Html.DisplayFor(model => model.parents_phone)
-                                                            </dd>
-                                                            <dd>
-                                                                <b>ADDRESS </b> : @Html.DisplayFor(model => model.parents_address)
-                                                            </dd>
-                                                        </dl>
-                                                        @using (Html.BeginForm())
-                                                        {
-                                                            @Html.AntiForgeryToken()
+                                    @using (Html.BeginForm())
+                                    {
+                                        @Html.AntiForgeryToken()
 
-                                                            <div class="form-actions no-color">
-                                                                <div class="col-md-offset-2 col-md-10">
-                                                                    <input type="submit" value="Confirm Delete" class="btn btn-warning" style="margin:auto;display:block;" onclick="return confirm('Are sure want to delete this?');" />
-
-                                                                </div>
-                                                            </div>
-                                                        }
-                                                    </div>
+                                        <div class="form-horizontal">
+                                            <h4>Subject</h4>
+                                            <hr />
+                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_code, "Subject Code", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.subject_code, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.subject_code, "", new { @class = "text-danger" })
                                                 </div>
-                                                <!-- end card-body-->
                                             </div>
-                                            <!-- end card-->
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_name, "Subject Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.subject_name, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.subject_name, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_type, "Subject Type", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @*@Html.EditorFor(model => model.subject_type, new { htmlAttributes = new { @class = "form-control" } })
+                                                        @Html.ValidationMessageFor(model => model.subject_type, "", new { @class = "text-danger" })*@
+
+                                                    @Html.DropDownListFor(model => model.subject_type, new SelectList(new[] { "Primary", "Secondary" }))
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_year, "Subject Year", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @*@Html.EditorFor(model => model.subject_year, new { htmlAttributes = new { @class = "form-control" } })
+                                                        @Html.ValidationMessageFor(model => model.subject_year, "", new { @class = "text-danger" })*@
+                                                    @Html.DropDownListFor(model => model.subject_year, new SelectList(new[] { "Primary 1", "Primary 2", "Primary 3", "Primary 4", "Primary 5", "Primary 6", "Form 1", "Form 2", "Form 3", "Form 4", "Form 5" }))
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="form-group">
+                                                <div class="col-md-offset-2 col-md-10">
+                                                    <input type="submit" value="Save Changes" style="margin:auto;display:block;" class="btn btn-warning" onclick="return confirm('Are you sure want to save changes?');" />
+                                                    &nbsp;
+                                                    <!--<input type="submit" href="/Admin/SubjectList" value="Cancel" style="margin:auto;display:block;" class="btn btn-danger" />-->
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <!-- end row-->
+                                    }
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
-            <a style="float:left;" class="btn btn-outline-purple btn-sm" href="@Url.Action("ParentList", "Admin")">BACK TO LIST</a>
         </div>
     </div>
     <!-- Basic Tables end -->
     <!-- ///////////////////////////START FOOTER/////////////////////////////////////////////////-->
+
+
     <footer class="footer footer-static footer-light navbar-border navbar-shadow">
         <div class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
             <p class="mt-50 mx-auto footer-text col-lg-12">
@@ -742,8 +748,6 @@
     dataTabled data
     <script src="~/Content/assets/data/data_datatables.js"></script>
     <!-- ///////////////////////////end JS from ASSETS/////////////////////////////////////////////////-->
-
-
 
 
 

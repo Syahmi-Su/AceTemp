@@ -157,7 +157,7 @@
                     <a href="#"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Outstanding</span></a>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="/Outstanding/Index">Manage <br />Outstanding <br />Payment</a>
+                            <a href="/Oustanding/AddOutstanding">Manage <br />Outstanding <br />Payment</a>
                         </li>
                     </ul>
                 </li>
@@ -207,90 +207,89 @@
                             </div>
 
                             <div class="card-content collapse show">
-                                <div class="card-body">
+                                    <div class="card-body">
 
-                                    @using (Html.BeginForm())
-                                    {
-                                        @Html.AntiForgeryToken()
+                                        @using (Html.BeginForm())
+                                        {
+                                            @Html.AntiForgeryToken()
 
-                                        <div class="form-horizontal">
-                                            <hr />
-                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                            @Html.HiddenFor(model => model.confirmation_id)
-                                            @Html.HiddenFor(model => model.parent_ic)
-                                            @Html.HiddenFor(model => model.student_ic)
-                                            @Html.HiddenFor(model => model.payment_feedetails)
-                                            @Html.HiddenFor(model => model.filename)
-                                            @Html.HiddenFor(model => model.confirmation_date)
+                                            <div class="form-horizontal">
+                                                <hr />
+                                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                                @Html.HiddenFor(model => model.confirmation_id)
+                                                @Html.HiddenFor(model => model.parent_ic)
+                                                @Html.HiddenFor(model => model.student_ic)
+                                                @Html.HiddenFor(model => model.payment_feedetails)
+                                                @Html.HiddenFor(model => model.filename)
+                                                @Html.HiddenFor(model => model.confirmation_date)
 
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.ref_num, "Reference Number", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.EditorFor(model => model.ref_num, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
-                                                    @Html.ValidationMessageFor(model => model.ref_num, "", new { @class = "text-danger" })
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.ref_num, "Reference Number", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                    <div class="col-md-10">
+                                                        @Html.EditorFor(model => model.ref_num, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                        @Html.ValidationMessageFor(model => model.ref_num, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.payment_date, "Payment Date", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                    <div class="col-md-10">
+                                                        @Html.EditorFor(model => model.payment_date, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                        @Html.ValidationMessageFor(model => model.payment_date, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.payment_detail, "Package Taken", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                    <div class="col-md-10">
+                                                        @Html.EditorFor(model => model.payment_detail, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                        @Html.ValidationMessageFor(model => model.payment_detail, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.payment_feedetails, "Month Fee", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                    <div class="col-md-10">
+                                                        @*@Html.EditorFor(model => model.payment_feedetailss, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })*@
+                                                        @Html.EditorFor(model => model.payment_feedetails, new { htmlAttributes = new { @class = "form-control" } })
+                                                        @Html.ValidationMessageFor(model => model.payment_feedetails, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.payment_fee, "Payment Fee", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                    <div class="col-md-10">
+                                                        @*@Html.EditorFor(model => model.payment_fee, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })*@
+                                                        @Html.EditorFor(model => model.payment_fee, new { htmlAttributes = new { @class = "form-control" } })
+                                                        @Html.ValidationMessageFor(model => model.payment_fee, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.status_id, "Payment Status", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                    <div class="col-md-10">
+                                                        @Html.DropDownList("status_id", new SelectList(ViewBag.data, "status_id", "status_desc"))
+                                                        @Html.ValidationMessageFor(model => model.status_id, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="col-md-offset-2 col-md-10">
+                                                        <input type="submit" value="Update" class="btn btn-success" />
+                                                    </div>
                                                 </div>
                                             </div>
 
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.payment_date, "Payment Date", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.EditorFor(model => model.payment_date, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
-                                                    @Html.ValidationMessageFor(model => model.payment_date, "", new { @class = "text-danger" })
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.payment_detail, "Package Taken", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.EditorFor(model => model.payment_detail, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
-                                                    @Html.ValidationMessageFor(model => model.payment_detail, "", new { @class = "text-danger" })
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.payment_feedetails, "Month Fee", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @*@Html.EditorFor(model => model.payment_feedetailss, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })*@
-                                                    @Html.EditorFor(model => model.payment_feedetails, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.ValidationMessageFor(model => model.payment_feedetails, "", new { @class = "text-danger" })
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.payment_fee, "Payment Fee", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @*@Html.EditorFor(model => model.payment_fee, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })*@
-                                                    @Html.EditorFor(model => model.payment_fee, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.ValidationMessageFor(model => model.payment_fee, "", new { @class = "text-danger" })
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.status_id, "Payment Status", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.DropDownList("status_id", new SelectList(ViewBag.data, "status_id", "status_desc"))
-                                                    @Html.ValidationMessageFor(model => model.status_id, "", new { @class = "text-danger" })
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <div class="col-md-offset-2 col-md-10">
-                                                    <input type="submit" value="Update" class="btn btn-success" />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    }
+                                        }
 
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <a style="float:left;" class="btn btn-outline-purple btn-sm" href="@Url.Action("ApprovalList", "Payment")">BACK TO LIST</a>
-        </div>
         </div>
         <!-- Basic Tables end -->
         <!-- ///////////////////////////START FOOTER/////////////////////////////////////////////////-->

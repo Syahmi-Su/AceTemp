@@ -154,7 +154,7 @@
                     <a href="#"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Outstanding</span></a>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="/Outstanding/Index">Manage <br />Outstanding <br />Payment</a>
+                            <a href="/Oustanding/AddOutstanding">Manage <br />Outstanding <br />Payment</a>
                         </li>
                     </ul>
                 </li>
@@ -235,7 +235,7 @@
                                                 @Html.LabelFor(model => model.package_category, "Package Category", htmlAttributes: new { @class = "control-label col-md-2" })
                                                 <div class="col-md-10">
                                                     @*@Html.EditorFor(model => model.subject_type, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.subject_type, "", new { @class = "text-danger" })*@
+                        @Html.ValidationMessageFor(model => model.subject_type, "", new { @class = "text-danger" })*@
 
                                                     @Html.DropDownListFor(model => model.package_category, new SelectList(new[] { "Primary", "Secondary" }))
                                                 </div>
@@ -263,7 +263,6 @@
                     </div>
                 </div>
             </div>
-            <a style="float:left;" class="btn btn-outline-purple btn-sm" href="@Url.Action("PackageList", "Admin")">BACK TO LIST</a>
         </div>
     </div>
     <!-- Basic Tables end -->

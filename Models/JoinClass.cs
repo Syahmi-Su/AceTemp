@@ -9,5 +9,8 @@ namespace AceTC.Models
     {
         public Student studentdetails { get; set; }
         public Package packagedetails { get; set; }
+        public studRegister studsubjdetails { get; set; }
+
+        public Subject subjectlist { get; set; }
     }
 }

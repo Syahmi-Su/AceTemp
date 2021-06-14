@@ -1,4 +1,5 @@
 ﻿using AceTC.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -34,7 +35,7 @@ namespace AceTC.Controllers
         }
 
         // GET: Payment/Create
-        public ActionResult AddPayment()
+        public ActionResult addPayment()
         {
             Payment addpack = new Payment();
             var par = db.Parents.ToList();
@@ -54,7 +55,7 @@ namespace AceTC.Controllers
             {
                 addpack.confirmation_id = Id.confirmation_id + 1;
             }
-            
+
 
             List<SelectListItem> a = new List<SelectListItem>()
             {
@@ -96,7 +97,7 @@ namespace AceTC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AddPayment([Bind(Include = "confirmation_id,student_ic,parent_ic,payment_fee,ref_num,status_id,confirmation_date,payment_date,payment_detail,payment_feedetails,filename, meal_fee,transport_fee,first_register,lower_discount")] Payment p)
+        public ActionResult addPayment([Bind(Include = "confirmation_id,student_ic,parent_ic,package_id,payment_fee,ref_num,status_id,confirmation_date,payment_date,payment_detail,payment_feedetails,filename, meal_fee,transport_fee,first_register,lower_discount")] Payment p)
         {
 
             double total = p.payment_fee + p.transport_fee + p.first_register + p.meal_fee;
@@ -126,6 +127,27 @@ namespace AceTC.Controllers
             {
                 return HttpNotFound();
             }
+
+/*            List<SelectListItem> a = new List<SelectListItem>()
+            {
+                new SelectListItem {
+                    Text = "RM20/Month", Value = "20"
+                },
+                new SelectListItem {
+                    Text = "RM40/Month", Value = "40"
+                },
+                new SelectListItem {
+                    Text = "RM60/Month", Value = "60"
+                },
+                new SelectListItem {
+                    Text = "RM80/Month", Value = "80"
+                },
+                new SelectListItem {
+                    Text = "RM100/Month", Value = "100"
+                },
+            };
+            ViewBag.transport_fee = new SelectList(a, "Value", "Text");*/
+
             return View(payment);
         }
 
@@ -134,15 +156,20 @@ namespace AceTC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "confirmation_id,student_ic,parent_ic,payment_fee,ref_num,status_id,confirmation_date,payment_date,payment_detail,payment_feedetailss,filename,meal_fee,transport_fee,first_register,lower_discount")] Payment payment)
+        public ActionResult Edit([Bind(Include = "confirmation_id,student_ic,parent_ic,package_id,payment_fee,ref_num,status_id,confirmation_date,payment_date,payment_detail,payment_feedetailss,filename,meal_fee,transport_fee,first_register,lower_discount")] Payment p)
         {
+            double total = p.payment_fee + p.transport_fee + p.first_register + p.meal_fee;
+            double discount = (100 - p.lower_discount) / 100;
+            p.payment_fee = total * discount;
+            p.confirmation_date = DateTime.Now;
+
             if (ModelState.IsValid)
             {
-                db.Entry(payment).State = EntityState.Modified;
+                db.Entry(p).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("ApprovalList","Payment");
             }
-            return View(payment);
+            return View(p);
         }
 
         public ActionResult MakePayment()
@@ -165,30 +192,49 @@ namespace AceTC.Controllers
 
         public ActionResult ApprovalList()
         {
-            //AceDBEntities entity = new AceDBEntities();
-            //List<Payment> payment = entity.Payments.ToList();
-            //List<Status> status = entity.Status.ToList();
-
-            //var multipletable = from a in payment
-            //                    join b in status on a.status_id equals b.status_id into table1
-            //                    from b in table1.DefaultIfEmpty()
-            //                    select new MultipleClass { paymentdetails = a, statusdetails = b};
-
-            //return View(multipletable);
-
             AceDBEntities entity = new AceDBEntities();
             List<Payment> payment = entity.Payments.ToList();
             List<Status> status = entity.Status.ToList();
             List<Package> package = entity.Packages.ToList();
             List<Student> student = entity.Students.ToList();
             List<Parent> parent = entity.Parents.ToList();
+            List<studRegister> register = entity.studRegisters.ToList();
+
 
             var multipletable = from a in payment
                                 join b in status on a.status_id equals b.status_id
-                                join p in package on a.package_id equals p.package_id
-                                join s in student on a.student_ic equals s.student_ic
+/*                                join p in package on a.package_id equals p.package_id
+*/                                join s in student on a.student_ic equals s.student_ic
                                 join par in parent on a.parent_ic equals par.parents_ic
-                                select new MultipleClass { paymentdetails = a, statusdetails = b, packagedetails = p, parentdetails = par, studentdetails = s };
+                                select new MultipleClass { paymentdetails = a, statusdetails = b, /*packagedetails = p,*/ parentdetails = par, studentdetails = s };
+
+/*            DateTime todayDate = DateTime.Now;
+            DateTime payDate = new DateTime(todayDate.Year, todayDate.Month, 14);
+            int result = DateTime.Compare(todayDate, payDate);
+
+  
+
+
+                foreach (var oldpay in register)
+                {
+                    int increment = 0;
+                    increment += 1;
+                    Outstanding newpay = new Outstanding();
+                    newpay.O_ID = increment;
+                newpay.O_month = DateTime.Now;
+                newpay.O_pID = oldpay.studreg_ic;
+                newpay.O_fees = 233;
+                newpay.O_remark = "test " + increment;
+                newpay.O_status = 1;
+
+
+                    db.Outstandings.Add(newpay);
+                    db.SaveChanges();
+
+
+                }
+*/
+
 
             return View(multipletable);
 
@@ -200,7 +246,7 @@ namespace AceTC.Controllers
             ViewBag.data = par;
 
             using (AceDBEntities entity = new AceDBEntities())
-            { 
+            {
                 return View(entity.Payments.Where(x => x.confirmation_id == id).FirstOrDefault());
             }
 
@@ -218,7 +264,7 @@ namespace AceTC.Controllers
                     entity.Entry(payment).State = EntityState.Modified;
                     entity.SaveChanges();
                 }
-                return RedirectToAction("ApprovalList","Payment");
+                return RedirectToAction("ApprovalList", "Payment");
             }
             catch
             {
@@ -229,17 +275,6 @@ namespace AceTC.Controllers
 
         public ActionResult PaymentHistories()
         {
-            //AceDBEntities entity = new AceDBEntities();
-            //List<Payment> payment = entity.Payments.ToList();
-            //List<Status> status = entity.Status.ToList();
-
-            //var multipletable = from a in payment
-            //                    join b in status on a.status_id equals b.status_id into table1
-            //                    from b in table1.DefaultIfEmpty()
-            //                    select new MultipleClass { paymentdetails = a, statusdetails = b };
-
-            //return View(multipletable);
-
             AceDBEntities entity = new AceDBEntities();
             List<Payment> payment = entity.Payments.ToList();
             List<Status> status = entity.Status.ToList();
@@ -251,9 +286,9 @@ namespace AceTC.Controllers
                                 join b in status on a.status_id equals b.status_id
                                 join c in parent on a.parent_ic equals c.parents_ic
                                 join d in student on a.student_ic equals d.student_ic
-                                join e in package on a.package_id equals e.package_id
+/*                                join e in package on a.package_id equals e.package_id*/
 
-                                select new MultipleClass { paymentdetails = a, statusdetails = b, parentdetails = c, studentdetails = d, packagedetails = e };
+                                select new MultipleClass { paymentdetails = a, statusdetails = b, parentdetails = c, studentdetails = d/*, packagedetails = e */};
 
             return View(multipletable);
         }

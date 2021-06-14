@@ -46,10 +46,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -128,7 +130,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AddOutstandingController.cs" />
     <Compile Include="Controllers\AddPackageController.cs" />
     <Compile Include="Controllers\AddParentController.cs" />
     <Compile Include="Controllers\AddStudentController.cs" />
@@ -183,6 +184,9 @@
       <DependentUpon>AceDBEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Student.cs">
+      <DependentUpon>AceDBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\studRegister.cs">
       <DependentUpon>AceDBEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Subject.cs">
@@ -4816,7 +4820,6 @@
     <Content Include="Views\Email\SendEmail.cshtml" />
     <Content Include="Views\Email\SendEmails.cshtml" />
     <Content Include="Views\Receipt\Slip.cshtml" />
-    <Content Include="Views\Receipt\View.cshtml" />
     <Content Include="Views\Payment\AddPayment.cshtml" />
     <Content Include="Views\Payment\Approval.cshtml" />
     <Content Include="Views\Payment\ApprovalList.cshtml" />
@@ -4834,9 +4837,9 @@
     <Content Include="Views\Payment\View.cshtml" />
     <Content Include="Views\Shared\navBar.cshtml" />
     <Content Include="upload\d1cc6a87-c80e-4116-bacb-c8f603c8b4fe.pdf" />
-    <Content Include="Views\AddOutstanding\AddOutstanding.cshtml" />
-    <Content Include="Views\Outstanding\SendOutstandingEmail.cshtml" />
-    <Content Include="Views\Outstanding\ApprovalOutstanding.cshtml" />
+    <Content Include="Views\AddStudent\AddStudentSubject.cshtml" />
+    <Content Include="Views\Payment\Edit.cshtml" />
+    <Content Include="Views\Admin\editStudentList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".vs\AceTC\v16\" />
