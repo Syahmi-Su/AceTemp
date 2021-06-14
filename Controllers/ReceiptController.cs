@@ -26,11 +26,10 @@ namespace AceTC.Controllers
             List<Parent> parent = entity.Parents.ToList();
             var multipletable = from a in payment
                                 join b in status on a.status_id equals b.status_id
-                                join p in package on a.package_id equals p.package_id
                                 join s in student on a.student_ic equals s.student_ic
                                 join par in parent on a.parent_ic equals par.parents_ic
-                                select new MultipleClass { paymentdetails = a, statusdetails = b, packagedetails = p, parentdetails = par, studentdetails = s };
-            return View(multipletable);
+                                select new MultipleClass { paymentdetails = a, statusdetails = b, parentdetails = par, studentdetails = s };
+            return View();
         }
     }
 }

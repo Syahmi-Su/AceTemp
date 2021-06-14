@@ -10,6 +10,7 @@ namespace AceTC.Controllers
 {
     public class AdminController : Controller
     {
+        private AceDBEntities db = new AceDBEntities();
         // GET: Admin
         public ActionResult Index()
         {
@@ -24,19 +25,8 @@ namespace AceTC.Controllers
                 studentcount = entity.Students.Count(),
                 packagecount = entity.Packages.Count(),
                 paymentcount = entity.Payments.Count(),
-                outstandingcount = entity.Outstandings.Count(),
-                subjectcount = entity.Subjects.Count(),
-                
             };
             return View(cnt);
-
-            //var x = entity.Students.Include("Payment").ToList().GroupBy(e => e.student_category).Select(y => new Count
-            //{
-            //    category = y.First().student_category,
-            //    count = y.Count()
-            //}).ToList();
-
-            //return View(x);
         }
 
         // GET: STUDENT
@@ -73,23 +63,70 @@ namespace AceTC.Controllers
         [HttpPost]
         public ActionResult EditStudentDetails(Student student)
         {
-            /*AceDBEntities entity = new AceDBEntities();
-            entity.Entry(student).State = EntityState.Modified;
-            entity.SaveChanges();
-            //ModelState.Clear();
-            //ViewBag.SuccessMessage = "Save Changes Successful. ";
-            return RedirectToAction("StudentList", "Admin");*/
+            var studentIC = student.student_ic;
+            var studPackage = student.student_package;
+            var cat = student.student_category;
+
+            Package p = db.Packages.Find(studPackage);
+            var totalsubj = p.total_subject;
+            var fee = p.package_price;
+
+            Payment pay = db.Payments.Where(x => x.student_ic == student.student_ic).FirstOrDefault();
+            pay.payment_fee = p.package_price;
+            pay.ref_num = "ACE";
+            pay.status_id = 1;
+            pay.confirmation_date = DateTime.Now;
+            pay.payment_date = DateTime.Now;
+            string p_details = p.package_category + "/ " + p.package_desc;
 
             using (AceDBEntities entity = new AceDBEntities())
             {
+                entity.Entry(pay).State = EntityState.Modified;
                 entity.Entry(student).State = EntityState.Modified;
                 entity.SaveChanges();
             }
             ModelState.Clear();
             //ViewBag.SuccessMessage = "Save Changes Successful. ";
-            return RedirectToAction("StudentList", "Admin");
+            return RedirectToAction("editStudentList", new { studentIC , totalsubj, cat});
 
+            }
+
+        public ActionResult editStudentList(string studentIC, int totalsubj, string cat)
+        {
+            ViewBag.totalsub = totalsubj;
+            var subj = db.Subjects.Where(x => x.subject_type == cat).ToList();
+            ViewBag.subj = subj;
+
+            studRegister std = db.studRegisters.Find(studentIC);
+
+            return View(std);
         }
+
+        [HttpPost]
+        public ActionResult editStudentList(string ic, studRegister reg)
+        {
+            if (ModelState.IsValid)
+            {
+                reg.subject_1 = reg.subject_1;
+                reg.subject_2 = reg.subject_2;
+                reg.subject_3 = reg.subject_3;
+                reg.subject_4 = reg.subject_4;
+                reg.subject_5 = reg.subject_5;
+                reg.subject_6 = reg.subject_6;
+                reg.subject_7 = reg.subject_7;
+                db.Entry(reg).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+
+            return RedirectToAction("StudentList", "Admin");
+        }
+
+
+
+
+
+
+
 
         public ActionResult DeleteStudent(string id)
         {
@@ -171,16 +208,16 @@ namespace AceTC.Controllers
         public ActionResult PackageList()
         {
             AceDBEntities entity = new AceDBEntities();
-            List<Student> studentparent = entity.Students.ToList();
-            List<Package> packagename = entity.Packages.ToList();
-
-            var multable = from pc in packagename
-                                join s in studentparent on pc.package_id equals s.student_package
-                                select new MultipleClass { studentdetails = s, packagedetails = pc };
-            return View(multable);
+            return View(from Package in entity.Packages select Package);
 
         }
 
+        public ActionResult SubjectList()
+        {
+            AceDBEntities slist = new AceDBEntities();
+            return View(from Subject in slist.Subjects select Subject);
+
+        }
 
         public ActionResult EditPackageDetails(int id)
         {
@@ -195,12 +232,6 @@ namespace AceTC.Controllers
         [HttpPost]
         public ActionResult EditPackageDetails(Package package)
         {
-            /*AceDBEntities entity = new AceDBEntities();
-            entity.Entry(student).State = EntityState.Modified;
-            entity.SaveChanges();
-            //ModelState.Clear();
-            //ViewBag.SuccessMessage = "Save Changes Successful. ";
-            return RedirectToAction("StudentList", "Admin");*/
 
             using (AceDBEntities entity = new AceDBEntities())
             {
@@ -213,16 +244,6 @@ namespace AceTC.Controllers
 
         }
 
-        public ActionResult SubjectList()
-        {
-            AceDBEntities slist = new AceDBEntities();
-            return View(from Subject in slist.Subjects select Subject);
-    
-        }
-
-
-        
-       
 
         public ActionResult DeletePackage(int id)
         {

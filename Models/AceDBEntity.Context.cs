@@ -26,12 +26,13 @@ namespace AceTC.Models
         }
     
         public virtual DbSet<Admin> Admins { get; set; }
-        public virtual DbSet<Package> Packages { get; set; }
+        public virtual DbSet<Outstanding> Outstandings { get; set; }
         public virtual DbSet<Parent> Parents { get; set; }
         public virtual DbSet<Status> Status { get; set; }
+        public virtual DbSet<Package> Packages { get; set; }
         public virtual DbSet<Student> Students { get; set; }
-        public virtual DbSet<Subject> Subjects { get; set; }
+        public virtual DbSet<studRegister> studRegisters { get; set; }
         public virtual DbSet<Payment> Payments { get; set; }
-        public virtual DbSet<Outstanding> Outstandings { get; set; }
+        public virtual DbSet<Subject> Subjects { get; set; }
     }
 }

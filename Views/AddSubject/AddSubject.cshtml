@@ -155,7 +155,7 @@
                     <a href="#"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Outstanding</span></a>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="/Outstanding/Index">Manage <br />Outstanding <br />Payment</a>
+                            <a href="/Oustanding/AddOutstanding">Manage <br />Outstanding <br />Payment</a>
                         </li>
                     </ul>
                 </li>
@@ -236,7 +236,7 @@
                                                 @Html.LabelFor(model => model.subject_type, "Subject Type", htmlAttributes: new { @class = "control-label col-md-2" })
                                                 <div class="col-md-10">
                                                     @*@Html.EditorFor(model => model.subject_type, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.subject_type, "", new { @class = "text-danger" })*@
+                                        @Html.ValidationMessageFor(model => model.subject_type, "", new { @class = "text-danger" })*@
                                                     @Html.DropDownListFor(model => model.subject_type, new SelectList(new[] { "Primary", "Secondary" }))
                                                 </div>
                                             </div>
@@ -245,7 +245,7 @@
                                                 @Html.LabelFor(model => model.subject_year, "Subject Year", htmlAttributes: new { @class = "control-label col-md-2" })
                                                 <div class="col-md-10">
                                                     @*@Html.EditorFor(model => model.subject_year, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.subject_year, "", new { @class = "text-danger" })*@
+                                        @Html.ValidationMessageFor(model => model.subject_year, "", new { @class = "text-danger" })*@
                                                     @Html.DropDownListFor(model => model.subject_year, new SelectList(new[] { "Primary 1", "Primary 2", "Primary 3", "Primary 4", "Primary 5", "Primary 6", "Form 1", "Form 2", "Form 3", "Form 4", "Form 5" }))
                                                 </div>
                                             </div>
@@ -264,7 +264,6 @@
                     </div>
                 </div>
             </div>
-            <a style="float:left;" class="btn btn-outline-purple btn-sm" href="@Url.Action("SubjectList", "Admin")">BACK TO LIST</a>
         </div>
     </div>
     <!-- Basic Tables end -->

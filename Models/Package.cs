@@ -17,6 +17,7 @@ namespace AceTC.Models
         public int package_id { get; set; }
         public string package_desc { get; set; }
         public string package_category { get; set; }
+        public int total_subject { get; set; }
         public double package_price { get; set; }
     }
 }

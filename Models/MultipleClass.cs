@@ -13,5 +13,6 @@ namespace AceTC.Models
         public Payment paymentdetails { get; set; }
         public Status statusdetails { get; set; }
         public Package packagedetails { get; set; }
+        public studRegister studentregister { get; set; }
     }
 }
