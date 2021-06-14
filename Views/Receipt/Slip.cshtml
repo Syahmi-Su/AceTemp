@@ -1,0 +1,157 @@
+@model IEnumerable<AceTC.Models.MultipleClass>
+
+@{ Layout = null;}
+
+@{
+    ViewBag.Title = "Slip";
+
+    if (Session["parents_ic"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+
+    var ses = Session["parents_ic"];
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css" />
+    <title>Pusat Tuisyen Madani</title>
+    <link rel="shortcut icon" href="~/Content/assets/images/ACElogo-triangle.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+            integrity="sha256-c9vxcXyAG4paArQG3xk6DjyW/9aHxai2ef9RpMWO44A=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+</head>
+
+<body>
+    <!-- Content will go here -->
+    <div id="invoice">
+
+        <div class="toolbar hidden-print">
+            <div class="text-right">
+                <button id="printInvoice" class="btn btn-info"><i class="fa fa-print"></i> Print</button>
+                <button id="downloadPDF" class="btn btn-info"><i class="fa fa-file-pdf-o"></i> Export as PDF</button>
+            </div>
+            <hr>
+        </div>
+        <div class="invoice overflow-auto">
+            <div style="min-width: 600px">
+                <header>
+                    <div class="row">
+                        <div class="col">
+
+                            <img src="~/Content/assets/images/ACElogo-triangle.png" style="width:200px;height:130px;" data-holder-rendered="true" />
+
+                        </div>
+                        <div class="col company-details">
+                            <h2 class="name">Ace Education</h2>
+                            <div>455 Foggy Heights, AZ 85004, US</div>
+                            <div>(123) 456-789</div>
+                            <div>company@example.com</div>
+                        </div>
+                    </div>
+                </header>
+                <main>
+
+
+                    @foreach (var item in Model)
+                    {
+
+
+                        <div class="row contacts">
+                            <div class="col invoice-to">
+                                <div class="text-gray-light">RECEIPT TO:</div>
+                                <h2 class="to">@Html.DisplayFor(model => item.parentdetails.parents_name)</h2>
+                                <div class="address">@Html.DisplayFor(model => item.parentdetails.parents_address)</div>
+                                <div class="email">@Html.DisplayFor(model => item.parentdetails.parents_email)</div>
+                            </div>
+                            <div class="col invoice-details">
+                                <h1 class="invoice-id">INVOICE @Html.DisplayFor(model => item.paymentdetails.ref_num)</h1>
+                                <div class="date">Date of Invoice: @Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.paymentdetails.confirmation_date))</div>
+
+                            </div>
+                        </div>
+
+
+                        <table border="0" cellspacing="0" cellpadding="0">
+                            <thead>
+                                <tr>
+                                    <th><strong>CONFIRMATION ID</strong></th>
+                                    <th class="text-left"><strong>PAYMENT DATE</strong></th>
+                                    <th class="text-left"><strong>CHILDREN NAME</strong></th>
+                                    <th class="text-left"><strong>CHILDREN NAME(CHINESE)</strong></th>
+                                    <th class="text-left"><strong>SUBJECT NAME</strong></th>
+                                    <th class="text-left"><strong>TOTAL</strong></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-left">@Html.DisplayFor(model => item.paymentdetails.confirmation_id)</td>
+                                    <td class="text-left"> @Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.paymentdetails.payment_date))</td>
+                                    <td class="text-left"> @Html.DisplayFor(model => item.studentdetails.student_name)</td>
+                                    <td class="text-left"> @Html.DisplayFor(model => item.studentdetails.student_cname)</td>
+                                    <td class="text-left">@Html.DisplayFor(model => item.packagedetails.package_desc)</td>
+                                    <td class="total"> RM @Html.DisplayFor(model => item.paymentdetails.payment_fee)</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3"></td>
+                                    <td colspan="2"><strong>GRAND TOTAL</strong></td>
+                                    <td>RM @Html.DisplayFor(model => item.paymentdetails.payment_fee)</td>
+                                </tr>
+                            </tfoot>
+                        </table><br /><br /><br /><br />
+                        <div class="thanks">Thank you!</div>
+                        <div class="notices">
+                            <div>NOTICE:</div>
+                            <div class="notice">Parents are encouraged to pay the fee before 14th of every Month for early payment discount. </div>
+                        </div>
+                    }
+                </main>
+
+                <footer>
+                    Invoice was created on a computer and is valid without the signature and seal.
+                </footer>
+            </div>
+            <!--DO NOT DELETE THIS div. IT is responsible for showing footer always at the bottom-->
+            <div></div>
+        </div>
+    </div>
+
+    <script>
+        $('#printInvoice').click(function () {
+            Popup($('.invoice')[0].outerHTML);
+            function Popup(data) {
+                window.print();
+                return true;
+            }
+        });
+
+
+        $('#downloadPDF').click(function () {
+            domtoimage.toPng(document.getElementById('invoice'))
+                .then(function (blob) {
+                    var pdf = new jsPDF('l', 'pt', [$('#invoice').width(), $('#invoice').height()]);
+
+                    pdf.addImage(blob, 'PNG', 0, 0, $('#invoice').width(), $('#invoice').height());
+                    pdf.save("Receipt.pdf");
+
+                    that.options.api.optionsChanged();
+                });
+        });
+    </script>
+
+
+</body>
+</html>
+

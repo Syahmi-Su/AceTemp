@@ -1,0 +1,353 @@
+﻿@*@model IEnumerable<AceTC.Models.Outstanding>*@
+@model AceTC.Models.Outstanding
+
+@{ Layout = null;}
+@{
+    ViewBag.Title = "ApprovalOutstanding";
+
+    if (Session["admin_id"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
+
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="Chameleon Admin is a modern Bootstrap 4 webapp &amp; admin dashboard html template with a large number of components, elegant design, clean and organized code.">
+    <meta name="keywords" content="admin template, Chameleon admin template, dashboard template, gradient admin template, responsive admin template, webapp, eCommerce dashboard, analytic dashboard">
+    <meta name="author" content="ThemeSelect">
+    <title> Admin - Pusat Tuisyen Madani </title>
+    <link rel="apple-touch-icon" href="~/Content/theme-assets/images/logo/ACElogo-triangle.png">
+    <link rel="shortcut icon" type="image/x-icon" href="~/Content/theme-assets/images/logo/ACElogo-triangle.ico">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700" rel="stylesheet">
+    <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
+    <!-- BEGIN VENDOR CSS-->
+    <link rel="stylesheet" type="text/css" href="~/Content/theme-assets/css/vendors.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/theme-assets/vendors/css/charts/chartist.css">
+    <!-- END VENDOR CSS-->
+    <!-- BEGIN CHAMELEON  CSS-->
+    <link rel="stylesheet" type="text/css" href="~/Content/theme-assets/css/app-lite.css">
+    <!-- END CHAMELEON  CSS-->
+    <!-- BEGIN Page Level CSS-->
+    <link rel="stylesheet" type="text/css" href="~/Content/theme-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/theme-assets/css/core/colors/palette-gradient.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/theme-assets/css/pages/dashboard-ecommerce.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/plugins/datatables/datatables.min.css" />
+    <!-- END Page Level CSS-->
+    <!-- BEGIN Custom CSS-->
+    <!-- END Custom CSS-->
+</head>
+
+
+<body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar" data-open="click" data-menu="vertical-menu" data-color="bg-chartbg" data-col="2-columns">
+    <!-- ///////////////////////////START NAVBAR/////////////////////////////////////////////////-->
+    <!-- fixed-top-->
+    <nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light">
+        <div class="navbar-wrapper">
+            <div class="navbar-container content">
+                <div class="collapse navbar-collapse show" id="navbar-mobile">
+                    <ul class="nav navbar-nav mr-auto float-left">
+                        <li class="nav-item d-block d-md-none"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu"></i></a></li>
+                        <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"><i class="ficon ft-maximize"></i></a></li>
+
+                    </ul>
+
+                    <ul class="nav navbar-nav float-right">
+                        <li class="dropdown dropdown-notification nav-item">
+                            <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-mail">             </i></a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <div class="arrow_box_right"><a class="dropdown-item" href="#"><i class="ft-book"></i> Read Mail</a><a class="dropdown-item" href="#"><i class="ft-bookmark"></i> Read Later</a><a class="dropdown-item" href="#"><i class="ft-check-square"></i> Mark all Read       </a></div>
+                            </div>
+                        </li>
+                        <li class="dropdown dropdown-user nav-item">
+                            <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">             <span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><i></i></span></a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <div class="arrow_box_right">
+                                    <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><span class="user-name text-bold-700 ml-1">Admin</span></span></a>
+                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="ft-user"></i> Edit Profile</a><a class="dropdown-item" href="#"><i class="ft-mail"></i> My Inbox</a><a class="dropdown-item" href="#"><i class="ft-check-square"></i> Task</a><a class="dropdown-item" href="#"><i class="ft-message-square"></i> Chats</a>
+                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="@Url.Action("Logout","Login")"><i class="ft-power"></i> Logout</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- ///////////////////////////END NAVBAR/////////////////////////////////////////////////-->
+    <!-- ///////////////////////////START SIDEBAR/////////////////////////////////////////////////-->
+    <div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true" data-img="~/Content/theme-assets/images/backgrounds/02.jpg">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav flex-row">
+                <li class="nav-item mr-auto">
+                    <a class="navbar-brand" href="/Admin/AdminDashboard">
+                        <img class="brand-logo" src="~/Content/theme-assets/images/logo/ACElogo-triangle.png" />
+                        <h3 class="brand-text">
+                            PUSAT TUISYEN <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            MADANI
+                        </h3>
+                    </a>
+                </li>
+                <li class="nav-item d-md-none"><a class="nav-link close-navbar"><i class="ft-x"></i></a></li>
+            </ul>
+        </div>
+        <div class="main-menu-content">
+            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+                <li class=" nav-item">
+                    <br />
+                    <a href="/Admin/AdminDashboard"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#"><i class="la la-female"></i><span class="menu-title" data-i18n="">Parents</span></a>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="/Admin/ParentList">Manage Parents</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#"><i class="la la-group"></i><span class="menu-title" data-i18n="">Students</span></a>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="/Admin/StudentList">Manage Students</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#"><i class="la la-leanpub"></i><span class="menu-title" data-i18n="">Subjects</span></a>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="/Admin/SubjectList">Manage Subjects</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#"><i class="la la-files-o"></i><span class="menu-title" data-i18n="">Tuition Packages</span></a>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="/Admin/PackageList">Manage Tuition <br />Packages</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item">
+                    <a href="#"><i class="la la-money"></i><span class="menu-title" data-i18n="">Payment</span></a>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="/Payment/AddPayment">Add Payment</a>
+                        </li>
+                    </ul>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="/Payment/ApprovalList">Approval List</a>
+                        </li>
+                    </ul>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="/Payment/PaymentHistories">Payment History</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Outstanding</span></a>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="/Outstanding/Index">Manage <br />Outstanding <br />Payment</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- ///////////////////////////END SIDEBAR/////////////////////////////////////////////////-->
+
+    <div class="app-content content">
+        <div class="content-wrapper">
+            <div class="content-wrapper-before"></div>
+            <div class="content-header row">
+                <div class="content-header-left col-md-4 col-12 mb-2">
+                    <h3 class="content-header-title">Outstanding</h3>
+                </div>
+                <div class="content-header-right col-md-8 col-12">
+                    <div class="breadcrumbs-top float-md-right">
+                        <div class="breadcrumb-wrapper mr-1">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/Outstanding/Index">Outstanding</a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    Manage Outstanding Payment <i class="la la-long-arrow-right"></i> Approval Outstanding Payment
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+                <!-- Basic Tables start -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Approval Outstanding Payment Details</h4>
+                                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                                <div class="heading-elements">
+                                    <ul class="list-inline mb-0">
+                                        <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                        <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                        <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card-header">
+                            </div>
+                            <div class="card-content collapse show">
+                                <div class="card-body">
+                                    @using (Html.BeginForm())
+                                    {
+                                        @Html.AntiForgeryToken()
+
+                                        <div class="form-horizontal">
+                                            <h4>Outstanding Payment</h4>
+                                            <hr />
+                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.O_ID, "Outstanding ID", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.O_ID, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                    @Html.ValidationMessageFor(model => model.O_ID, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.O_pID, "Parent IC", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.O_pID, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.O_pID, "", new { @class = "text-danger" })
+                                                    @*@Html.DropDownList("parent_ic", new SelectList(ViewBag.data, "parents_name", "parents_ic"))
+                        @Html.ValidationMessageFor(model => model.O_pID, "", new { @class = "text-danger" })*@
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.O_month, "Month Issued", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.O_month, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.O_month, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.O_remark, "Remark", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.O_remark, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.O_remark, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.O_fees, "Outstanding Fee", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.O_fees, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.O_fees, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            @*<div class="form-group">
+                    <div class="col-md-10">
+                        @Html.HiddenFor(model => model.O_status, new { @class = "form-control", @value = "1" })
+                    </div>
+                </div>*@
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.O_status, "Payment Status", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownListFor(model => model.O_status, (SelectList)ViewBag.O_status, "-select-", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.O_status, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <div class="col-md-offset-2 col-md-10">
+                                                    <input type="submit" value="Save Changes" style="margin:auto;display:block;" class="btn btn-info" onclick="return confirm('Are you sure want to save changes?');" />
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a style="float:left;" class="btn btn-outline-purple btn-sm" href="@Url.Action("Index", "Outstanding")">BACK TO LIST</a>
+        </div>
+    </div>
+    <!-- Basic Tables end -->
+    <!-- ///////////////////////////START FOOTER/////////////////////////////////////////////////-->
+
+
+    <footer class="footer footer-static footer-light navbar-border navbar-shadow">
+        <div class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
+            <p class="mt-50 mx-auto footer-text col-lg-12">
+                Copyright &copy;
+                <script>document.write(new Date().getFullYear());</script> All rights reserved | Pusat Tuisyen Madani
+            </p>
+
+        </div>
+    </footer>
+
+    <!-- ///////////////////////////END FOOTER/////////////////////////////////////////////////-->
+    <!-- BEGIN VENDOR JS-->
+    <script src="~/Content/theme-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
+    <!-- BEGIN VENDOR JS-->
+    <!-- BEGIN PAGE VENDOR JS-->
+    <script src="~/Content/theme-assets/vendors/js/charts/chartist.min.js" type="text/javascript"></script>
+    <!-- END PAGE VENDOR JS-->
+    <!-- BEGIN CHAMELEON  JS-->
+    <script src="~/Content/theme-assets/js/core/app-menu-lite.js" type="text/javascript"></script>
+    <script src="~/Content/theme-assets/js/core/app-lite.js" type="text/javascript"></script>
+    <!-- END CHAMELEON  JS-->
+    <!-- BEGIN PAGE LEVEL JS-->
+    <script src="~/Content/theme-assets/js/scripts/pages/dashboard-lite.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL JS-->
+    <!-- ///////////////////////////start JS from ASSETS/////////////////////////////////////////////////-->
+    <script src="~/Content/assets/js/modernizr.min.js"></script>
+    <script src="~/Content/assets/js/jquery.min.js"></script>
+    <script src="~/Content/assets/js/moment.min.js"></script>
+
+    <script src="~/Content/assets/js/popper.min.js"></script>
+    <script src="~/Content/assets/js/bootstrap.min.js"></script>
+
+    <script src="~/Content/assets/js/detect.js"></script>
+    <script src="~/Content/assets/js/fastclick.js"></script>
+    <script src="~/Content/assets/js/jquery.blockUI.js"></script>
+    <script src="~/Content/assets/js/jquery.nicescroll.js"></script>-->
+    <!-- App js -->
+    <script src="~/Content/assets/js/admin.js"></script>
+
+    <!-- BEGIN Java Script for this page -->
+    <script src="~/Content/assets/plugins/chart.js/Chart.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/datatables.min.js"></script>
+    <!-- Counter-Up-->
+    <script src="~/Content/assets/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="~/Content/assets/plugins/counterup/jquery.counterup.min.js"></script>
+    dataTabled data
+    <script src="~/Content/assets/data/data_datatables.js"></script>
+    <!-- ///////////////////////////end JS from ASSETS/////////////////////////////////////////////////-->
+
+
+
+</body>
+</html>
+

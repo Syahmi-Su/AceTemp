@@ -1,0 +1,404 @@
+﻿@model AceTC.Models.CascadingClass
+
+@{ Layout = null;}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Pusat Tuisyen Madani</title>
+    <meta name="description" content="Dashboard | Nura Admin">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Your website">
+
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/Content/assets/images/ACElogo-triangle.ico">
+
+    <!-- Bootstrap CSS -->
+    <link href="~/Content/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome CSS -->
+    <link href="~/Content/assets/font-awesome/css/all.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom CSS -->
+    <link href="~/Content/assets/css/style.css" rel="stylesheet" type="text/css" />
+
+    <!-- BEGIN CSS for this page -->
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/plugins/chart.js/Chart.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/plugins/datatables/datatables.min.css" />
+    <!-- END CSS for this page -->
+</head>
+
+<body class="adminbody">
+
+    <div id="main">
+
+        <!-- top bar navigation -->
+        <div class="headerbar">
+
+            <!-- LOGO -->
+            <div class="headerbar-left">
+                <img alt="Logo" style="width:60px;height:60px;" src="~/Content/assets/images/ACElogo-triangle.png" />
+                <span style="color:white">Pusat Tuisyen Madani</span>
+            </div>
+
+            <nav class="navbar-custom">
+
+                <ul class="list-inline float-right mb-0">
+
+                    <li class="list-inline-item dropdown notif">
+                        <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" aria-haspopup="false" aria-expanded="false">
+                            <i class="fas fa-cog"></i>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-arrow-success dropdown-sm">
+                            <!-- item-->
+                            <div class="dropdown-item noti-title">
+                                <h5>
+                                    <small>Settings</small>
+                                </h5>
+                            </div>
+
+                            <!-- item-->
+                            <a href="#" class="dropdown-item notify-item">
+                                <p class="notify-details ml-0">
+                                    <i class="fas fa-cog"></i>
+                                    <b>Settings 1</b>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="#" class="dropdown-item notify-item">
+                                <p class="notify-details ml-0">
+                                    <i class="fas fa-cog"></i>
+                                    <b>Settings 2</b>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="#" class="dropdown-item notify-item">
+                                <p class="notify-details ml-0">
+                                    <i class="fas fa-cog"></i>
+                                    <b>Settings 3</b>
+                                </p>
+                            </a>
+
+                        </div>
+
+                    </li>
+
+
+                    <li class="list-inline-item dropdown notif">
+                        <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" aria-haspopup="false" aria-expanded="false">
+                            <img src="~/Content/assets/images/download.png" alt="Profile image" class="avatar-rounded">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                            <!-- item-->
+                            <div class="dropdown-item noti-title">
+                                <h5 class="text-overflow">
+                                    <small>Hi, @Session["admin_id"].ToString()</small>
+                                </h5>
+                            </div>
+
+                            <!-- item-->
+                            <a href="@Url.Action("Logout","Login")" class="dropdown-item notify-item">
+                                <i class="fas fa-power-off"></i>
+                                <span>Logout</span>
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <ul class="list-inline menu-left mb-0">
+                    <li class="float-left">
+                        <button class="button-menu-mobile open-left">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </li>
+                </ul>
+
+            </nav>
+
+        </div>
+        <!-- End Navigation -->
+        <!-- Left Sidebar -->
+        <div class="left main-sidebar">
+
+            <div class="sidebar-inner leftscroll">
+
+                <div id="sidebar-menu">
+
+                    <ul>
+
+                        <li class="submenu">
+                            <a class="active" href="/Admin/AdminDashboard">
+                                <i class="fas fa-bars"></i>
+                                <span> Dashboard </span>
+                            </a>
+                        </li>
+
+                        <li class="menu-title">Home</li>
+                        <li class="submenu">
+                            <a href="/Admin/testing">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <span> Notification</span>
+                            </a>
+                        </li>
+
+
+                        <li class="menu-title">Administration</li>
+                        <li class="submenu">
+                            <a id="tables" href="#">
+                                <i class="fas fa-user-circle"></i>
+                                <span> Parent List </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="/Admin/ParentList">Manage Parent List</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="submenu">
+                            <a id="tables" href="#">
+                                <i class="fas fa-users"></i>
+                                <span> Student List </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="/Admin/StudentList">Manage Student List</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="submenu">
+                            <a id="tables" href="#">
+                                <i class="fas fa-book"></i>
+                                <span> Package List </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="tables-basic.html">Manage Package List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="submenu">
+                            <a id="tables" href="#">
+                                <i class="fas fa-folder"></i>
+                                <span> Subject List </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="tables-basic.html">Manage Subject List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="menu-title">Payment</li>
+                        <li class="submenu">
+                            <a href="/Payment/AddPayment">
+                                <i class="fas fa-credit-card"></i>
+                                <span> Make Payment</span>
+                            </a>
+                        </li>
+
+                        <li class="submenu">
+                            <a href="/Payment/ApprovalList">
+                                <i class="fas fa-list"></i>
+                                <span> Approval List</span>
+                            </a>
+                        </li>
+
+                        <li class="submenu">
+                            <a href="/Payment/PaymentHistories">
+                                <i class="fas fa-history"></i>
+                                <span> Payment History</span>
+                            </a>
+                        </li>
+
+
+                        <li class="menu-title">Data Analytics</li>
+                        <li class="submenu">
+                            <a href="/Outstanding/Index">
+                                <i class="fas fa-chart-bar"></i>
+                                <span> Outstanding List</span>
+                            </a>
+                        </li>
+
+
+                        <li class="menu-title">User Manual</li>
+                        <li class="submenu">
+                            <a href="/Admin/testing">
+                                <i class="fas fa-info-circle"></i>
+                                <span> Admin Manual</span>
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+                    <div class="clearfix"></div>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+        </div>
+        <!-- End Sidebar -->
+
+        <div class="content-page">
+
+            <!-- Start content -->
+            <div class="content">
+
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="breadcrumb-holder">
+                                <h1 class="main-title float-left">Send Email Reminder</h1>
+                                <ol class="breadcrumb float-right">
+                                    <li class="breadcrumb-item">Home</li>
+                                    <li class="breadcrumb-item">Admin</li>
+                                    <li class="breadcrumb-item active">Send Email Reminder</li>
+                                </ol>
+                                <div class="clearfix"></div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card mb-3">
+                                <div class="card-header">
+                                    <h3><i class="fas fa-user-friends"></i> Send Email Reminder</h3>
+                                </div>
+
+                                <div class="card-body">
+
+                                    @using (Html.BeginForm())
+                                    {
+                                        @Html.AntiForgeryToken()
+
+                                        <div class="form-horizontal">
+                                            <hr />
+                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.receiver, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.receiver, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.receiver, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.subject, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.subject, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.message, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.TextAreaFor(model => model.message, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.message, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            @if (ViewBag.msg != null)
+                                            {
+                                                <div class="alert alert-success"> @ViewBag.msg </div>
+                                            }
+
+                                            @if (ViewBag.Error != null)
+                                            {
+                                                <div class="alert alert-danger">  @ViewBag.Error  </div>
+                                            }
+
+                                            <div class="form-group">
+                                                <div class="col-md-offset-2 col-md-10">
+                                                    <input type="submit" value="Send" style="margin:auto;display:block;" class="btn btn-info" />
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    }
+
+                                </div>
+                                <!-- end card-body-->
+                            </div>
+                            <!-- end card-->
+                        </div>
+
+
+                    </div>
+                    <!-- end row-->
+
+                </div>
+                <!-- END container-fluid -->
+
+            </div>
+            <!-- END content -->
+
+        </div>
+        <!-- END content-page -->
+
+        <footer class="footer">
+        </footer>
+
+        <script src="~/Content/assets/js/modernizr.min.js"></script>
+        <script src="~/Content/assets/js/jquery.min.js"></script>
+        <script src="~/Content/assets/js/moment.min.js"></script>
+
+        <script src="~/Content/assets/js/popper.min.js"></script>
+        <script src="~/Content/assets/js/bootstrap.min.js"></script>
+
+        <script src="~/Content/assets/js/detect.js"></script>
+        <script src="~/Content/assets/js/fastclick.js"></script>
+        <script src="~/Content/assets/js/jquery.blockUI.js"></script>
+        <script src="~/Content/assets/js/jquery.nicescroll.js"></script>
+
+        <!-- App js -->
+        <script src="~/Content/assets/js/admin.js"></script>
+
+    </div>
+    <!-- END main -->
+    <!-- BEGIN Java Script for this page -->
+    <script src="~/Content/assets/plugins/chart.js/Chart.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/datatables.min.js"></script>
+
+    <!-- Counter-Up-->
+    <script src="~/Content/assets/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="~/Content/assets/plugins/counterup/jquery.counterup.min.js"></script>
+
+    <!-- dataTabled data -->
+    <script src="~/Content/assets/data/data_datatables.js"></script>
+
+    <!-- Charts data -->
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
+    <!-- END Java Script for this page -->
+
+</body>
+
+</html>
+

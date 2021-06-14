@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+
+    if (Session["admin_id"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
+
+<h2>Index</h2>

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AceDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="admin_id" />
+    </Key>
+    <Property Name="admin_id" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="admin_pass" Type="nvarchar" MaxLength="258" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Outstanding">
+    <Key>
+      <PropertyRef Name="O_ID" />
+    </Key>
+    <Property Name="O_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="O_month" Type="date" Nullable="false" />
+    <Property Name="O_pID" Type="nvarchar" MaxLength="14" Nullable="false" />
+    <Property Name="O_fees" Type="float" Nullable="false" />
+    <Property Name="O_remark" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="O_status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Package">
+    <Key>
+      <PropertyRef Name="package_id" />
+    </Key>
+    <Property Name="package_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="package_desc" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="package_category" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="package_price" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Parents">
+    <Key>
+      <PropertyRef Name="parents_ic" />
+    </Key>
+    <Property Name="parents_ic" Type="nvarchar" MaxLength="14" Nullable="false" />
+    <Property Name="parents_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="parents_pass" Type="nvarchar" MaxLength="257" Nullable="false" />
+    <Property Name="parents_email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="parents_phone" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="parents_address" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="confirmation_id" />
+    </Key>
+    <Property Name="confirmation_id" Type="int" Nullable="false" />
+    <Property Name="student_ic" Type="nvarchar" MaxLength="14" Nullable="false" />
+    <Property Name="parent_ic" Type="nvarchar" MaxLength="14" Nullable="false" />
+    <Property Name="payment_fee" Type="float" Nullable="false" />
+    <Property Name="ref_num" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="status_id" Type="int" Nullable="false" />
+    <Property Name="confirmation_date" Type="date" Nullable="false" />
+    <Property Name="payment_date" Type="date" Nullable="false" />
+    <Property Name="payment_detail" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="payment_feedetails" Type="nvarchar" MaxLength="100" />
+    <Property Name="filename" Type="nvarchar" MaxLength="100" />
+    <Property Name="package_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="status_id" />
+    </Key>
+    <Property Name="status_id" Type="int" Nullable="false" />
+    <Property Name="status_desc" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="student_ic" />
+    </Key>
+    <Property Name="student_ic" Type="nvarchar" MaxLength="14" Nullable="false" />
+    <Property Name="student_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="student_cname" Type="nvarchar" MaxLength="10" />
+    <Property Name="student_package" Type="int" Nullable="false" />
+    <Property Name="student_dob" Type="date" Nullable="false" />
+    <Property Name="student_gender" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="student_category" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="student_year" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="parent_ic" Type="nvarchar" MaxLength="14" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Subject">
+    <Key>
+      <PropertyRef Name="subject_code" />
+    </Key>
+    <Property Name="subject_code" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="subject_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="subject_type" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="subject_year" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="AceDBModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Outstanding" EntityType="Self.Outstanding" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Package" EntityType="Self.Package" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Parents" EntityType="Self.Parents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subject" EntityType="Self.Subject" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

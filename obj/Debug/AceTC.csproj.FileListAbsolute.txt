@@ -1,0 +1,597 @@
+C:\Users\User\Desktop\AD\AceTC\bin\AceTC.dll.config
+C:\Users\User\Desktop\AD\AceTC\bin\AceTC.dll
+C:\Users\User\Desktop\AD\AceTC\bin\AceTC.pdb
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\csc.exe
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\csc.exe.config
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\csc.rsp
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\csi.exe
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\csi.exe.config
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\csi.rsp
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.AppContext.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.Console.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.IO.Compression.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.Net.Http.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.Net.Sockets.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.ValueTuple.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.Xml.XPath.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\vbc.exe
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\vbc.exe.config
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\vbc.rsp
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\VBCSCompiler.exe
+C:\Users\User\Desktop\AD\AceTC\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\User\Desktop\AD\AceTC\bin\Antlr3.Runtime.dll
+C:\Users\User\Desktop\AD\AceTC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\User\Desktop\AD\AceTC\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\User\Desktop\AD\AceTC\bin\Newtonsoft.Json.dll
+C:\Users\User\Desktop\AD\AceTC\bin\System.Web.Helpers.dll
+C:\Users\User\Desktop\AD\AceTC\bin\System.Web.Mvc.dll
+C:\Users\User\Desktop\AD\AceTC\bin\System.Web.Optimization.dll
+C:\Users\User\Desktop\AD\AceTC\bin\System.Web.Razor.dll
+C:\Users\User\Desktop\AD\AceTC\bin\System.Web.WebPages.Deployment.dll
+C:\Users\User\Desktop\AD\AceTC\bin\System.Web.WebPages.dll
+C:\Users\User\Desktop\AD\AceTC\bin\System.Web.WebPages.Razor.dll
+C:\Users\User\Desktop\AD\AceTC\bin\WebGrease.dll
+C:\Users\User\Desktop\AD\AceTC\bin\System.Web.Helpers.xml
+C:\Users\User\Desktop\AD\AceTC\bin\System.Web.Mvc.xml
+C:\Users\User\Desktop\AD\AceTC\bin\System.Web.Optimization.xml
+C:\Users\User\Desktop\AD\AceTC\bin\System.Web.Razor.xml
+C:\Users\User\Desktop\AD\AceTC\bin\System.Web.WebPages.xml
+C:\Users\User\Desktop\AD\AceTC\bin\System.Web.WebPages.Deployment.xml
+C:\Users\User\Desktop\AD\AceTC\bin\System.Web.WebPages.Razor.xml
+C:\Users\User\Desktop\AD\AceTC\bin\Newtonsoft.Json.xml
+C:\Users\User\Desktop\AD\AceTC\bin\Antlr3.Runtime.pdb
+C:\Users\User\Desktop\AD\AceTC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\User\Desktop\AD\AceTC\obj\Debug\AceTC.csprojAssemblyReference.cache
+C:\Users\User\Desktop\AD\AceTC\obj\Debug\AceTC.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\AD\AceTC\obj\Debug\AceTC.csproj.CopyComplete
+C:\Users\User\Desktop\AD\AceTC\obj\Debug\AceTC.dll
+C:\Users\User\Desktop\AD\AceTC\obj\Debug\AceTC.pdb
+C:\Users\User\Desktop\AD\AceTC\bin\EntityFramework.dll
+C:\Users\User\Desktop\AD\AceTC\bin\EntityFramework.SqlServer.dll
+C:\Users\User\Desktop\AD\AceTC\bin\EntityFramework.xml
+C:\Users\User\Desktop\AD\AceTC\bin\EntityFramework.SqlServer.xml
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\AceTC.dll.config
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\AceTC.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\AceTC.pdb
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\csc.exe
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\csc.exe.config
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\csc.rsp
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\csi.exe
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\csi.exe.config
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\csi.rsp
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.AppContext.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.Console.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.IO.Compression.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.Net.Http.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.Net.Sockets.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.ValueTuple.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.Xml.XPath.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\vbc.exe
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\vbc.exe.config
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\vbc.rsp
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\VBCSCompiler.exe
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\Antlr3.Runtime.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\EntityFramework.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\EntityFramework.SqlServer.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\Newtonsoft.Json.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\System.Web.Helpers.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\System.Web.Mvc.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\System.Web.Optimization.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\System.Web.Razor.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\System.Web.WebPages.Deployment.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\System.Web.WebPages.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\System.Web.WebPages.Razor.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\WebGrease.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\EntityFramework.xml
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\EntityFramework.SqlServer.xml
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\System.Web.Helpers.xml
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\System.Web.Mvc.xml
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\System.Web.Optimization.xml
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\System.Web.Razor.xml
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\System.Web.WebPages.xml
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\System.Web.WebPages.Deployment.xml
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\System.Web.WebPages.Razor.xml
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\Newtonsoft.Json.xml
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\Antlr3.Runtime.pdb
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\obj\Debug\AceTC.csprojAssemblyReference.cache
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\obj\Debug\AceTC.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\obj\Debug\AceTC.csproj.CopyComplete
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\obj\Debug\AceTC.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceTC\obj\Debug\AceTC.pdb
+C:\Users\User\Documents\GitHub\AceEdu\bin\AceTC.dll.config
+C:\Users\User\Documents\GitHub\AceEdu\bin\AceTC.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\AceTC.pdb
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\csc.exe
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\csc.exe.config
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\csc.rsp
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\csi.exe
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\csi.exe.config
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\csi.rsp
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.AppContext.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.Console.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.IO.Compression.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.Net.Http.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.Net.Sockets.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.ValueTuple.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.Xml.XPath.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\vbc.exe
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\vbc.exe.config
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\vbc.rsp
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\VBCSCompiler.exe
+C:\Users\User\Documents\GitHub\AceEdu\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\User\Documents\GitHub\AceEdu\bin\Antlr3.Runtime.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\EntityFramework.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\EntityFramework.SqlServer.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\Newtonsoft.Json.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\System.Web.Helpers.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\System.Web.Mvc.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\System.Web.Optimization.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\System.Web.Razor.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\System.Web.WebPages.Deployment.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\System.Web.WebPages.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\System.Web.WebPages.Razor.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\WebGrease.dll
+C:\Users\User\Documents\GitHub\AceEdu\bin\EntityFramework.xml
+C:\Users\User\Documents\GitHub\AceEdu\bin\EntityFramework.SqlServer.xml
+C:\Users\User\Documents\GitHub\AceEdu\bin\System.Web.Helpers.xml
+C:\Users\User\Documents\GitHub\AceEdu\bin\System.Web.Mvc.xml
+C:\Users\User\Documents\GitHub\AceEdu\bin\System.Web.Optimization.xml
+C:\Users\User\Documents\GitHub\AceEdu\bin\System.Web.Razor.xml
+C:\Users\User\Documents\GitHub\AceEdu\bin\System.Web.WebPages.xml
+C:\Users\User\Documents\GitHub\AceEdu\bin\System.Web.WebPages.Deployment.xml
+C:\Users\User\Documents\GitHub\AceEdu\bin\System.Web.WebPages.Razor.xml
+C:\Users\User\Documents\GitHub\AceEdu\bin\Newtonsoft.Json.xml
+C:\Users\User\Documents\GitHub\AceEdu\bin\Antlr3.Runtime.pdb
+C:\Users\User\Documents\GitHub\AceEdu\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\User\Documents\GitHub\AceEdu\obj\Debug\AceTC.csprojAssemblyReference.cache
+C:\Users\User\Documents\GitHub\AceEdu\obj\Debug\AceTC.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\AceEdu\obj\Debug\AceTC.csproj.CopyComplete
+C:\Users\User\Documents\GitHub\AceEdu\obj\Debug\AceTC.dll
+C:\Users\User\Documents\GitHub\AceEdu\obj\Debug\AceTC.pdb
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\obj\Debug\AceTC.csprojAssemblyReference.cache
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\obj\Debug\AceTC.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\obj\Debug\AceTC.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\obj\Debug\AceTC.pdb
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\AceTC.dll.config
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\AceTC.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\AceTC.pdb
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\csc.exe
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\csc.exe.config
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\csc.rsp
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\csi.exe
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\csi.exe.config
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\csi.rsp
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\System.AppContext.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\System.Console.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\System.IO.Compression.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\System.Net.Sockets.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\System.ValueTuple.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\System.Xml.XPath.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\vbc.exe
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\vbc.exe.config
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\vbc.rsp
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\VBCSCompiler.exe
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\EntityFramework.xml
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\EntityFramework.SqlServer.xml
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\System.Web.Helpers.xml
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\System.Web.Mvc.xml
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\System.Web.Optimization.xml
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\System.Web.Razor.xml
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\System.Web.WebPages.xml
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\System.Web.WebPages.Deployment.xml
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\System.Web.WebPages.Razor.xml
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\Newtonsoft.Json.xml
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\Antlr3.Runtime.pdb
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\user\Documents\Degree\SEM_II\SCSP3106_Applications_Development\2u2i-project\AceEdu\obj\Debug\AceTC.csproj.CopyComplete
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\AceTC.dll.config
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\AceTC.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\AceTC.pdb
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\csc.exe
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\csc.exe.config
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\csc.rsp
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\csi.exe
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\csi.exe.config
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\csi.rsp
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.AppContext.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.Console.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.IO.Compression.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.Memory.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.Net.Sockets.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.Numerics.Vectors.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.ValueTuple.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.Xml.XPath.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\vbc.exe
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\vbc.exe.config
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\vbc.rsp
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\VBCSCompiler.exe
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\EntityFramework.xml
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\EntityFramework.SqlServer.xml
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\System.Web.Helpers.xml
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\System.Web.Mvc.xml
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\System.Web.Optimization.xml
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\System.Web.Razor.xml
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\System.Web.WebPages.xml
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\System.Web.WebPages.Deployment.xml
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\System.Web.WebPages.Razor.xml
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\Newtonsoft.Json.xml
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\Antlr3.Runtime.pdb
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\obj\Debug\AceTC.csprojAssemblyReference.cache
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\obj\Debug\AceTC.csproj.CoreCompileInputs.cache
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\obj\Debug\AceTC.csproj.CopyComplete
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\obj\Debug\AceTC.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEdu\obj\Debug\AceTC.pdb
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\AceTC.dll.config
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\AceTC.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\AceTC.pdb
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\csc.exe
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\csc.exe.config
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\csc.rsp
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\csi.exe
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\csi.exe.config
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\csi.rsp
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.AppContext.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.Console.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.IO.Compression.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.Memory.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.Numerics.Vectors.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.ValueTuple.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\vbc.exe
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\vbc.exe.config
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\vbc.rsp
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\VBCSCompiler.exe
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\EntityFramework.xml
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\EntityFramework.SqlServer.xml
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\System.Web.Helpers.xml
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\System.Web.Mvc.xml
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\System.Web.Optimization.xml
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\System.Web.Razor.xml
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\System.Web.WebPages.xml
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\System.Web.WebPages.Razor.xml
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\Newtonsoft.Json.xml
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\Antlr3.Runtime.pdb
+C:\Users\Acer\Documents\GitHub\AceEduOK\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Acer\Documents\GitHub\AceEduOK\obj\Debug\AceTC.csprojAssemblyReference.cache
+C:\Users\Acer\Documents\GitHub\AceEduOK\obj\Debug\AceTC.csproj.CoreCompileInputs.cache
+C:\Users\Acer\Documents\GitHub\AceEduOK\obj\Debug\AceTC.csproj.CopyComplete
+C:\Users\Acer\Documents\GitHub\AceEduOK\obj\Debug\AceTC.dll
+C:\Users\Acer\Documents\GitHub\AceEduOK\obj\Debug\AceTC.pdb
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\AceTC.dll.config
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\AceTC.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\AceTC.pdb
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\csc.exe
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\csc.exe.config
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\csc.rsp
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\csi.exe
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\csi.exe.config
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\csi.rsp
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.AppContext.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.Console.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.IO.Compression.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.Memory.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.Net.Sockets.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.Numerics.Vectors.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.ValueTuple.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.Xml.XPath.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\vbc.exe
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\vbc.exe.config
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\vbc.rsp
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\VBCSCompiler.exe
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\EntityFramework.xml
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\EntityFramework.SqlServer.xml
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\System.Web.Helpers.xml
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\System.Web.Mvc.xml
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\System.Web.Optimization.xml
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\System.Web.Razor.xml
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\System.Web.WebPages.xml
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\System.Web.WebPages.Deployment.xml
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\System.Web.WebPages.Razor.xml
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\Newtonsoft.Json.xml
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\Antlr3.Runtime.pdb
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\obj\Debug\AceTC.csprojAssemblyReference.cache
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\obj\Debug\AceTC.csproj.CoreCompileInputs.cache
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\obj\Debug\AceTC.csproj.CopyComplete
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\obj\Debug\AceTC.dll
+C:\Users\User\Downloads\Telegram Desktop\AceEduOK\obj\Debug\AceTC.pdb
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\AceTC.dll.config
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\AceTC.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\AceTC.pdb
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\csc.exe
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\csc.exe.config
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\csc.rsp
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\csi.exe
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\csi.exe.config
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\csi.rsp
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.AppContext.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.Console.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.IO.Compression.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.Memory.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.Numerics.Vectors.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.ValueTuple.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\vbc.exe
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\vbc.exe.config
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\vbc.rsp
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\VBCSCompiler.exe
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\EntityFramework.xml
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\EntityFramework.SqlServer.xml
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\System.Web.Helpers.xml
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\System.Web.Mvc.xml
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\System.Web.Optimization.xml
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\System.Web.Razor.xml
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\System.Web.WebPages.xml
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\System.Web.WebPages.Razor.xml
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\Newtonsoft.Json.xml
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\Antlr3.Runtime.pdb
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\obj\Debug\AceTC.csprojAssemblyReference.cache
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\obj\Debug\AceTC.csproj.CoreCompileInputs.cache
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\obj\Debug\AceTC.csproj.CopyComplete
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\obj\Debug\AceTC.dll
+C:\Users\Acer\Documents\GitHub\Pusat Tuisyen Madani\obj\Debug\AceTC.pdb

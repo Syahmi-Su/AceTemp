@@ -1,0 +1,95 @@
+﻿@model IEnumerable<AceTC.Models.Payment>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.parent_ic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.student_ic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ref_num)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.confirmation_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.payment_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.payment_detail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.payment_feedetailss)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.payment_fee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.filename)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.parent_ic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.student_ic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ref_num)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.confirmation_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.payment_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.payment_detail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.payment_feedetailss)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.payment_fee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.filename)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.confirmation_id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.confirmation_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.confirmation_id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

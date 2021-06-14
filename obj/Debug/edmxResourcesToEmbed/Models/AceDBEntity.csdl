@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AceDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="admin_id" />
+    </Key>
+    <Property Name="admin_id" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="admin_pass" Type="String" MaxLength="258" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Package">
+    <Key>
+      <PropertyRef Name="package_id" />
+    </Key>
+    <Property Name="package_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="package_desc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="package_category" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="package_price" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Parent">
+    <Key>
+      <PropertyRef Name="parents_ic" />
+    </Key>
+    <Property Name="parents_ic" Type="String" MaxLength="14" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="parents_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="parents_pass" Type="String" MaxLength="257" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="parents_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="parents_phone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="parents_address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="status_id" />
+    </Key>
+    <Property Name="status_id" Type="Int32" Nullable="false" />
+    <Property Name="status_desc" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="student_ic" />
+    </Key>
+    <Property Name="student_ic" Type="String" MaxLength="14" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="student_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="student_cname" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="student_package" Type="Int32" Nullable="false" />
+    <Property Name="student_dob" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="student_gender" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="student_category" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="student_year" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="parent_ic" Type="String" MaxLength="14" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Subject">
+    <Key>
+      <PropertyRef Name="subject_code" />
+    </Key>
+    <Property Name="subject_code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="subject_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="subject_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="subject_year" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="AceDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="Packages" EntityType="Self.Package" />
+    <EntitySet Name="Parents" EntityType="Self.Parent" />
+    <EntitySet Name="Status" EntityType="Self.Status" />
+    <EntitySet Name="Students" EntityType="Self.Student" />
+    <EntitySet Name="Subjects" EntityType="Self.Subject" />
+    <EntitySet Name="Payments" EntityType="AceDBModel.Payment" />
+    <EntitySet Name="Outstandings" EntityType="AceDBModel.Outstanding" />
+  </EntityContainer>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="confirmation_id" />
+    </Key>
+    <Property Name="confirmation_id" Type="Int32" Nullable="false" />
+    <Property Name="student_ic" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+    <Property Name="parent_ic" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+    <Property Name="payment_fee" Type="Double" Nullable="false" />
+    <Property Name="ref_num" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="status_id" Type="Int32" Nullable="false" />
+    <Property Name="confirmation_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="payment_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="payment_detail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="payment_feedetails" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="filename" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="package_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Outstanding">
+    <Key>
+      <PropertyRef Name="O_ID" />
+    </Key>
+    <Property Name="O_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="O_month" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="O_pID" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+    <Property Name="O_fees" Type="Double" Nullable="false" />
+    <Property Name="O_remark" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="O_status" Type="Int32" Nullable="false" />
+  </EntityType>
+</Schema>

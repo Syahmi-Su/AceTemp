@@ -1,0 +1,184 @@
+﻿@model AceTC.Models.UserModel
+
+@{
+    Layout = null;
+    ViewBag.Title = "Login";
+}
+
+<head>
+    <link href="~/styles/style.css" rel="stylesheet" />
+    <style>
+        .field-validation-error {
+            color: red;
+        }
+    </style>
+</head>
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <title>Pusat Tuisyen Madani | Home </title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="High Edu Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta tag Keywords -->
+    <!-- Custom-Files -->
+    <link rel="stylesheet" href="~/styles/bootstrap.css">
+    <!-- Bootstrap-Core-CSS -->
+    <link rel="stylesheet" href="~/styles/styles.css" type="text/css" media="all" />
+    <!-- Style-CSS -->
+    <!-- font-awesome-icons -->
+    <link href="~/styles/font-awesome.css" rel="stylesheet">
+    <!-- //font-awesome-icons -->
+    <!-- /Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Playfair+Display:400,400i,700i" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,800" rel="stylesheet">
+    <!-- //Fonts -->
+</head>
+
+<body>
+    <!-- mian-content -->
+    <div class="banner-content" id="home">
+        <!-- header -->
+        <header class="header">
+            <div class="container-fluid px-lg-5">
+                <!-- nav -->
+                <nav class="py-4">
+                    <div id="logo">
+
+                    </div>
+                    <label for="drop" class="toggle">Menu</label>
+                    <img alt="Logo" style="width:130px;height:100px;" src="~/Content/assets/images/ACElogo-triangle.png" />
+                    <input type="checkbox" id="drop" />
+                    <ul class="menu mt-2">
+                        <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("Login", "Index", "Login")</li>
+                    </ul>
+                </nav>
+                <!-- //nav -->
+            </div>
+        </header>
+        <!-- //header -->
+        <!--/banner-->
+        <div class="banner-info-w3pvt" style="padding-top: 80px; padding-bottom: 80px; padding-left: 0px;">
+            @* @using (Html.BeginForm()) *@
+            @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+
+                <h1 style="padding-top: 50px; padding-bottom: 0px">Pusat Tuisyen Madini</h1>
+                <div class="login-form">
+                    <div class="close"> </div>
+                    <div class="head-info">
+                        <label class="lbl-1"> </label>
+                        <label class="lbl-2"> </label>
+                        <label class="lbl-3"> </label>
+                    </div>
+                    <div class="clear"></div>
+
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            <div class="key">
+                                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "text", @placeholder = "Username" } })
+                                <br />
+                                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="key">
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @type = "password", @placeholder = "Password" } })
+                                <br />
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div>
+                                <label class="field-validation-error" color="red">@Html.DisplayFor(model => model.LoginErrorMsg)</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="signin">
+                                <input type="submit" value="Login" />
+                                <input type="reset" value="Clear" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <!--// banner-inner -->
+    </div>
+    <!-- //header -->
+    <!--// mian-content -->
+    <!--footer -->
+    <footer>
+        <section class="footer footer_1its py-3">
+            <div class="container py-md-4">
+                <div class="row footer-top mb-md-5 mb-4">
+                    <div class="col-lg-6 col-md-6 footer-grid_section_1its">
+                        <div class="footer-title-w3ls">
+                            <h3>Address</h3>
+                        </div>
+                        <div class="footer-text">
+                            <p>Address  : Taman Mutiara Rini, Johor, Malaysia</p>
+                            <p>Phone  &nbsp : +03 534894364</p>
+                            <p>Email   &nbsp&nbsp : <a href="mailto:info@example.com">aceeducation@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 mt-md-0 mt-4 footer-grid_section_1its">
+                        <div class="footer-title-w3ls">
+                            <h3>Quick Links</h3>
+                        </div>
+                        <div class="row">
+                            <ul class="social_section_1info">
+                                <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li>@Html.ActionLink("About", "About", "Home")</li>
+                                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-grid_section text-center">
+                    <div class="footer-text">
+                        <p>Visit our social media to get to know us.</p>
+                    </div>
+                    <ul class="social_section_1info">
+                        <li class="mb-2 facebook"><a href="#"><span class="fa fa-facebook mr-1"></span>facebook</a></li>
+                        <li class="mb-2 twitter"><a href="#"><span class="fa fa-twitter mr-1"></span>twitter</a></li>
+                        <li class="google"><a href="#"><span class="fa fa-google-plus mr-1"></span>google</a></li>
+                        <li class="linkedin"><a href="#"><span class="fa fa-linkedin mr-1"></span>linkedin</a></li>
+                    </ul>
+                </div>
+                <div class="move-top-w3layouts text-center mt-3">
+                    <a href="#home" class="move-top"> <span class="fa fa-angle-up  mb-3" aria-hidden="true"></span></a>
+                </div>
+
+            </div>
+        </section>
+    </footer>
+    <!-- //footer -->
+    <!-- copyright -->
+    <div class="cpy-right text-center py-3">
+        <p>&copy; @DateTime.Now.Year - LuxTech</p>
+    </div>
+    <!-- //copyright -->
+
+</body>
+
+</html>

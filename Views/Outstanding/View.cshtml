@@ -1,0 +1,567 @@
+﻿@model AceTC.Models.Outstanding
+
+@{ Layout = null;}
+@{
+    ViewBag.Title = "Create";
+
+    if (Session["admin_id"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Pusat Tuisyen Madani</title>
+    <meta name="description" content="Dashboard | Nura Admin">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Your website">
+
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/Content/assets/images/ACElogo-triangle.ico">
+
+    <!-- Bootstrap CSS -->
+    <link href="~/Content/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome CSS -->
+    <link href="~/Content/assets/font-awesome/css/all.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom CSS -->
+    <link href="~/Content/assets/css/style.css" rel="stylesheet" type="text/css" />
+
+    <!-- BEGIN CSS for this page -->
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/plugins/chart.js/Chart.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/plugins/datatables/datatables.min.css" />
+    <!-- END CSS for this page -->
+</head>
+
+<body class="adminbody">
+
+    <div id="main">
+
+        <!-- top bar navigation -->
+        <div class="headerbar">
+
+            <!-- LOGO -->
+            <div class="headerbar-left">
+                <img alt="Logo" style="width:60px;height:60px;" src="~/Content/assets/images/ACElogo-triangle.png" />
+                <span style="color:white">Pusat Tuisyen Madani</span>
+            </div>
+
+            <nav class="navbar-custom">
+
+                <ul class="list-inline float-right mb-0">
+
+                    <li class="list-inline-item dropdown notif">
+                        <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" aria-haspopup="false" aria-expanded="false">
+                            <i class="fas fa-cog"></i>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-arrow-success dropdown-sm">
+                            <!-- item-->
+                            <div class="dropdown-item noti-title">
+                                <h5>
+                                    <small>Settings</small>
+                                </h5>
+                            </div>
+
+                            <!-- item-->
+                            <a href="#" class="dropdown-item notify-item">
+                                <p class="notify-details ml-0">
+                                    <i class="fas fa-cog"></i>
+                                    <b>Settings 1</b>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="#" class="dropdown-item notify-item">
+                                <p class="notify-details ml-0">
+                                    <i class="fas fa-cog"></i>
+                                    <b>Settings 2</b>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="#" class="dropdown-item notify-item">
+                                <p class="notify-details ml-0">
+                                    <i class="fas fa-cog"></i>
+                                    <b>Settings 3</b>
+                                </p>
+                            </a>
+
+                        </div>
+
+                    </li>
+
+
+                    <li class="list-inline-item dropdown notif">
+                        <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" aria-haspopup="false" aria-expanded="false">
+                            <img src="~/Content/assets/images/download.png" alt="Profile image" class="avatar-rounded">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                            <!-- item-->
+                            <div class="dropdown-item noti-title">
+                                <h5 class="text-overflow">
+                                    <small>Hi, @Session["admin_id"].ToString()</small>
+                                </h5>
+                            </div>
+
+                            <!-- item-->
+                            <a href="#" class="dropdown-item notify-item">
+                                <i class="fas fa-power-off"></i>
+                                <span>Logout</span>
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <ul class="list-inline menu-left mb-0">
+                    <li class="float-left">
+                        <button class="button-menu-mobile open-left">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </li>
+                </ul>
+
+            </nav>
+
+        </div>
+        <!-- End Navigation -->
+        <!-- Left Sidebar -->
+        <div class="left main-sidebar">
+
+            <div class="sidebar-inner leftscroll">
+
+                <div id="sidebar-menu">
+
+                    <ul>
+
+                        <li class="submenu">
+                            <a class="active" href="/Admin/AdminDashboard">
+                                <i class="fas fa-bars"></i>
+                                <span> Dashboard </span>
+                            </a>
+                        </li>
+
+                        <li class="menu-title">Home</li>
+                        <li class="submenu">
+                            <a href="/Admin/testing">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <span> Notification</span>
+                            </a>
+                        </li>
+
+
+                        <li class="menu-title">Administration</li>
+                        <li class="submenu">
+                            <a id="tables" href="#">
+                                <i class="fas fa-user-circle"></i>
+                                <span> Parent List </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="/Admin/ParentList">Manage Parent List</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="submenu">
+                            <a id="tables" href="#">
+                                <i class="fas fa-users"></i>
+                                <span> Student List </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="/Admin/StudentList">Manage Student List</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="submenu">
+                            <a id="tables" href="#">
+                                <i class="fas fa-book"></i>
+                                <span> Package List </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="tables-basic.html">Manage Package List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="submenu">
+                            <a id="tables" href="#">
+                                <i class="fas fa-folder"></i>
+                                <span> Subject List </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="tables-basic.html">Manage Subject List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                        <li class="menu-title">Payment</li>
+                        <li class="submenu">
+                            <a href="/Payment/AddPayment">
+                                <i class="fas fa-credit-card"></i>
+                                <span> Make Payment</span>
+                            </a>
+                        </li>
+
+                        <li class="submenu">
+                            <a href="/Payment/ApprovalList">
+                                <i class="fas fa-list"></i>
+                                <span> Approval List</span>
+                            </a>
+                        </li>
+
+                        <li class="submenu">
+                            <a href="/Payment/PaymentHistories">
+                                <i class="fas fa-history"></i>
+                                <span> Payment History</span>
+                            </a>
+                        </li>
+
+
+                        <li class="menu-title">Data Analytics</li>
+                        <li class="submenu">
+                            <a href="/Outstanding/Index">
+                                <i class="fas fa-chart-bar"></i>
+                                <span> Outstanding List</span>
+                            </a>
+                        </li>
+
+
+                        <li class="menu-title">User Manual</li>
+                        <li class="submenu">
+                            <a href="/Admin/testing">
+                                <i class="fas fa-info-circle"></i>
+                                <span> Admin Manual</span>
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+                    <div class="clearfix"></div>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+        </div>
+        <!-- End Sidebar -->
+
+        <div class="content-page">
+
+            <!-- Start content -->
+            <div class="content">
+
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="breadcrumb-holder">
+                                <h1 class="main-title float-left">Outstanding</h1>
+                                <ol class="breadcrumb float-right">
+                                    <li class="breadcrumb-item">Home</li>
+                                    <li class="breadcrumb-item active">Oustanding List</li>
+                                    <li class="breadcrumb-item active">Add Outstanding</li>
+                                </ol>
+                                <div class="clearfix"></div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card mb-3">
+                                <div class="card-header">
+                                    <h3><i class="fas fa-user-friends"></i> Add Oustanding</h3>
+                                </div>
+
+                                <div class="card-body">
+
+                                    @using (Html.BeginForm())
+                                    {
+                                        @Html.AntiForgeryToken()
+
+                                        <div class="form-horizontal">
+                                            <h4>Student</h4>
+                                            <hr />
+                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.O_pID, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.O_pID, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.O_pID, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.O_month, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.O_month, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.O_month, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.O_remark, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.O_remark, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.O_remark, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.O_fees, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.O_fees, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.O_fees, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="col-md-10">
+                                                    @Html.HiddenFor(model => model.O_status, new { @class = "form-control", @value = "1" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="col-md-offset-2 col-md-10">
+                                                    <input type="submit" value="Add" style="margin:auto;display:block;" class="btn btn-info" />
+                                                    <input type="button" value="Go Back" style="margin:auto;display:block;" class="btn btn-info" href="javascript: history.go(-1)" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+
+
+                                </div>
+                                <!-- end card-body-->
+                            </div>
+                            <!-- end card-->
+                        </div>
+
+
+                    </div>
+                    <!-- end row-->
+
+                </div>
+                <!-- END container-fluid -->
+
+            </div>
+            <!-- END content -->
+
+        </div>
+        <!-- END content-page -->
+
+        <footer class="footer">
+        </footer>
+
+        <script src="~/Content/assets/js/modernizr.min.js"></script>
+        <script src="~/Content/assets/js/jquery.min.js"></script>
+        <script src="~/Content/assets/js/moment.min.js"></script>
+
+        <script src="~/Content/assets/js/popper.min.js"></script>
+        <script src="~/Content/assets/js/bootstrap.min.js"></script>
+
+        <script src="~/Content/assets/js/detect.js"></script>
+        <script src="~/Content/assets/js/fastclick.js"></script>
+        <script src="~/Content/assets/js/jquery.blockUI.js"></script>
+        <script src="~/Content/assets/js/jquery.nicescroll.js"></script>
+
+        <!-- App js -->
+        <script src="~/Content/assets/js/admin.js"></script>
+
+    </div>
+    <!-- END main -->
+    <!-- BEGIN Java Script for this page -->
+    <script src="~/Content/assets/plugins/chart.js/Chart.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/datatables.min.js"></script>
+
+    <!-- Counter-Up-->
+    <script src="~/Content/assets/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="~/Content/assets/plugins/counterup/jquery.counterup.min.js"></script>
+
+    <!-- dataTabled data -->
+    <script src="~/Content/assets/data/data_datatables.js"></script>
+
+    <!-- Charts data -->
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
+    <!-- END Java Script for this page -->
+
+</body>
+
+</html>
+
+
+
+@*@model IEnumerable<AceTC.Models.Outstanding>
+
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.O_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.O_month)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.O_pID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.O_fees)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.O_remark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.O_status)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.O_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.O_month)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.O_pID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.O_fees)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.O_remark)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.O_status)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }*@
+
+
+@*@model AceTC.Models.Outstanding
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Outstanding</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.O_ID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.O_ID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.O_ID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.O_month, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.O_month, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.O_month, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.O_pID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.O_pID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.O_pID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.O_fees, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.O_fees, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.O_fees, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.O_remark, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.O_remark, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.O_remark, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.O_status, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.O_status, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.O_status, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@
+

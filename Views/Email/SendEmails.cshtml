@@ -1,0 +1,38 @@
+﻿@model AceTC.Models.CascadingClass
+
+@{
+    ViewBag.Title = "SendEmail";
+}
+
+<h2>SendEmail</h2>
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger">  @ViewBag.Error  </div>
+}
+
+@if (ViewBag.msg != null)
+{
+    <div class="alert alert-success"> @ViewBag.msg </div>
+}
+
+<form method="post" action="SendEmail">
+    <div class="container">
+        @*@if (ViewBag.ParentList != null)
+        {
+            @Html.DropDownListFor(m => m.parent_id, ViewBag.ParentList as SelectList, "-- Select Parent Email --", new { @class = "form-control", @name = "receiver" })
+        }*@
+        <span class="form-control-static">Receiver: </span>
+        <input class="form-control" type="text" name="receiver" />
+        <br />
+        <span class="form-control-static">Subject: </span>
+        <input class="form-control" type="text" name="subject" />
+        @*@Html.TextBoxFor(m => m.subject, new { @class = "form-control" })*@
+        <br />
+        <span class="form-control-static">Message: </span>
+        <textarea class="form-control" rows="5" name="message"></textarea>
+        @*@Html.TextAreaFor(m => m.message, new { @class = "form-control" })*@
+        <br />
+        <input class="btn btn-primary" type="submit" value="Send" />
+    </div>
+</form>  
