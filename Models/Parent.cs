@@ -17,6 +17,8 @@ namespace AceTC.Models
         public string parents_ic { get; set; }
         public string parents_name { get; set; }
         public string parents_pass { get; set; }
+
+        public string confirmPass { get; set; }
         public string parents_email { get; set; }
         public string parents_phone { get; set; }
         public string parents_address { get; set; }

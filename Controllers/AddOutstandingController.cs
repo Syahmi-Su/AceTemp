@@ -14,9 +14,9 @@ namespace AceTC.Controllers
         // GET: AddOutstanding
         public ActionResult AddOutstanding()
         {
-            
+
             Outstanding addo = new Outstanding();
-            
+
             var par = db.Parents.ToList();
             if (par != null)
             {
@@ -46,7 +46,7 @@ namespace AceTC.Controllers
             };
             ViewBag.O_status = new SelectList(b, "Value", "Text");
             return View(addo);
-            
+
         }
 
         [HttpPost]
