@@ -15,19 +15,6 @@ namespace AceTC.Controllers
         // GET: Oustanding/Index
         public ActionResult Index()
         {
-            //using (AceDBEntities entity = new AceDBEntities())
-            //{
-            //    return View(entity.Outstandings.ToList());
-            //}
-
-            //AceDBEntities entity = new AceDBEntities();
-            //List<Student> studentparent = entity.Students.ToList();
-            //List<Package> packagename = entity.Packages.ToList();
-
-            //var multable = from pc in packagename
-            //               join s in studentparent on pc.package_id equals s.student_package
-            //               select new MultipleClass { studentdetails = s, packagedetails = pc };
-            //return View(multable);
 
 
             AceDBEntities entity = new AceDBEntities();
@@ -72,99 +59,6 @@ namespace AceTC.Controllers
             return RedirectToAction("Index", "Outstanding");
         }
 
-        //// GET: Oustanding/Details/5
-        //public ActionResult Details(int id)
-        //{
-        //    using (AceDBEntities entity = new AceDBEntities())
-        //    {
-        //        return View(entity.Outstandings.Where(x => x.O_ID == id).FirstOrDefault());
-        //    }
-        //}
-
-        //// GET: Oustanding/Create
-        //public ActionResult Create()
-        //{
-        //    return View();
-        //}
-
-        //// POST: Oustanding/Create
-        //[HttpPost]
-        //public ActionResult Create(Outstanding outstanding)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add insert logic here
-        //        using (AceDBEntities entity = new AceDBEntities())
-        //        {
-        //            entity.Outstandings.Add(outstanding);
-        //            entity.SaveChanges();
-        //        }
-        //        return RedirectToAction("Index");
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
-
-        //// GET: Oustanding/Edit/5
-        //public ActionResult Edit(int id)
-        //{
-        //    using (AceDBEntities entity = new AceDBEntities())
-        //    {
-        //        return View(entity.Outstandings.Where(x => x.O_ID == id).FirstOrDefault());
-        //    }
-        //}
-
-        //// POST: Oustanding/Edit/5
-        //[HttpPost]
-        //public ActionResult Edit(int id, Outstanding outstanding)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add update logic here
-        //        using (AceDBEntities entity = new AceDBEntities())
-        //        {
-        //            entity.Entry(outstanding).State = EntityState.Modified;
-        //            entity.SaveChanges();
-        //        }
-        //        return RedirectToAction("Index");
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
-
-        //// GET: Oustanding/Delete/5
-        //public ActionResult Delete(int id)
-        //{
-        //    using (AceDBEntities entity = new AceDBEntities())
-        //    {
-        //        return View(entity.Outstandings.Where(x => x.O_ID == id).FirstOrDefault());
-        //    }
-        //}
-
-        //// POST: Oustanding/Delete/5
-        //[HttpPost]
-        //public ActionResult Delete(int id, Outstanding outstanding)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add delete logic here
-        //        using (AceDBEntities entity = new AceDBEntities())
-        //        {
-        //            outstanding = entity.Outstandings.Where(x => x.O_ID == id).FirstOrDefault();
-        //            entity.Outstandings.Remove(outstanding);
-        //            entity.SaveChanges();
-        //        }
-        //            return RedirectToAction("Index");
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
 
         public ActionResult SendOutstandingEmail()
         {
@@ -228,5 +122,32 @@ namespace AceTC.Controllers
             }
             return View();
         }
+   
+    [HttpGet]
+    public ActionResult ApprovalAll ()
+        {
+            AceDBEntities db = new AceDBEntities();
+
+            List<Outstanding>  Outstanding = db.Outstandings.ToList();
+            List<studRegister> register = db.studRegisters.ToList();
+            List<Student> studentlist = db.Students.ToList();
+            List<Parent> parent = db.Parents.ToList();
+            List<Package> package = db.Packages.ToList();
+
+            var multiple = from o in studentlist
+                           join s in package on o.student_package equals s.package_id
+                           join p in parent on o.parent_ic equals p.parents_ic
+                           select new MultipleClass { packagedetails = s, studentdetails = o };
+
+            return View(multiple);
+        }
+    
+    
+    
+    
+    
+    
+    
+    
     }
 }

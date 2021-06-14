@@ -1,0 +1,42 @@
+﻿@model IEnumerable<AceTC.Models.MultipleClass>
+
+@{ 
+    ViewBag.Title = "DeleteStudent";
+    Layout = "~/Views/Shared/navBarAdmin.cshtml";
+
+    if (Session["admin_id"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
+
+}
+<div class="table-responsive">
+    <table id="dataTable" class="table table-bordered table-hover display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Parent Name</th>
+                <th>Student Name</th>
+                <th>Student Name (Chinese)</th>
+                <th>Package </th>
+                <th>Tuition Fees</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+
+                <tr>
+                    <td>@student.parentdetails.parents_name</td>
+                    <td>@student.studentdetails.student_name</td>
+                    <td>@student.studentdetails.student_cname</td>
+                    <td>@student.studentdetails.student_gender</td>
+                    <td>@student.packagedetails.package_desc</td>
+                    <td>@student.packagedetails.package_price</td>
+                </tr>
+
+            }
+
+        </tbody>
+    </table>
+</div>

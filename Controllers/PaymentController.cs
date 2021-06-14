@@ -128,25 +128,6 @@ namespace AceTC.Controllers
                 return HttpNotFound();
             }
 
-/*            List<SelectListItem> a = new List<SelectListItem>()
-            {
-                new SelectListItem {
-                    Text = "RM20/Month", Value = "20"
-                },
-                new SelectListItem {
-                    Text = "RM40/Month", Value = "40"
-                },
-                new SelectListItem {
-                    Text = "RM60/Month", Value = "60"
-                },
-                new SelectListItem {
-                    Text = "RM80/Month", Value = "80"
-                },
-                new SelectListItem {
-                    Text = "RM100/Month", Value = "100"
-                },
-            };
-            ViewBag.transport_fee = new SelectList(a, "Value", "Text");*/
 
             return View(payment);
         }
