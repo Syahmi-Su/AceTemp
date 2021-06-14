@@ -228,10 +228,11 @@
                                             <div class="form-group">
                                                 @Html.LabelFor(model => model.O_pID, "Parent IC", htmlAttributes: new { @class = "control-label col-md-2" })
                                                 <div class="col-md-10">
-                                                    @Html.EditorFor(model => model.O_pID, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.ValidationMessageFor(model => model.O_pID, "", new { @class = "text-danger" })
+                                                    @*@Html.EditorFor(model => model.O_pID, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.O_pID, "", new { @class = "text-danger" })*@
+                                                     @Html.DropDownList("O_pID", new SelectList(ViewBag.data, "parents_ic", "parents_name"))
                                                     @*@Html.DropDownList("parent_ic", new SelectList(ViewBag.data, "parents_name", "parents_ic"))
-                                                        @Html.ValidationMessageFor(model => model.O_pID, "", new { @class = "text-danger" })*@
+                                                    @Html.ValidationMessageFor(model => model.O_pID, "", new { @class = "text-danger" })*@
                                                 </div>
                                             </div>
 
