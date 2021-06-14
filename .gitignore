@@ -15,3 +15,10 @@ Services/Data/SecurityDAO.cs
 AceTC.csproj
 AceTC.csproj
 bin/AceTC.dll
+bin/AceTC.dll
+bin/AceTC.pdb
+obj/Debug/AceTC.csproj.CoreCompileInputs.cache
+obj/Debug/AceTC.csproj.FileListAbsolute.txt
+obj/Debug/AceTC.dll
+obj/Debug/AceTC.pdb
+obj/Debug/DesignTimeResolveAssemblyReferences.cache
