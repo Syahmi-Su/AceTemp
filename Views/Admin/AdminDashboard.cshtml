@@ -1,4 +1,4 @@
-﻿@model AceTC.Models.CountClass
+﻿@*@model AceTC.Models.CountClass*@
 
 @{ Layout = null;}
 
@@ -9,6 +9,14 @@
     {
         Response.Redirect("~/Login/Index");
     }
+
+    var totalstudents = ViewData["totalstudents"];
+    var primarystudents = ViewData["primarystudents"];
+    var secondarystudents = ViewData["secondarystudents"];
+    var totalsubjects = ViewData["totalsubjects"];
+    var totalpackages = ViewData["totalpackages"];
+    var totaloutstandings = ViewData["totaloutstandings"];
+    var pendingpayment = ViewData["pendingpayment"];
 }
 
 <!DOCTYPE html>
@@ -172,7 +180,7 @@
                 <div class="row match-height">
                     <div class="col-12">
                         <div class="">
-                            <div id="gradient-line-chart1" class="height-250 GradientlineShadow1"></div>
+                            <!--<div id="gradient-line-chart1" class="height-250 GradientlineShadow1"></div>-->
                         </div>
                     </div>
                 </div>
@@ -189,7 +197,7 @@
                                 <div class="progress-stats-container ct-golden-section height-75 position-relative pt-3  ">
                                     <!--<div id="progress-stats-bar-chart"></div>
                                     <div id="progress-stats-line-chart" class="progress-stats-shadow"></div>-->
-                                    <h1 class="font-large-5 float-right p-1" align="right">@Model.studentcount</h1>
+                                    <h1 class="font-large-5 float-right p-1" align="right">@primarystudents</h1>
                                 </div>
                             </div>
                         </div>
@@ -202,7 +210,7 @@
                                     <i class="la la-leanpub info font-large-1 float-right p-1"></i>
                                 </div>
                                 <div class="progress-stats-container ct-golden-section height-75 position-relative pt-3">
-                                    <h1 class="font-large-5 float-right p-1" align="right">@Model.subjectcount</h1>
+                                    <h1 class="font-large-5 float-right p-1" align="right">@totalsubjects</h1>
                                 </div>
                             </div>
                         </div>
@@ -215,7 +223,7 @@
                                     <i class="la la-money warning font-large-1 float-right p-1"></i>
                                 </div>
                                 <div class="progress-stats-container ct-golden-section height-75 position-relative pt-3">
-                                    <h1 class="font-large-5 float-right p-1" align="right">@Model.studentcount</h1>
+                                    <h1 class="font-large-5 float-right p-1" align="right">@pendingpayment</h1>
                                 </div>
                             </div>
                         </div>
@@ -234,7 +242,7 @@
                                 <div class="progress-stats-container ct-golden-section height-75 position-relative pt-3  ">
                                     <!--<div id="progress-stats-bar-chart"></div>
                                     <div id="progress-stats-line-chart" class="progress-stats-shadow"></div>-->
-                                    <h1 class="font-large-5 float-right p-1" align="right">@Model.studentcount</h1>
+                                    <h1 class="font-large-5 float-right p-1" align="right">@secondarystudents</h1>
                                 </div>
                             </div>
                         </div>
@@ -247,7 +255,7 @@
                                     <i class="la la-files-o info font-large-1 float-right p-1"></i>
                                 </div>
                                 <div class="progress-stats-container ct-golden-section height-75 position-relative pt-3">
-                                    <h1 class="font-large-5 float-right p-1" align="right">@Model.packagecount</h1>
+                                    <h1 class="font-large-5 float-right p-1" align="right">@totalpackages</h1>
                                 </div>
                             </div>
                         </div>
@@ -260,41 +268,13 @@
                                     <i class="ft-credit-card warning font-large-1 float-right p-1"></i>
                                 </div>
                                 <div class="progress-stats-container ct-golden-section height-75 position-relative pt-3">
-                                    <h1 class="font-large-5 float-right p-1" align="right">@Model.outstandingcount</h1>
+                                    <h1 class="font-large-5 float-right p-1" align="right">@totaloutstandings</h1>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--/ eCommerce statistic -->
-                <!--<div class="row">
-                    <div class="col-xs-12 col-md-6 col-lg-6 col-xl-4">
-                        <div class="card-box noradius noborder bg-danger">
-                            <i class="far fa-user float-right text-white"></i>
-                            <h6 class="text-white text-uppercase m-b-20">Students</h6>
-                            <h1 class="m-b-20 text-white counter">@Model.studentcount</h1>
-                            <span class="text-white">Until Today</span>
-                        </div>
-                    </div>
-
-                    <div class="col-xs-12 col-md-6 col-lg-6 col-xl-4">
-                        <div class="card-box noradius noborder bg-purple">
-                            <i class="fas fa-credit-card float-right text-white"></i>
-                            <h6 class="text-white text-uppercase m-b-20">Payments</h6>
-                            <h1 class="m-b-20 text-white counter">@Model.paymentcount</h1>
-                            <span class="text-white">Until Today</span>
-                        </div>
-                    </div>
-
-                    <div class="col-xs-12 col-md-6 col-lg-6 col-xl-4">
-                        <div class="card-box noradius noborder bg-warning">
-                            <i class="fas fa-book float-right text-white"></i>
-                            <h6 class="text-white text-uppercase m-b-20">Packages</h6>
-                            <h1 class="m-b-20 text-white counter">@Model.packagecount</h1>
-                            <span class="text-white">Until Today</span>
-                        </div>
-                    </div>-->
-
+                
 
             </div>
             <!--Try-->
