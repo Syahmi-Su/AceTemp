@@ -1,0 +1,74 @@
+﻿@model IEnumerable<AceTC.Models.MultipleClass>
+
+@{
+    ViewBag.Title = "DeleteStudent";
+    Layout = "~/Views/Shared/navBarAdmin.cshtml";
+
+        if (Session["admin_id"] == null)
+        {
+            Response.Redirect("~/Login/Index");
+        }
+}
+
+<div class="content-body">
+    <!-- Basic Tables start -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Parent Details</h4>
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card-header">
+                    <button class="btn btn-success btn-sm" onclick="javascript: fnExcelReport('dataTable', 'data')" style="float: right;"><i class="la la-file-excel-o"></i>&nbsp; Download</button>
+                </div>
+                <div class="card-content collapse show">
+                    <div class="card-body">
+                        <button style="float:left;" class="btn btn-info btn-sm" onclick="location.href='@Url.Action("CreateOutstanding", "OutstandingController")';return false;"><i class="ft-plus"></i>&nbsp;Add Outstanding Payment</button>&nbsp;&nbsp;
+                        <input type="submit" value="Save" class="btn btn-default" />
+                        <br /><br />
+                        <p class="card-text"></p>
+                        <p><span class="text-bold-600"></span></p>
+                        <div class="table-responsive">
+                            <table id="dataTable" class="table table-bordered table-hover display" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Parent Name</th>
+                                        <th>Student Name</th>
+                                        <th>Student Name (Chinese)</th>
+                                        <th>Package </th>
+                                        <th>Tuition Fees</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var student in Model)
+                                    {
+
+                                        <tr>
+                                            <td>@student.parentdetails.parents_name</td>
+                                            <td>@student.studentdetails.student_name</td>
+                                            <td>@student.studentdetails.student_cname</td>
+                                            <td>@student.packagedetails.package_desc</td>
+                                            <td>@student.packagedetails.package_price</td>
+                                        </tr>
+
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -29,7 +29,7 @@ namespace AceTC.Controllers
                                 join s in student on a.student_ic equals s.student_ic
                                 join par in parent on a.parent_ic equals par.parents_ic
                                 select new MultipleClass { paymentdetails = a, statusdetails = b, parentdetails = par, studentdetails = s };
-            return View();
+            return View(multipletable);
         }
     }
 }

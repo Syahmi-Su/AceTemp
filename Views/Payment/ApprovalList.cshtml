@@ -157,7 +157,7 @@
                     <a href="#"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Outstanding</span></a>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="/Oustanding/AddOutstanding">Manage <br />Outstanding <br />Payment</a>
+                            <a href="/Outstanding/Index">Manage <br />Outstanding <br />Payment</a>
                         </li>
                     </ul>
                 </li>
@@ -237,8 +237,7 @@
                                                             <td>@payment.paymentdetails.payment_date.ToShortDateString()</td>
                                                             <td>@payment.paymentdetails.payment_detail</td>
                                                             <td>@payment.paymentdetails.payment_fee</td>
-                                                            <td>@payment.paymentdetails.filename</td>
-                                                            <td style='color:red;'><b>@payment.statusdetails.status_desc</b></td>
+                                                            <td><a href="@Url.Content(payment.paymentdetails.filename)" target="_blank" class="btn btn-success" download><span class="fa fa-download"></a></td>
                                                             <td>
 @*                                                                <a class='btn btn-info' href='@Url.Action("Approval", "Payment", new { id = payment.paymentdetails.confirmation_id})'>Approval</a>
 *@

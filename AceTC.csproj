@@ -130,6 +130,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AddOutstandingController.cs" />
     <Compile Include="Controllers\AddPackageController.cs" />
     <Compile Include="Controllers\AddParentController.cs" />
     <Compile Include="Controllers\AddStudentController.cs" />
@@ -4829,7 +4830,6 @@
     <Content Include="Views\Parent\ViewSubject.cshtml" />
     <Content Include="Views\Admin\DeletePackage.cshtml" />
     <Content Include="Views\Admin\DeleteParent.cshtml" />
-    <Content Include="Views\Admin\DeleteStudent.cshtml" />
     <Content Include="Views\Admin\DeleteSubject.cshtml" />
     <Content Include="Views\Admin\EditPackageDetails.cshtml" />
     <Content Include="Views\Admin\EditParentDetails.cshtml" />
@@ -4840,6 +4840,12 @@
     <Content Include="Views\AddStudent\AddStudentSubject.cshtml" />
     <Content Include="Views\Payment\Edit.cshtml" />
     <Content Include="Views\Admin\editStudentList.cshtml" />
+    <Content Include="Views\AddOutstanding\AddOutstanding.cshtml" />
+    <Content Include="Views\Outstanding\ApprovalOutstanding.cshtml" />
+    <Content Include="Views\Outstanding\SendOutstandingEmail.cshtml" />
+    <Content Include="Views\Shared\navBarAdmin.cshtml" />
+    <Content Include="Views\Admin\DeleteStudent.cshtml" />
+    <Content Include="Views\Outstanding\ApprovalAll.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".vs\AceTC\v16\" />

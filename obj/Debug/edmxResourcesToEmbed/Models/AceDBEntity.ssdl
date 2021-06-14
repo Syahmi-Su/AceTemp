@@ -11,7 +11,7 @@
     <Key>
       <PropertyRef Name="O_ID" />
     </Key>
-    <Property Name="O_ID" Type="int" Nullable="false" />
+    <Property Name="O_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="O_month" Type="date" Nullable="false" />
     <Property Name="O_pID" Type="nvarchar" MaxLength="14" Nullable="false" />
     <Property Name="O_fees" Type="float" Nullable="false" />
