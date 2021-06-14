@@ -9,18 +9,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Outstandings">
-      <EntityTypeMapping TypeName="AceDBModel.Outstanding">
-        <MappingFragment StoreEntitySet="Outstanding">
-          <ScalarProperty Name="O_ID" ColumnName="O_ID" />
-          <ScalarProperty Name="O_month" ColumnName="O_month" />
-          <ScalarProperty Name="O_pID" ColumnName="O_pID" />
-          <ScalarProperty Name="O_fees" ColumnName="O_fees" />
-          <ScalarProperty Name="O_remark" ColumnName="O_remark" />
-          <ScalarProperty Name="O_status" ColumnName="O_status" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Parents">
       <EntityTypeMapping TypeName="AceDBModel.Parent">
         <MappingFragment StoreEntitySet="Parents">
@@ -104,6 +92,18 @@
           <ScalarProperty Name="subject_type" ColumnName="subject_type" />
           <ScalarProperty Name="subject_name" ColumnName="subject_name" />
           <ScalarProperty Name="subject_code" ColumnName="subject_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Outstandings">
+      <EntityTypeMapping TypeName="AceDBModel.Outstanding">
+        <MappingFragment StoreEntitySet="Outstanding">
+          <ScalarProperty Name="O_status" ColumnName="O_status" />
+          <ScalarProperty Name="O_remark" ColumnName="O_remark" />
+          <ScalarProperty Name="O_fees" ColumnName="O_fees" />
+          <ScalarProperty Name="O_pID" ColumnName="O_pID" />
+          <ScalarProperty Name="O_month" ColumnName="O_month" />
+          <ScalarProperty Name="O_ID" ColumnName="O_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

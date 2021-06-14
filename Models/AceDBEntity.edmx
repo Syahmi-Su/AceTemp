@@ -16,7 +16,7 @@
           <Key>
             <PropertyRef Name="O_ID" />
           </Key>
-          <Property Name="O_ID" Type="int" Nullable="false" />
+          <Property Name="O_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="O_month" Type="date" Nullable="false" />
           <Property Name="O_pID" Type="nvarchar" MaxLength="14" Nullable="false" />
           <Property Name="O_fees" Type="float" Nullable="false" />
@@ -124,17 +124,6 @@
           <Property Name="admin_id" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="admin_pass" Type="String" MaxLength="258" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityType Name="Outstanding">
-          <Key>
-            <PropertyRef Name="O_ID" />
-          </Key>
-          <Property Name="O_ID" Type="Int32" Nullable="false" />
-          <Property Name="O_month" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="O_pID" Type="String" MaxLength="14" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="O_fees" Type="Double" Nullable="false" />
-          <Property Name="O_remark" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="O_status" Type="Int32" Nullable="false" />
-        </EntityType>
         <EntityType Name="Parent">
           <Key>
             <PropertyRef Name="parents_ic" />
@@ -155,7 +144,6 @@
         </EntityType>
         <EntityContainer Name="AceDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Admins" EntityType="Self.Admin" />
-          <EntitySet Name="Outstandings" EntityType="Self.Outstanding" />
           <EntitySet Name="Parents" EntityType="Self.Parent" />
           <EntitySet Name="Status" EntityType="Self.Status" />
           <EntitySet Name="Packages" EntityType="AceDBModel.Package" />
@@ -163,6 +151,7 @@
           <EntitySet Name="studRegisters" EntityType="AceDBModel.studRegister" />
           <EntitySet Name="Payments" EntityType="AceDBModel.Payment" />
           <EntitySet Name="Subjects" EntityType="AceDBModel.Subject" />
+          <EntitySet Name="Outstandings" EntityType="AceDBModel.Outstanding" />
         </EntityContainer>
         <EntityType Name="Package">
           <Key>
@@ -225,6 +214,17 @@
           <Property Name="subject_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="subject_type" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="Outstanding">
+          <Key>
+            <PropertyRef Name="O_ID" />
+          </Key>
+          <Property Name="O_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="O_month" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="O_pID" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="O_fees" Type="Double" Nullable="false" />
+          <Property Name="O_remark" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="O_status" Type="Int32" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -236,18 +236,6 @@
               <MappingFragment StoreEntitySet="Admin">
                 <ScalarProperty Name="admin_id" ColumnName="admin_id" />
                 <ScalarProperty Name="admin_pass" ColumnName="admin_pass" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Outstandings">
-            <EntityTypeMapping TypeName="AceDBModel.Outstanding">
-              <MappingFragment StoreEntitySet="Outstanding">
-                <ScalarProperty Name="O_ID" ColumnName="O_ID" />
-                <ScalarProperty Name="O_month" ColumnName="O_month" />
-                <ScalarProperty Name="O_pID" ColumnName="O_pID" />
-                <ScalarProperty Name="O_fees" ColumnName="O_fees" />
-                <ScalarProperty Name="O_remark" ColumnName="O_remark" />
-                <ScalarProperty Name="O_status" ColumnName="O_status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -334,6 +322,18 @@
                 <ScalarProperty Name="subject_type" ColumnName="subject_type" />
                 <ScalarProperty Name="subject_name" ColumnName="subject_name" />
                 <ScalarProperty Name="subject_code" ColumnName="subject_code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Outstandings">
+            <EntityTypeMapping TypeName="AceDBModel.Outstanding">
+              <MappingFragment StoreEntitySet="Outstanding">
+                <ScalarProperty Name="O_status" ColumnName="O_status" />
+                <ScalarProperty Name="O_remark" ColumnName="O_remark" />
+                <ScalarProperty Name="O_fees" ColumnName="O_fees" />
+                <ScalarProperty Name="O_pID" ColumnName="O_pID" />
+                <ScalarProperty Name="O_month" ColumnName="O_month" />
+                <ScalarProperty Name="O_ID" ColumnName="O_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

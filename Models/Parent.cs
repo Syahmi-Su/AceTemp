@@ -27,9 +27,7 @@ namespace AceTC.Models
         [Required(ErrorMessage = "Password Not Match!")]
         [DataType(DataType.Password)]
         [DisplayName("Confirm Password")]
-        [Compare("parents_pass")]
-        public string confirmPass { get; set; }
-        public string parents_email { get; set; }
+        [Compare("parents_pass")] public string parents_email { get; set; }
         public string parents_phone { get; set; }
         public string parents_address { get; set; }
     }
