@@ -1,129 +1,161 @@
-﻿@{
+﻿@{ 
+
     Layout = null;
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Index";
+
 }
 
-<!DOCTYPE html>
-<html lang="zxx">
-<head>
-    <title>Pusat Tuisyen Madani | Home </title>
-    <!-- Meta tag Keywords -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8" />
-    <meta name="keywords" content="High Edu Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-    <script>
-        addEventListener("load", function() {
-            setTimeout(hideURLbar, 0);
-        }, false);
+<!doctype html>
+<html lang="en">
 
-        function hideURLbar() {
-            window.scrollTo(0, 1);
-        }
-    </script>
-    <!-- //Meta tag Keywords -->
-    <!-- Custom-Files -->
-    <link rel="stylesheet" href="~/styles/bootstrap.css">
-    <!-- Bootstrap-Core-CSS -->
-    <link rel="stylesheet" href="~/styles/styles.css" type="text/css" media="all" />
-    <!-- Style-CSS -->
-    <!-- font-awesome-icons -->
-    <link href="~/styles/font-awesome.css" rel="stylesheet">
-    <!-- //font-awesome-icons -->
-    <!-- /Fonts -->
-    <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Playfair+Display:400,400i,700i" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,800" rel="stylesheet">
-    <!-- //Fonts -->
+<head>
+
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--====== Title ======-->
+    <title>Pusat Tuisyen Madani</title>
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="~/assetslp/images/favicon.png" type="image/png">
+
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="~/assetslp/css/bootstrap.min.css">
+
+    <!--====== Line Icons css ======-->
+    <link rel="stylesheet" href="~/assetslp/css/LineIcons.css">
+
+    <!--====== Magnific Popup css ======-->
+    <link rel="stylesheet" href="~/assetslp/css/magnific-popup.css">
+
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="~/assetslp/css/default.css">
+
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="~/assetslp/css/style.css">
+
+
 </head>
 
 <body>
-    <!-- mian-content -->
-    <div class="banner-content" id="home">
-        <!-- header -->
-        <header class="header">
-            <div class="container-fluid px-lg-5">
-                <!-- nav -->
-                <nav class="py-4">
-                    <div id="logo">
-                    </div>
-                    <label for="drop" class="toggle">Menu</label>
-                    <img alt="Logo" style="width:130px;height:100px;" src="~/Content/assets/images/ACElogo-triangle.png" />
-                    <input type="checkbox" id="drop" />
-                    <ul class="menu mt-2">
-                        <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        <li>@Html.ActionLink("Login", "Index", "Login")</li>
-                    </ul>
-                </nav>
-                <!-- //nav -->
-            </div>
-        </header>
-        <!-- //header -->
-        <!--/banner-->
-        <div class="banner-info-w3pvt">
-            <h3>Pusat Tuisyen Madani</h3>
-            <p class="my-4">Login into your account to view children details and upload payment</p>
-            <div class="ban-buttons">
-                @Html.ActionLink("Login", "Index", "Login")
-            </div>
-        </div>
-        <!--// banner-inner -->
-    </div>
-    <!-- //header -->
-    <!--// mian-content -->
-    <!--footer -->
-    <footer>
-        <section class="footer footer_1its py-3">
-            <div class="container py-md-4">
-                <div class="row footer-top mb-md-5 mb-4">
-                    <div class="col-lg-6 col-md-6 footer-grid_section_1its">
-                        <div class="footer-title-w3ls">
-                            <h3>Address</h3>
-                        </div>
-                        <div class="footer-text">
-                            <p>Address  : Taman Mutiara Rini, Johor, Malaysia</p>
-                            <p>Phone  &nbsp : +03 534894364</p>
-                            <p>Email   &nbsp&nbsp : <a href="mailto:info@example.com">aceeducation@gmail.com</a></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 mt-md-0 mt-4 footer-grid_section_1its">
-                        <div class="footer-title-w3ls">
-                            <h3>Quick Links</h3>
-                        </div>
-                        <div class="row">
-                            <ul class="social_section_1info">
-                                <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
-                                <li>@Html.ActionLink("About", "About", "Home")</li>
-                                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-grid_section text-center">
-                    <div class="footer-text">
-                        <p>Visit our social media to get to know us.</p>
-                    </div>
-                    <ul class="social_section_1info">
-                        <li class="mb-2 facebook"><a href="#"><span class="fa fa-facebook mr-1"></span>facebook</a></li>
-                        <li class="mb-2 twitter"><a href="#"><span class="fa fa-twitter mr-1"></span>twitter</a></li>
-                        <li class="google"><a href="#"><span class="fa fa-google-plus mr-1"></span>google</a></li>
-                        <li class="linkedin"><a href="#"><span class="fa fa-linkedin mr-1"></span>linkedin</a></li>
-                    </ul>
-                </div>
-                <div class="move-top-w3layouts text-center mt-3">
-                    <a href="#home" class="move-top"> <span class="fa fa-angle-up  mb-3" aria-hidden="true"></span></a>
-                </div>
 
+    <!--====== HEADER PART START ======-->
+
+    <header class="header-area">
+        <div class="navgition navgition-transparent">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="#">
+                                <img style="width:150px;height:60px;" src="~/assetslp/images/logo.png" alt="Logo">
+                            </a>
+
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarOne" aria-controls="navbarOne" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarFour">
+                                <ul class="navbar-nav m-auto" style="width: 50px;">
+                                    <li class="nav-item active">
+                                        <a class="page-scroll" href="@Url.Action("Index","Home")">HOME</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="@Url.Action("About","Home")">SERVICES</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="@Url.Action("Contact","Home")">CONTACT</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="@Url.Action("Index","Login")">LOGIN</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </nav> <!-- navbar -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- navgition -->
+
+        <div id="home" class="header-hero bg_cover">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-8 col-lg-10">
+                        <div class="header-content text-center">
+                            <h3 class="header-title">Pusat Tuisyen Madani</h3>
+                            <p class="text">Login to start your session. View children details and upload payment proof. Best tuition center.</p>
+                            <ul class="header-btn">
+                                <li><a class="main-btn btn-one" href="@Url.Action("Index","Login")">LOG IN</a></li>
+                            </ul>
+                        </div> <!-- header content -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+            <div class="header-shape">
+                <img src="~/assetslp/images/header-shape.svg" alt="shape">
             </div>
-        </section>
+        </div> <!-- header content -->
+    </header>
+
+    <!--====== HEADER PART ENDS ======-->
+    <!--====== FOOTER PART START ======-->
+
+    <footer id="footer" class="footer-area">
+        <div class="footer-widget">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-link">
+                        <h6 class="footer-title">Company</h6>
+                        <ul>
+                            <li><a class="btn btn-info" href="@Url.Action("About","Home")">About</a>    <a class="btn btn-info" href="@Url.Action("Contact","Home")">Contact</a>    <a class="btn btn-info" href="@Url.Action("Index","Home")">Home</a> </li>
+                        </ul>
+                    </div> <!-- footer link -->
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- footer widget -->
+
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright text-center">
+                            <p class="text">Developed by <a rel="nofollow" href="https://uideck.com">LuxTech</a> - @DateTime.Now.Year </p>
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- footer copyright -->
     </footer>
-    <!-- //footer -->
-    <!-- copyright -->
-    <div class="cpy-right text-center py-3">
-        <p>&copy; @DateTime.Now.Year - LuxTech</p>
-    </div>
-    <!-- //copyright -->
+
+    <!--====== FOOTER PART ENDS ======-->
+    <!--====== BACK TO TOP PART START ======-->
+
+    <a class="back-to-top" href="#"><i class="lni-chevron-up"></i></a>
+
+    <!--====== BACK TO TOP PART ENDS ======-->
+    <!--====== jquery js ======-->
+    <script src="~/assetslp/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="~/assetslp/js/vendor/jquery-1.12.4.min.js"></script>
+
+    <!--====== Bootstrap js ======-->
+    <script src="~/assetslp/js/bootstrap.min.js"></script>
+    <script src="~/assetslp/js/popper.min.js"></script>
+
+    <!--====== Scrolling Nav js ======-->
+    <script src="~/assetslp/js/jquery.easing.min.js"></script>
+    <script src="~/assetslp/js/scrolling-nav.js"></script>
+
+    <!--====== Magnific Popup js ======-->
+    <script src="~/assetslp/js/jquery.magnific-popup.min.js"></script>
+
+    <!--====== Main js ======-->
+    <script src="~/assetslp/js/main.js"></script>
 
 </body>
 

@@ -1,191 +1,209 @@
 ﻿@{
+
     Layout = null;
     ViewBag.Title = "Contact";
+
 }
 
-<!DOCTYPE html>
-<html lang="zxx">
+<!doctype html>
+<html lang="en">
 
 <head>
-    <title>Pusat Tuisyen Madani | Contact</title>
-    <!-- Meta tag Keywords -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8" />
-    <meta name="keywords" content="High Edu Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-    <script>
-        addEventListener("load", function () {
-            setTimeout(hideURLbar, 0);
-        }, false);
 
-        function hideURLbar() {
-            window.scrollTo(0, 1);
-        }
-    </script>
-    <!-- //Meta tag Keywords -->
-    <!-- Custom-Files -->
-    <link rel="stylesheet" href="~/styles/bootstrap.css">
-    <!-- Bootstrap-Core-CSS -->
-    <link rel="stylesheet" href="~/styles/styles.css" type="text/css" media="all" />
-    <!-- Style-CSS -->
-    <!-- font-awesome-icons -->
-    <link href="~/styles/font-awesome.css" rel="stylesheet">
-    <!-- //font-awesome-icons -->
-    <!-- /Fonts -->
-    <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Playfair+Display:400,400i,700i" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,800" rel="stylesheet">
-    <!-- //Fonts -->
-    <style>
-        .card {
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-            transition: 0.3s;
-            width: 100%;
-            border-radius: 5px;
-        }
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-            .card:hover {
-                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-            }
+    <!--====== Title ======-->
+    <title>Pusat Tuisyen Madani</title>
 
-        img {
-            border-radius: 5px 5px 0 0;
-        }
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="~/assetslp/images/favicon.png" type="image/png">
 
-        .container {
-            padding: 8px 20px;
-        }
-    </style>
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="~/assetslp/css/bootstrap.min.css">
+
+    <!--====== Line Icons css ======-->
+    <link rel="stylesheet" href="~/assetslp/css/LineIcons.css">
+
+    <!--====== Magnific Popup css ======-->
+    <link rel="stylesheet" href="~/assetslp/css/magnific-popup.css">
+
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="~/assetslp/css/default.css">
+
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="~/assetslp/css/style.css">
+
+
 </head>
 
 <body>
-    <!-- mian-content -->
-    <!-- //header -->
-    <div class="banner-content inner" id="home">
-        <!-- header -->
-        <header class="header">
-            <div class="container-fluid px-lg-5">
-                <!-- nav -->
-                <nav class="py-4">
-                    <div id="logo">
 
+    <!--====== HEADER PART START ======-->
+
+    <header class="header-area">
+        <div class="navgition navgition-transparent">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="#">
+                                <img style="width:150px;height:60px;" src="~/assetslp/images/logo.png" alt="Logo">
+                            </a>
+
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarFour" aria-controls="navbarFour" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarFour">
+                                <ul class="navbar-nav m-auto" style="width: 50px;">
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="@Url.Action("Index","Home")">HOME</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="@Url.Action("About","Home")">SERVICES</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="page-scroll" href="@Url.Action("Contact","Home")">CONTACT</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="@Url.Action("Index","Login")">LOGIN</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </nav> <!-- navbar -->
                     </div>
-                    <label for="drop" class="toggle">Menu</label>
-                    <img alt="Logo" style="width:130px;height:100px;" src="~/Content/assets/images/ACElogo-triangle.png" />
-                    <input type="checkbox" id="drop" />
-                    <ul class="menu mt-2">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li class="active">@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        <li>@Html.ActionLink("Login", "Index", "Login")</li>
-                    </ul>
-                </nav>
-                <!-- //nav -->
-            </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- navgition -->
         </header>
-        <!-- //header -->
-    </div>
-    <!-- //header -->
-    <!--// mian-content -->
-    <!---->
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="index.html">Home</a>
-        </li>
-        <li class="breadcrumb-item active">Contact Us</li>
-    </ol>
-    <!---->
-    <!--// mian-content -->
-    <!-- banner -->
-    <section class="ab-info-main py-md-2 py-2">
-        <div class="container py-md-5 py-4">
-            <h3 class="tittle text-center mb-lg-5 mb-3"><span class="sub-tittle">Find Us</span> Contact Us</h3>
-            <div class="row contact-main-info">
-                <div class="col">
-                    <div class="address">
-                        <div class="card">
-                            <div class="container">
-                                <h4>Address</h4>
-                                <p><span class="fa fa-home"></span>Taman Mutiara Rini, Skudai, Johor, Malaysia </p>
-                            </div>
-                        </div>
-                    </div>
+        <!--====== HEADER PART ENDS ======-->
+        <!--====== CALL TO ACTION PART START ======-->
 
-                    <div class="address address-mdl">
-                        <div class="card ">
-                            <div class="container">
-                                <h4>Phones</h4>
-                                <p><span class="fa fa-phone"></span>+03 4567 7890</p>
-                                <p><span class="fa fa-mobile"></span>+03 4567 7891</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="address address-mdl">
-                        <div class="card">
-                            <div class="container">
-                                <h4>Email</h4>
-                                <p><span class="fa fa-envelope"></span> <a>aceeducation@gmail.com</a></p>
-                                <p><span class="fa fa-globe"></span> <a>www.pusattuisyenmadani.com</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <section id="call-to-action" class="call-to-action">
+            <div class="call-action-image">
+                <img src="~/assetslp/images/call-to-action.png" alt="call-to-action">
             </div>
-        </div>
-    </section>
-    <!-- //contact -->
-    <!--footer -->
-    <footer>
-        <section class="footer footer_1its py-3">
-            <div class="container py-md-4">
-                <div class="row footer-top mb-md-5 mb-4">
-                    <div class="col-lg-6 col-md-6 footer-grid_section_1its">
-                        <div class="footer-title-w3ls">
-                            <h3>Address</h3>
-                        </div>
-                        <div class="footer-text">
-                            <p>Address  : Taman Mutiara Rini, Johor, Malaysia</p>
-                            <p>Phone  &nbsp : +03 534894364</p>
-                            <p>Email   &nbsp&nbsp : <a href="mailto:info@example.com">aceeducation@gmail.com</a></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 mt-md-0 mt-4 footer-grid_section_1its">
-                        <div class="footer-title-w3ls">
-                            <h3>Quick Links</h3>
-                        </div>
-                        <div class="row">
-                            <ul class="social_section_1info">
-                                <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
-                                <li>@Html.ActionLink("About", "About", "Home")</li>
-                                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-grid_section text-center">
-                    <div class="footer-text">
-                        <p>Visit our social media to get to know us.</p>
-                    </div>
-                    <ul class="social_section_1info">
-                        <li class="mb-2 facebook"><a href="#"><span class="fa fa-facebook mr-1"></span>facebook</a></li>
-                        <li class="mb-2 twitter"><a href="#"><span class="fa fa-twitter mr-1"></span>twitter</a></li>
-                        <li class="google"><a href="#"><span class="fa fa-google-plus mr-1"></span>google</a></li>
-                        <li class="linkedin"><a href="#"><span class="fa fa-linkedin mr-1"></span>linkedin</a></li>
-                    </ul>
-                </div>
-                <div class="move-top-w3layouts text-center mt-3">
-                    <a href="#home" class="move-top"> <span class="fa fa-angle-up  mb-3" aria-hidden="true"></span></a>
-                </div>
 
-            </div>
+            <div class="container-fluid">
+                <div class="row justify-content-end">
+                    <div class="col-lg-6">
+                        <div class="call-action-content text-center">
+                            <h2 class="call-title">Contact</h2>
+                            <p class="text">For any enquiries can reach out this contact details.</p>
+                            <div class="row justify-content-center">
+                                <div class="single-pricing mt-40">
+                                    <div class="pricing-header text-center">
+                                        <h5 class="sub-title">Pusat Tuisyen Madani</h5>
+                                    </div>
+                                    <div class="pricing-list">
+                                        <ul class="text-left">
+                                            <li><i class="lni-check-mark-circle"> Address </i> Taman Mutiara Rini, Johor</li>
+                                            <li><i class="lni-check-mark-circle"> Number </i> +03 123456789</li>
+                                            <li><i class="lni-check-mark-circle"> Email </i> aceeducation@gmail.com</li>
+                                            <br />
+                                            <br />
+                                        </ul>
+                                    </div>
+
+                                    <div class="buttom-shape">
+                                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 112.35">
+                                            <defs>
+                                                <style>
+                                                    .color-1 {
+                                                        fill: #2bdbdc;
+                                                        isolation: isolate;
+                                                    }
+
+                                                    .cls-1 {
+                                                        opacity: 0.1;
+                                                    }
+
+                                                    .cls-2 {
+                                                        opacity: 0.2;
+                                                    }
+
+                                                    .cls-3 {
+                                                        opacity: 0.4;
+                                                    }
+
+                                                    .cls-4 {
+                                                        opacity: 0.6;
+                                                    }
+                                                </style>
+                                            </defs>
+                                            <title>bottom-part1</title>
+                                            <g id="bottom-part"><g id="Group_747" data-name="Group 747"><path id="Path_294" data-name="Path 294" class="cls-1 color-1" d="M0,24.21c120-55.74,214.32,2.57,267,0S349.18,7.4,349.18,7.4V82.35H0Z" transform="translate(0 0)" /><path id="Path_297" data-name="Path 297" class="cls-2 color-1" d="M350,34.21c-120-55.74-214.32,2.57-267,0S.82,17.4.82,17.4V92.35H350Z" transform="translate(0 0)" /><path id="Path_296" data-name="Path 296" class="cls-3 color-1" d="M0,44.21c120-55.74,214.32,2.57,267,0S349.18,27.4,349.18,27.4v74.95H0Z" transform="translate(0 0)" /><path id="Path_295" data-name="Path 295" class="cls-4 color-1" d="M349.17,54.21c-120-55.74-214.32,2.57-267,0S0,37.4,0,37.4v74.95H349.17Z" transform="translate(0 0)" /></g></g>
+                                        </svg>
+                                    </div>
+                                </div> <!-- single pricing -->
+                            </div>
+                        </div> <!-- slider-content -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
         </section>
-    </footer>
-    <!-- //footer -->
-    <!-- copyright -->
-    <div class="cpy-right text-center py-3">
-        <p>&copy; @DateTime.Now.Year - LuxTech</p>
-    </div>
-    <!-- //copyright -->
+
+        <!--====== CALL TO ACTION PART ENDS ======-->
+        <!--====== FOOTER PART START ======-->
+
+        <footer id="footer" class="footer-area">
+            <div class="footer-widget">
+                <div class="container">
+                    <div class="row">
+                        <div class="footer-link">
+                            <h6 class="footer-title">Company</h6>
+                            <ul>
+                                <li><a class="btn btn-info" href="@Url.Action("About","Home")">About</a>    <a class="btn btn-info" href="@Url.Action("Contact","Home")">Contact</a>    <a class="btn btn-info" href="@Url.Action("Index","Home")">Home</a> </li>
+                            </ul>
+                        </div> <!-- footer link -->
+                    </div> <!-- row -->
+                </div> <!-- container -->
+            </div> <!-- footer widget -->
+
+            <div class="footer-copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="copyright text-center">
+                                <p class="text">Developed by <a rel="nofollow" href="https://uideck.com">LuxTech</a> - @DateTime.Now.Year </p>
+                            </div>
+                        </div>
+                    </div> <!-- row -->
+                </div> <!-- container -->
+            </div> <!-- footer copyright -->
+        </footer>
+
+        <!--====== FOOTER PART ENDS ======-->
+
+        <!--====== BACK TO TOP PART START ======-->
+
+        <a class="back-to-top" href="#"><i class="lni-chevron-up"></i></a>
+
+        <!--====== BACK TO TOP PART ENDS ======-->
+        <!--====== jquery js ======-->
+        <script src="~/assetslp/js/vendor/modernizr-3.6.0.min.js"></script>
+        <script src="~/assetslp/js/vendor/jquery-1.12.4.min.js"></script>
+
+        <!--====== Bootstrap js ======-->
+        <script src="~/assetslp/js/bootstrap.min.js"></script>
+        <script src="~/assetslp/js/popper.min.js"></script>
+
+        <!--====== Scrolling Nav js ======-->
+        <script src="~/assetslp/js/jquery.easing.min.js"></script>
+        <script src="~/assetslp/js/scrolling-nav.js"></script>
+
+        <!--====== Magnific Popup js ======-->
+        <script src="~/assetslp/js/jquery.magnific-popup.min.js"></script>
+
+        <!--====== Main js ======-->
+        <script src="~/assetslp/js/main.js"></script>
 
 </body>
 
