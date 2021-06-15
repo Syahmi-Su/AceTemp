@@ -234,23 +234,31 @@
                                                 @foreach (var student in Model)
                                                 {
 
-                                                    <tr>
-                                                        <td>@student.studentdetails.student_ic</td>
-                                                        <td>@student.studentdetails.student_name</td>
-                                                        <td>@student.studentdetails.student_cname</td>
-                                                        <td>@student.studentdetails.student_gender</td>
-                                                        <td>@student.studentdetails.student_dob.ToShortDateString()</td>
-                                                        <td>@student.studentdetails.student_category</td>
-                                                        <td>@student.studentdetails.student_year</td>
+                                                <tr>
+                                                    <td>@student.studentdetails.student_ic</td>
+                                                    <td>@student.studentdetails.student_name</td>
+                                                    @if (@student.studentdetails.student_cname == null)
+                                                    {
+                                                        <td>N/A</td>
+                                                    }
+                                                    else
+                                                    {
+                                                       <td>@student.studentdetails.student_cname</td>
+                                                    }
 
-                                                        <td>@student.packagedetails.package_desc</td>
-                                                        <td>@student.parentdetails.parents_name</td>
-                                                        <td>
-                                                            @Html.ActionLink(" Edit", "EditStudentDetails", new { id = student.studentdetails.student_ic }, new { @class = "btn btn-warning fas fa-edit" })
-                                                            &nbsp;&nbsp;
-                                                            @Html.ActionLink(" Delete", "DeleteStudent", new { id = student.studentdetails.student_ic }, new { @class = "btn btn-danger fas fa-trash-alt" })
-                                                        </td>
-                                                    </tr>
+                                                    <td>@student.studentdetails.student_gender</td>
+                                                    <td>@student.studentdetails.student_dob.ToShortDateString()</td>
+                                                    <td>@student.studentdetails.student_category</td>
+                                                    <td>@student.studentdetails.student_year</td>
+
+                                                    <td>@student.packagedetails.package_desc</td>
+                                                    <td>@student.parentdetails.parents_name</td>
+                                                    <td>
+                                                        @Html.ActionLink(" Edit", "EditStudentDetails", new { id = student.studentdetails.student_ic }, new { @class = "btn btn-warning fas fa-edit" })
+                                                        &nbsp;&nbsp;
+                                                        @Html.ActionLink(" Delete", "DeleteStudent", new { id = student.studentdetails.student_ic }, new { @class = "btn btn-danger fas fa-trash-alt" })
+                                                    </td>
+                                                </tr>
 
                                                 }
 

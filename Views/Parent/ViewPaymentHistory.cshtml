@@ -204,32 +204,40 @@
                                                 {
                                                     if (payment.statusdetails.status_id != 1)
                                                     {
-                                                        <tr>
-                                                            <td>@payment.paymentdetails.ref_num</td>
-                                                            <td>@payment.studentdetails.student_name</td>
-                                                            <td>@payment.paymentdetails.payment_date.ToShortDateString()</td>
-                                                            <td>@payment.paymentdetails.payment_detail</td>
-                                                            <td>@payment.paymentdetails.payment_fee</td>
-                                                            <td>@payment.paymentdetails.filename</td>
-                                                            <td>@payment.paymentdetails.confirmation_date.ToShortDateString()</td>
-                                                            @if (payment.statusdetails.status_id == 2)
-                                                            {
-                                                                <td style='color:green;'><b>@payment.statusdetails.status_desc</b></td>
-                                                            }
-                                                            else
-                                                            {
-                                                                <td style='color:red;'><b>@payment.statusdetails.status_desc</b></td>
-                                                            }
-                                                            @if (payment.statusdetails.status_id == 2)
-                                                            {
-                                                                <td><a class='btn btn-info' href='@Url.Action("Slip", "Receipt", new { id= payment.paymentdetails.confirmation_id})' target="_blank">View</a></td>
-                                                            }
-                                                            else
-                                                            {
-                                                                <td>N/A</td>
-                                                            }
+                                                <tr>
+                                                    <td>@payment.paymentdetails.ref_num</td>
+                                                    <td>@payment.studentdetails.student_name</td>
+                                                    <td>@payment.paymentdetails.payment_date.ToShortDateString()</td>
+                                                    <td>@payment.paymentdetails.payment_detail</td>
+                                                    <td>@payment.paymentdetails.payment_fee</td>
+                                                    @if (payment.paymentdetails.filename == null)
+                                                    {
+                                                        <td>N/A</td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td><a href="@Url.Content(payment.paymentdetails.filename)" target="_blank" download>Download</a></td>
 
-                                                        </tr>
+                                                    }
+
+                                                    <td>@payment.paymentdetails.confirmation_date.ToShortDateString()</td>
+                                                    @if (payment.statusdetails.status_id == 2)
+                                                    {
+                                                        <td style='color:green;'><b>@payment.statusdetails.status_desc</b></td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td style='color:red;'><b>@payment.statusdetails.status_desc</b></td>
+                                                    }
+                                                    @if (payment.statusdetails.status_id == 2)
+                                                    {
+                                                        <td><a class='btn btn-info' href='@Url.Action("Slip", "Receipt", new { id= payment.paymentdetails.confirmation_id})' target="_blank">View</a></td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>N/A</td>
+                                                    }
+                                                </tr>
                                                     }
 
                                                 }
