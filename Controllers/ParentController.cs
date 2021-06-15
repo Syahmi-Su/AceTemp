@@ -87,14 +87,16 @@ namespace AceTC.Controllers
             List<Parent> parentlist = entity.Parents.ToList();
             List<Status> statuslist = entity.Status.ToList();
             List<Package> packagelist = entity.Packages.ToList();
+            List<studRegister> register = entity.studRegisters.ToList();
             List<Payment> paymentlist = entity.Payments.Where(a => a.parent_ic.Equals(uid)).ToList();
 
             var multipletable = from pa in paymentlist
                                 join p in parentlist on pa.parent_ic equals p.parents_ic
                                 join s in studentlist on pa.student_ic equals s.student_ic
                                 join st in statuslist on pa.status_id equals st.status_id
-/*                                join pack in packagelist on pa.package_id equals pack.package_id*/
-                                select new MultipleClass { studentdetails = s, parentdetails = p, paymentdetails = pa, statusdetails = st, /*packagedetails = pack*/ };
+                                join reg in register on pa.student_ic equals reg.studreg_ic
+                                /*                                join pack in packagelist on pa.package_id equals pack.package_id*/
+                                select new MultipleClass { studentdetails = s, parentdetails = p, paymentdetails = pa, statusdetails = st, studentregister = reg };
 
 
             return View(multipletable);

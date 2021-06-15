@@ -56,18 +56,14 @@
                     </ul>
 
                     <ul class="nav navbar-nav float-right">
-                        <li class="dropdown dropdown-notification nav-item">
-                            <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="la la-cog">             </i></a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <div class="arrow_box_right"><a class="dropdown-item" href="/Parent/editPassword"><i class="la la-wrench"></i> Change Password</a></div>
-                            </div>
-                        </li>
+
                         <li class="dropdown dropdown-user nav-item">
                             <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">             <span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><i></i></span></a>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <div class="arrow_box_right">
-                                    <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><span class="user-name text-bold-700 ml-1">My Account</span></span></a>
-                                    <!--<div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="ft-user"></i> Edit Profile</a><a class="dropdown-item" href="#"><i class="ft-mail"></i> My Inbox</a><a class="dropdown-item" href="#"><i class="ft-check-square"></i> Task</a><a class="dropdown-item" href="#"><i class="ft-message-square"></i> Chats</a>-->
+                                    <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><span class="user-name text-bold-700 ml-1">Hi, @Session["parents_ic"].ToString()</span></span></a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="@Url.Action("editPassword", "Parent", new { id = Session["parents_ic"] })"><i class="ft-user"></i> Change Password</a>
                                     <div class="dropdown-divider"></div><a class="dropdown-item" href="@Url.Action("Logout","Login")"><i class="ft-power"></i> Logout</a>
                                 </div>
                             </div>
@@ -84,11 +80,8 @@
             <ul class="nav navbar-nav flex-row">
                 <li class="nav-item mr-auto">
                     <a class="navbar-brand" href="/Parent/ViewChildren">
-                        <img class="brand-logo" src="~/Content/theme-assets/images/logo/ACElogo-triangle.png" />
-                        <h3 class="brand-text">
-                            PUSAT TUISYEN <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            MADANI
-                        </h3>
+                        <img class="brand-logo" style="width: 80%;display: block; margin-left: auto; margin-right: auto;" src="~/Content/theme-assets/images/logo/ACElogo-triangle.png" />
+
                     </a>
                 </li>
                 <li class="nav-item d-md-none"><a class="nav-link close-navbar"><i class="ft-x"></i></a></li>
@@ -98,7 +91,7 @@
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
                 <li class="nav-item">
                     <br />
-                    <a href="/Parent/Notification"><i class="ft-home"></i><span class="menu-title" data-i18n="">My Account</span></a>
+
                 </li>
                 <li class="active">
                     <a href="#"><i class="la la-female"></i><span class="menu-title" data-i18n="">Students</span></a>
@@ -211,7 +204,7 @@
                                                                     <b>GENDER</b> : @student.studentdetails.student_gender
                                                                 </dd>
                                                                 <dd>
-                                                                    <b>DATE OF BIRTH</b> : @student.studentdetails.student_dob
+                                                                    <b>DATE OF BIRTH</b> : @student.studentdetails.student_dob.ToShortDateString()
                                                                 </dd>
                                                                 <dd>
                                                                     <b>CATEGORY</b> : @student.studentdetails.student_category

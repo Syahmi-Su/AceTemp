@@ -4385,6 +4385,82 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Web.config" />
+    <Content Include="assetslp\.DS_Store" />
+    <Content Include="assetslp\css\style.css.map" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="assetslp\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="assetslp\fonts\iconic\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="assetslp\fonts\iconic\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="assetslp\fonts\iconic\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="assetslp\fonts\iconic\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="assetslp\fonts\LineIcons.eot" />
+    <Content Include="assetslp\fonts\LineIcons.ttf" />
+    <Content Include="assetslp\fonts\LineIcons.woff" />
+    <Content Include="assetslp\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="assetslp\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="assetslp\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="assetslp\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="assetslp\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="assetslp\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="assetslp\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="assetslp\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="assetslp\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="assetslp\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="assetslp\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="assetslp\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="assetslp\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="assetslp\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="assetslp\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="assetslp\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="assetslp\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="assetslp\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="assetslp\images\.DS_Store" />
+    <Content Include="assetslp\js\.DS_Store" />
+    <Content Include="assetslp\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="assetslp\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="assetslp\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="assetslp\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="assetslp\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="assetslp\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
     <EntityDeploy Include="Models\AceDBEntity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>AceDBEntity.Designer.cs</LastGenOutput>
@@ -4912,13 +4988,6 @@
     <Content Include="styles\font-awesome.css" />
     <Content Include="styles\style.css" />
     <Content Include="styles\styles.css" />
-    <Content Include="Web.config" />
-    <Content Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
@@ -4986,7 +5055,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>

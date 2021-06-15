@@ -65,7 +65,7 @@
                             <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">             <span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><i></i></span></a>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <div class="arrow_box_right">
-                                    <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><span class="user-name text-bold-700 ml-1">Admin</span></span></a>
+                                    <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><span class="user-name text-bold-700 ml-1">Hi, @Session["admin_id"].ToString()</span></span></a>
 
                                     <div class="dropdown-divider"></div><a class="dropdown-item" href="@Url.Action("Logout","Login")"><i class="ft-power"></i> Logout</a>
                                 </div>
@@ -83,7 +83,8 @@
             <ul class="nav navbar-nav flex-row" style="height: 100px; width: 200px; padding-left: 35px;">
                 <li class="nav-item mr-auto">
                     <a class="navbar-brand" href="/Admin/AdminDashboard">
-                        <img class="brand-logo" style="height:80px; width:160px;" src="/Content/theme-assets/images/logo/ACElogo-triangle.png">
+                        <img class="brand-logo" style="width: 80%;display: block; margin-left: auto; margin-right: auto;" src="~/Content/theme-assets/images/logo/ACElogo-triangle.png" />
+
                     </a>
                 </li>
                 <li class="nav-item d-md-none"><a class="nav-link close-navbar"><i class="ft-x"></i></a></li>
@@ -287,7 +288,6 @@
     <script src="~/Content/assets/plugins/counterup/jquery.counterup.min.js"></script>
     dataTabled data
     <script src="~/Content/assets/data/data_datatables.js"></script>
-    <!-- ///////////////////////////end JS from ASSETS/////////////////////////////////////////////////-->
 
 
 

@@ -22,13 +22,15 @@ namespace AceTC.Controllers
             List<Payment> payment = entity.Payments.Where(a => a.confirmation_id.Equals(id)).ToList();
             List<Status> status = entity.Status.ToList();
             List<Package> package = entity.Packages.ToList();
+            List<studRegister> register = entity.studRegisters.ToList();
             List<Student> student = entity.Students.ToList();
             List<Parent> parent = entity.Parents.ToList();
             var multipletable = from a in payment
                                 join b in status on a.status_id equals b.status_id
                                 join s in student on a.student_ic equals s.student_ic
                                 join par in parent on a.parent_ic equals par.parents_ic
-                                select new MultipleClass { paymentdetails = a, statusdetails = b, parentdetails = par, studentdetails = s };
+                                join reg in register on a.student_ic equals reg.studreg_ic
+                                select new MultipleClass { paymentdetails = a, statusdetails = b, parentdetails = par, studentdetails = s, studentregister = reg };
             return View(multipletable);
         }
     }
