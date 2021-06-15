@@ -229,7 +229,7 @@
                                             <tbody>
                                                 @foreach (var payment in Model)
                                                 {
-                                                    if (payment.paymentdetails.status_id == 1)
+                                                    if (payment.paymentdetails.status_id == 1 || payment.paymentdetails.status_id == 4)
                                                     {
                                                 <tr>
                                                     <td>@payment.paymentdetails.parent_ic</td>

@@ -628,3 +628,4 @@ C:\Users\user\Downloads\Telegram Desktop\AceTemp\obj\Debug\AceTC.csproj.CoreComp
 C:\Users\user\Downloads\Telegram Desktop\AceTemp\obj\Debug\AceTC.csproj.CopyComplete
 C:\Users\user\Downloads\Telegram Desktop\AceTemp\obj\Debug\AceTC.dll
 C:\Users\user\Downloads\Telegram Desktop\AceTemp\obj\Debug\AceTC.pdb
+C:\Users\user\Downloads\Telegram Desktop\AceTemp\obj\Debug\AceTC.csprojAssemblyReference.cache

@@ -4811,9 +4811,6 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Admin\EditStudentDetails.cshtml" />
     <Content Include="Views\Outstanding\Index.cshtml" />
-    <Content Include="Views\Outstanding\Details.cshtml" />
-    <Content Include="Views\Outstanding\Create.cshtml" />
-    <Content Include="Views\Outstanding\Edit.cshtml" />
     <Content Include="Views\Outstanding\Delete.cshtml" />
     <Content Include="Views\Outstanding\View.cshtml" />
     <Content Include="Views\AddPackage\AddPackage.cshtml" />
