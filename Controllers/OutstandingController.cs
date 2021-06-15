@@ -46,6 +46,7 @@ namespace AceTC.Controllers
             else
                 return View(outs);
         }
+
         [HttpPost]
         public ActionResult ApprovalOutstanding(Outstanding outstanding)
         {
@@ -60,25 +61,18 @@ namespace AceTC.Controllers
         }
 
 
-        public ActionResult SendOutstandingEmail()
+        public ActionResult SendOutstandingEmail(int id)
         {
             AceDBEntities db = new AceDBEntities();
-            ViewBag.ParentList = new SelectList(GetParentList(), "parents_ic", "parents_email");
-            return View();
-        }
-        public List<Parent> GetParentList()
-        {
-            AceDBEntities db = new AceDBEntities();
-            List<Parent> parents = db.Parents.ToList();
-            return parents;
-        }
 
-        public ActionResult GetOutstandingList(string receiver)
-        {
-            AceDBEntities db = new AceDBEntities();
-            List<Outstanding> selectList = db.Outstandings.Where(x => x.O_pID == receiver).ToList();
-            ViewBag.Slist = new SelectList(selectList, "O_ID", "O_fees");
-            return PartialView("DisplayOutstanding");
+            List<Outstanding> outstandings = db.Outstandings.Where(a => a.O_ID.Equals(id)).ToList();
+            List<Parent> parents = db.Parents.ToList();
+
+            var multipleclass = from o in outstandings
+                                join p in parents on o.O_pID equals p.parents_ic
+                                select new CascadingClass { receiver = p, message = o };
+
+            return View(multipleclass);
         }
 
         [HttpPost]
@@ -104,8 +98,8 @@ namespace AceTC.Controllers
                     };
                     using (var mess = new MailMessage(senderEmail, receiverEmail)
                     {
-                        Subject = subject,
-                        Body = "Total Outstanding Balance " + body
+                        Subject = "Your Latest Outstanding Balance " + subject,
+                        Body = "Total Outstanding Balance : RM" + body
                     })
                     {
                         smtp.Send(mess);
@@ -113,18 +107,19 @@ namespace AceTC.Controllers
 
                     ViewBag.msg = "Email sent successfully";
 
-                    return View();
+                    return RedirectToAction("Index", "Outstanding");
+
                 }
             }
             catch (Exception)
             {
                 ViewBag.Error = "Send Email failed!!";
             }
-            return View();
+            return RedirectToAction("Index", "Outstanding");
         }
-   
 
-    public ActionResult ApprovalAll ()
+
+        public ActionResult ApprovalAll ()
         {
             AceDBEntities db = new AceDBEntities();
             List<Student> studentlist = db.Students.ToList();

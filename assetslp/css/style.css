@@ -156,7 +156,7 @@ p {
 ===========================*/
 /*===== NAVBAR ONE =====*/
 .navgition {
-  padding: 20px 0;
+  padding: 10px 0;
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
   -ms-transition: all 0.3s ease-out 0s;
@@ -321,7 +321,7 @@ p {
           color: #0067f4; }
 
 .header-hero {
-  height: 850px;
+  height: 700px;
   position: relative; }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .header-hero {
@@ -428,8 +428,8 @@ p {
       3.SERVICES css 
 ===========================*/
 .services-area {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   position: relative; }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .services-area {
@@ -509,8 +509,8 @@ p {
       4.PRICING css 
 ===========================*/
 .pricing-area {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   background-color: #f4f6f7; }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .pricing-area {
@@ -647,8 +647,9 @@ p {
     5.CALL TO ACTION css 
 ===========================*/
 .call-to-action {
-  background-color: #0067f4;
-  position: relative; }
+    background-color: #dee2e6;
+    position: relative;
+}
 
 .call-action-image {
   position: absolute;
@@ -673,26 +674,29 @@ p {
 .call-action-content {
   max-width: 560px;
   margin: 0 auto;
-  padding-top: 230px;
-  padding-bottom: 236px; }
+  padding-top: 50px;
+  padding-bottom: 50px; }
   @media (max-width: 767px) {
     .call-action-content {
       padding-top: 80px;
       padding-bottom: 80px; } }
-  .call-action-content .call-title {
-    font-size: 44px;
+.call-action-content .call-title {
+    font-size: 35px;
     font-weight: 600;
-    color: #fff;
-    line-height: 55px; }
+    color: #004085;
+    line-height: 55px;
+}
     @media (max-width: 767px) {
       .call-action-content .call-title {
         font-size: 28px;
         line-height: 38px; } }
-  .call-action-content .text {
+.call-action-content .text {
     font-size: 16px;
-    color: #fff;
+    color: #004085;
     line-height: 24px;
-    margin-top: 16px; }
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
     @media (max-width: 767px) {
       .call-action-content .text {
         font-size: 14px; } }
