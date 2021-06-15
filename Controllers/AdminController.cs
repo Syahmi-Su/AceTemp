@@ -19,14 +19,49 @@ namespace AceTC.Controllers
 
         public ActionResult AdminDashboard()
         {
-            AceDBEntities entity = new AceDBEntities();
-            CountClass cnt = new CountClass()
+            //AceDBEntities entity = new AceDBEntities();
+            //CountClass cnt = new CountClass()
+            //{
+            //    studentcount = entity.Students.Count(),
+            //    packagecount = entity.Packages.Count(),
+            //    paymentcount = entity.Payments.Count(),
+            //};
+            //return View(cnt);
+
+            using (AceDBEntities entity = new AceDBEntities())
             {
-                studentcount = entity.Students.Count(),
-                packagecount = entity.Packages.Count(),
-                paymentcount = entity.Payments.Count(),
-            };
-            return View(cnt);
+                int totstud = (from tot in entity.Students select tot.student_ic).Count();
+                int primarystud = (from tot in entity.Students where tot.student_category == "Primary" select tot.student_ic).Count();
+                int secondarystud = (from tot in entity.Students where tot.student_category == "Secondary" select tot.student_ic).Count();
+                int totsubj = (from tot in entity.Subjects select tot.subject_code).Count();
+                int totpack = (from tot in entity.Packages select tot.package_id).Count();
+                int totouts = (from tot in entity.Outstandings select tot.O_ID).Count();
+                int pendpay = (from tot in entity.Payments where tot.status_id == 1 select tot.confirmation_id).Count();
+
+
+                ViewData["totalstudents"] = totstud;
+                var totalstudents = ViewData["totalstudents"];
+
+                ViewData["primarystudents"] = primarystud;
+                var primarystudents = ViewData["primarystudents"];
+
+                ViewData["secondarystudents"] = secondarystud;
+                var secondarystudents = ViewData["secondarystudents"];
+
+                ViewData["totalsubjects"] = totsubj;
+                var totalsubjects = ViewData["totalsubjects"];
+
+                ViewData["totalpackages"] = totpack;
+                var totalpackages = ViewData["totalpackages"];
+
+                ViewData["totaloutstandings"] = totouts;
+                var totaloutstandings = ViewData["totaloutstandings"];
+
+                ViewData["pendingpayment"] = pendpay;
+                var pendingpayment = ViewData["pendingpayment"];
+
+            }
+            return View();
         }
 
         // GET: STUDENT
