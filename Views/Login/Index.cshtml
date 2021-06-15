@@ -1,80 +1,252 @@
-﻿ @model AceTC.Models.UserModel
+﻿@model AceTC.Models.UserModel
 
 @{
+    Layout = null;
     ViewBag.Title = "Login";
 }
 
+<!doctype html>
+<html lang="en">
+
 <head>
-    <link href="~/styles/style.css" rel="stylesheet" />
+
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <style>
         .field-validation-error {
             color: red;
         }
     </style>
+
+    <!--====== Title ======-->
+    <title>Pusat Tuisyen Madani</title>
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="~/assetslp/images/favicon.png" type="image/png">
+
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="~/assetslp/css/bootstrap.min.css">
+
+    <!--====== Line Icons css ======-->
+    <link rel="stylesheet" href="~/assetslp/css/LineIcons.css">
+
+    <!--====== Magnific Popup css ======-->
+    <link rel="stylesheet" href="~/assetslp/css/magnific-popup.css">
+
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="~/assetslp/css/default.css">
+
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="~/assetslp/css/style.css">
+
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/assetslp/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/assetslp/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/assetslp/fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/assetslp/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/assetslp/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/assetslp/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/assetslp/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/assetslp/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/assetslp/css/util.css">
+    <link rel="stylesheet" type="text/css" href="~/assetslp/css/main.css">
+    <!--===============================================================================================-->
 </head>
 
-@* @using (Html.BeginForm()) *@
-@using (Html.BeginForm("Login", "Login", FormMethod.Post))
-{
-    @Html.AntiForgeryToken()
+<body>
 
-    <h1>Pusat Tuisyen Madani</h1>
-    <div class="login-form">
-        <div class="close"> </div>
-        <div class="head-info">
-            <label class="lbl-1"> </label>
-            <label class="lbl-2"> </label>
-            <label class="lbl-3"> </label>
-        </div>
-        <div class="clear"></div>
+    <!--====== HEADER PART START ======-->
 
-        <div class="form-horizontal">
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                <div class="key">
-                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "text", @placeholder = "Username" } })
-                    <br />
-                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
-                </div>
+    <header class="header-area">
+        <div class="navgition navgition-transparent">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="#">
+                                <img style="width:150px;height:60px;" src="~/assetslp/images/logo.png" alt="Logo">
+                            </a>
+
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarOne" aria-controls="navbarOne" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarFour">
+                                <ul class="navbar-nav m-auto" style="width: 50px;">
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="@Url.Action("Index","Home")">HOME</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="@Url.Action("About","Home")">SERVICES</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="@Url.Action("Contact","Home")">CONTACT</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="page-scroll" href="@Url.Action("Index","Login")">LOGIN</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </nav> <!-- navbar -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- navgition -->
+
+        <div id="home" class="header-hero bg_cover">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-8 col-lg-10">
+                        <div class="header-content text-center">
+                            <div class="limiter">
+                                <div class="container-login100">
+                                    <div class="wrap-login100">
+
+                                        @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { @class = "login100-form validate-form" }))
+                                        {
+                                            @Html.AntiForgeryToken()
+
+                                            <span class="login100-form-title p-b-26">
+                                                Login
+                                            </span>
+
+                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                            <div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
+                                                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "input100", @type = "text" } })
+                                                <span class="focus-input100" data-placeholder="Email"></span>
+                                            </div>
+
+                                            <div class="wrap-input100 validate-input" data-validate="Enter password">
+                                                <span class="btn-show-pass">
+                                                    <i class="zmdi zmdi-eye"></i>
+                                                </span>
+                                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "input100", @type = "password" } })
+                                                <span class="focus-input100" data-placeholder="Password"></span>
+                                            </div>
+
+                                            <div >
+                                                <div>
+                                                    <label class="field-validation-error" color="red">@Html.DisplayFor(model => model.LoginErrorMsg)</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="container-login100-form-btn">
+                                                <div class="wrap-login100-form-btn">
+                                                    <div class="login100-form-bgbtn"></div>
+                                                    <button type="submit" class="login100-form-btn">
+                                                        Login
+                                                    </button>
+                                                </div>
+                                                <div class="wrap-login100-form-btn">
+                                                    <div class="login100-form-bgbtn"></div>
+                                                    <button type="reset" class="login100-form-btn">
+                                                        Clear
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        }
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- header content -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+            <div class="header-shape">
+                <img src="~/assetslp/images/header-shape.svg" alt="shape">
             </div>
+        </div> <!-- header content -->
+    </header>
 
-            <div class="form-group">
-                <div class="key">
-                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @type = "password", @placeholder = "Password" } })
-                    <br />
-                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                </div>
-            </div>
+    <!--====== HEADER PART ENDS ======-->
+    <!--====== FOOTER PART START ======-->
 
-            <div class="form-group">
-                <div>
-                    <label class="field-validation-error" color="red">@Html.DisplayFor(model => model.LoginErrorMsg)</label>
-                </div>
-            </div>
+    <footer id="footer" class="footer-area">
+        <div class="footer-widget">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-link">
+                        <h6 class="footer-title">Company</h6>
+                        <ul>
+                            <li><a class="btn btn-info" href="@Url.Action("About","Home")">About</a>    <a class="btn btn-info" href="@Url.Action("Contact","Home")">Contact</a>    <a class="btn btn-info" href="@Url.Action("Index","Home")">Home</a> </li>
+                        </ul>
+                    </div> <!-- footer link -->
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- footer widget -->
 
-            <div class="form-group">
-                <div class="signin">
-                    <input type="submit" value="Login" />
-                    <input type="reset" value="Clear" />
-                </div>
-            </div>
-        </div>
-    </div>
-}
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright text-center">
+                            <p class="text">Developed by <a rel="nofollow" href="https://uideck.com">LuxTech</a> - @DateTime.Now.Year </p>
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- footer copyright -->
+    </footer>
 
+    <!--====== FOOTER PART ENDS ======-->
+    <!--====== BACK TO TOP PART START ======-->
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+    <a class="back-to-top" href="#"><i class="lni-chevron-up"></i></a>
 
+    <!--====== BACK TO TOP PART ENDS ======-->
+    <!--====== jquery js ======-->
+    <script src="~/assetslp/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="~/assetslp/js/vendor/jquery-1.12.4.min.js"></script>
 
-<script>
-            $(document).ready(function (c) {
-                $('.close').on('click', function (c) {
-                    $('.login-form').fadeOut('slow', function (c) {
-                        $('.login-form').remove();
-                    });
-                });
-            });
-</script>
+    <!--====== Bootstrap js ======-->
+    <script src="~/assetslp/js/bootstrap.min.js"></script>
+    <script src="~/assetslp/js/popper.min.js"></script>
 
+    <!--====== Scrolling Nav js ======-->
+    <script src="~/assetslp/js/jquery.easing.min.js"></script>
+    <script src="~/assetslp/js/scrolling-nav.js"></script>
+
+    <!--====== Magnific Popup js ======-->
+    <script src="~/assetslp/js/jquery.magnific-popup.min.js"></script>
+
+    <!--====== Main js ======-->
+    <script src="~/assetslp/js/main.js"></script>
+
+    <!--===============================================================================================-->
+    <script src="~/assetslp/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/assetslp/vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/assetslp/vendor/bootstrap/js/popper.js"></script>
+    <script src="~/assetslp/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/assetslp/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/assetslp/vendor/daterangepicker/moment.min.js"></script>
+    <script src="~/assetslp/vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/assetslp/vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/assetslp/js2/main.js"></script>
+
+</body>
+
+</html>

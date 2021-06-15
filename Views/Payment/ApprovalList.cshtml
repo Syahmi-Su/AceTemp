@@ -231,24 +231,34 @@
                                                 {
                                                     if (payment.paymentdetails.status_id == 1)
                                                     {
-                                                        <tr>
-                                                            <td>@payment.paymentdetails.parent_ic</td>
-                                                            <td>@payment.paymentdetails.ref_num</td>
-                                                            <td>@payment.paymentdetails.payment_date.ToShortDateString()</td>
-                                                            <td>@payment.paymentdetails.payment_detail</td>
-                                                            <td>@payment.paymentdetails.payment_fee</td>
-                                                            <td><a href="@Url.Content(payment.paymentdetails.filename)" target="_blank" class="btn btn-success" download><span class="fa fa-download"></a></td>
-                                                            <td>
-@*                                                                <a class='btn btn-info' href='@Url.Action("Approval", "Payment", new { id = payment.paymentdetails.confirmation_id})'>Approval</a>
-*@
-                                                                    <a href="@Url.Action("Approval","Payment", new { id = payment.paymentdetails.confirmation_id })" data-toggle="tooltip" data-original-title="Approve">
-                                                                        <i class="la la-check-square"></i>
-                                                                    </a>
-                                                                    <a href="@Url.Action("Edit","Payment", new { id = payment.paymentdetails.confirmation_id })" data-toggle="tooltip" data-original-title="Edit Details">
-                                                                        <i class="la la la-edit"></i>
-                                                                    </a>
-                                                            </td>
-                                                        </tr>
+                                                <tr>
+                                                    <td>@payment.paymentdetails.parent_ic</td>
+                                                    <td>@payment.paymentdetails.ref_num</td>
+                                                    <td>@payment.paymentdetails.payment_date.ToShortDateString()</td>
+                                                    <td>@payment.paymentdetails.payment_detail</td>
+                                                    <td>@payment.paymentdetails.payment_fee</td>
+
+                                                    @if (payment.paymentdetails.filename == null)
+                                                    {
+                                                        <td>N/A</td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td><a href="@Url.Content(payment.paymentdetails.filename)" target="_blank" download>Download</a></td>
+
+                                                    }
+
+
+                                                    <td>@payment.statusdetails.status_desc</td>
+                                                    <td>
+                                                        <a href="@Url.Action("Approval","Payment", new { id = payment.paymentdetails.confirmation_id })" data-toggle="tooltip" data-original-title="Approve">
+                                                            <i class="la la-check-square"></i>
+                                                        </a>
+                                                        <a href="@Url.Action("Edit","Payment", new { id = payment.paymentdetails.confirmation_id })" data-toggle="tooltip" data-original-title="Edit Details">
+                                                            <i class="la la la-edit"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
                                                     }
 
                                                 }
