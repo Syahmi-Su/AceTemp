@@ -176,7 +176,7 @@ namespace AceTC.Controllers
                 p.payment_date = DateTime.Now;
                 db.Entry(p).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("ViewChildren", "Parent");
+                return RedirectToAction("ViewPaymentHistory", "Parent");
             }
 
         }
