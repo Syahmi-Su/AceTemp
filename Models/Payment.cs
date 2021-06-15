@@ -26,11 +26,8 @@ namespace AceTC.Models
         public string payment_feedetails { get; set; }
         public string filename { get; set; }
         public int meal_fee { get; set; }
-
         public int transport_fee { get; set; }
-
         public int first_register { get; set; }
-
         public float lower_discount { get; set; }
     }
 }

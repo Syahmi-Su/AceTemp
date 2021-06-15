@@ -36,7 +36,7 @@ namespace AceTC.Controllers
                 int totsubj = (from tot in entity.Subjects select tot.subject_code).Count();
                 int totpack = (from tot in entity.Packages select tot.package_id).Count();
                 int totouts = (from tot in entity.Outstandings select tot.O_ID).Count();
-                int pendpay = (from tot in entity.Payments where tot.status_id == 1 select tot.confirmation_id).Count();
+                int pendpay = (from tot in entity.Payments where (tot.status_id == 1||tot.status_id == 4) select tot.confirmation_id).Count();
 
 
                 ViewData["totalstudents"] = totstud;

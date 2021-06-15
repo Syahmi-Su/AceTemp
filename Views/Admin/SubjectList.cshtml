@@ -55,18 +55,13 @@
                     </ul>
 
                     <ul class="nav navbar-nav float-right">
-                        <li class="dropdown dropdown-notification nav-item">
-                            <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-mail">             </i></a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <div class="arrow_box_right"><a class="dropdown-item" href="#"><i class="ft-book"></i> Read Mail</a><a class="dropdown-item" href="#"><i class="ft-bookmark"></i> Read Later</a><a class="dropdown-item" href="#"><i class="ft-check-square"></i> Mark all Read       </a></div>
-                            </div>
-                        </li>
+
                         <li class="dropdown dropdown-user nav-item">
                             <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">             <span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><i></i></span></a>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <div class="arrow_box_right">
-                                    <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><span class="user-name text-bold-700 ml-1">Admin</span></span></a>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="ft-user"></i> Edit Profile</a><a class="dropdown-item" href="#"><i class="ft-mail"></i> My Inbox</a><a class="dropdown-item" href="#"><i class="ft-check-square"></i> Task</a><a class="dropdown-item" href="#"><i class="ft-message-square"></i> Chats</a>
+                                    <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><span class="user-name text-bold-700 ml-1">Hi, @Session["admin_id"].ToString()</span></span></a>
+
                                     <div class="dropdown-divider"></div><a class="dropdown-item" href="@Url.Action("Logout","Login")"><i class="ft-power"></i> Logout</a>
                                 </div>
                             </div>
@@ -83,11 +78,8 @@
             <ul class="nav navbar-nav flex-row">
                 <li class="nav-item mr-auto">
                     <a class="navbar-brand" href="/Admin/AdminDashboard">
-                        <img class="brand-logo" src="~/Content/theme-assets/images/logo/ACElogo-triangle.png" />
-                        <h3 class="brand-text">
-                            PUSAT TUISYEN <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            MADANI
-                        </h3>
+                        <img class="brand-logo" style="width: 80%;display: block; margin-left: auto; margin-right: auto;" src="~/Content/theme-assets/images/logo/ACElogo-triangle.png" />
+
                     </a>
                 </li>
                 <li class="nav-item d-md-none"><a class="nav-link close-navbar"><i class="ft-x"></i></a></li>
@@ -268,34 +260,14 @@
         </div>
     </footer>
 
-    <!-- ///////////////////////////END FOOTER/////////////////////////////////////////////////-->
-    <!-- BEGIN VENDOR JS-->
     <script src="~/Content/theme-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
-    <!-- BEGIN VENDOR JS-->
-    <!-- BEGIN PAGE VENDOR JS-->
-    <script src="~/Content/theme-assets/vendors/js/charts/chartist.min.js" type="text/javascript"></script>
-    <!-- END PAGE VENDOR JS-->
-    <!-- BEGIN CHAMELEON  JS-->
     <script src="~/Content/theme-assets/js/core/app-menu-lite.js" type="text/javascript"></script>
     <script src="~/Content/theme-assets/js/core/app-lite.js" type="text/javascript"></script>
-    <!-- END CHAMELEON  JS-->
-    <!-- BEGIN PAGE LEVEL JS-->
-    <script src="~/Content/theme-assets/js/scripts/pages/dashboard-lite.js" type="text/javascript"></script>
-    <!-- END PAGE LEVEL JS-->
-    <!-- ///////////////////////////start JS from ASSETS/////////////////////////////////////////////////-->
     <script src="~/Content/assets/js/modernizr.min.js"></script>
     <script src="~/Content/assets/js/jquery.min.js"></script>
     <script src="~/Content/assets/js/moment.min.js"></script>
 
-    <script src="~/Content/assets/js/popper.min.js"></script>
-    <script src="~/Content/assets/js/bootstrap.min.js"></script>
 
-    <script src="~/Content/assets/js/detect.js"></script>
-    <script src="~/Content/assets/js/fastclick.js"></script>
-    <script src="~/Content/assets/js/jquery.blockUI.js"></script>
-    <script src="~/Content/assets/js/jquery.nicescroll.js"></script>-->
-    <!-- App js -->
-    <script src="~/Content/assets/js/admin.js"></script>
 
     <!-- BEGIN Java Script for this page -->
     <script src="~/Content/assets/plugins/chart.js/Chart.min.js"></script>
@@ -305,7 +277,6 @@
     <script src="~/Content/assets/plugins/counterup/jquery.counterup.min.js"></script>
     dataTabled data
     <script src="~/Content/assets/data/data_datatables.js"></script>
-    <!-- ///////////////////////////end JS from ASSETS/////////////////////////////////////////////////-->
 
 
     <script>
@@ -319,8 +290,6 @@
                     title: "Subject Name"
                 }, {
                     title: "Subject Type"
-                }, {
-                    title: "Subject Year"
                 }, {
                     title: "Action"
                 }]

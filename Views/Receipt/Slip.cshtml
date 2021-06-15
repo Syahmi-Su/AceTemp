@@ -47,9 +47,10 @@
                         </div>                                                                                                                                                                                
                         <div class="col company-details">
                             <h2 class="name">Ace Education</h2>
-                            <div>455 Foggy Heights, AZ 85004, US</div>
-                            <div>(123) 456-789</div>
-                            <div>company@example.com</div>
+                            <div>29A, Jalan Utama 44, Mutiara Square,</div>
+                            <div>Taman Mutiara Rini</div>
+                            <div>81300 Skudai, Johor</div>
+                            <div>018-2885025</div>
                         </div>
                     </div>
                 </header>
@@ -92,7 +93,7 @@
                                     <td class="text-left"> @Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.paymentdetails.payment_date))</td>
                                     <td class="text-left"> @Html.DisplayFor(model => item.studentdetails.student_name)</td>
                                     <td class="text-left"> @Html.DisplayFor(model => item.studentdetails.student_cname)</td>
-                                    <td class="text-left">@Html.DisplayFor(model => item.packagedetails.package_desc)</td>
+                                    <td class="text-left">@Html.DisplayFor(model => item.studentregister.subject_1) &nbsp;@Html.DisplayFor(model => item.studentregister.subject_2) &nbsp;@Html.DisplayFor(model => item.studentregister.subject_3) &nbsp;@Html.DisplayFor(model => item.studentregister.subject_4)&nbsp;@Html.DisplayFor(model => item.studentregister.subject_5) &nbsp;@Html.DisplayFor(model => item.studentregister.subject_6) &nbsp;@Html.DisplayFor(model => item.studentregister.subject_7)</td>
                                     <td class="total"> RM @Html.DisplayFor(model => item.paymentdetails.payment_fee)</td>
                                 </tr>
                             </tbody>
