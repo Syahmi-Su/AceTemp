@@ -5,292 +5,343 @@
     Layout = "~/Views/Shared/navBarAdmin.cshtml";
 }
 
-
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-<div class="form-horizontal">
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @Html.HiddenFor(model => model.studreg_ic)
-
-    @if (ViewBag.totalsub == 1)
-    {
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_1, "Subject 1", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_1, "", new { @class = "text-danger" })
+<div class="app-content content">
+    <div class="content-wrapper">
+        <div class="content-wrapper-before"></div>
+        <div class="content-header row">
+            <div class="content-header-left col-md-4 col-12 mb-2">
+                <h3 class="content-header-title">Students</h3>
+            </div>
+            <div class="content-header-right col-md-8 col-12">
+                <div class="breadcrumbs-top float-md-right">
+                    <div class="breadcrumb-wrapper mr-1">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="/Admin/StudentList">Students</a>
+                            </li>
+                            <li class="breadcrumb-item active">
+                                Manage Students <i class="la la-long-arrow-right"></i> Add Subject
+                            </li>
+                        </ol>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="content-body">
+            <!-- Basic Tables start -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Add Subject</h4>
+                            <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                            <div class="heading-elements">
+                                <ul class="list-inline mb-0">
+                                    <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                    <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                    <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
-    }
-    else if (ViewBag.totalsub == 2)
-    {
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_1, "Subject 1", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_1, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                                </ul>
+                            </div>
+                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_2, "Subject 2", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_2", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_2, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                        <div class="card-content collapse show">
+                            <div class="card-body">
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
-    }
-    else if (ViewBag.totalsub == 3)
-    {
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_1, "Subject 1", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_1, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_2, "Subject 2", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_2", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_2, "", new { @class = "text-danger" })
+                                    <div class="form-horizontal">
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                        @Html.HiddenFor(model => model.studreg_ic)
+
+                                        @if (ViewBag.totalsub == 1)
+                                        {
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_1, "Subject 1", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_1, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="col-md-offset-2 col-md-10">
+                                                    <input type="submit" value="Save" class="btn btn-success" />
+                                                </div>
+                                            </div>
+                                        }
+                                        else if (ViewBag.totalsub == 2)
+                                        {
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_1, "Subject 1", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_1, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_2, "Subject 2", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_2", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_2, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="col-md-offset-2 col-md-10">
+                                                    <input type="submit" value="Save" class="btn btn-success" />
+                                                </div>
+                                            </div>
+                                        }
+                                        else if (ViewBag.totalsub == 3)
+                                        {
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_1, "Subject 1", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_1, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_2, "Subject 2", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_2", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_2, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_3, "Subject 3", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_3", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_3, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="col-md-offset-2 col-md-10">
+                                                    <input type="submit" value="Save" class="btn btn-success" />
+                                                </div>
+                                            </div>
+
+                                        }
+                                        else if (ViewBag.totalsub == 4)
+                                        {
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_1, "Subject 1", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_1, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_2, "Subject 2", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_2", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_2, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_3, "Subject 3", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_3", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_3, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_4, "Subject 4", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_4", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_4, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="col-md-offset-2 col-md-10">
+                                                    <input type="submit" value="Save" class="btn btn-success" />
+                                                </div>
+                                            </div>
+
+                                        }
+                                        else if (ViewBag.totalsub == 5)
+                                        {
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_1, "Subject 1", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_1, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_2, "Subject 2", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_2", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_2, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_3, "Subject 3", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_3", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_3, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_4, "Subject 4", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_4", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_4, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_5, "Subject 5", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_5", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_5, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="col-md-offset-2 col-md-10">
+                                                    <input type="submit" value="Save" class="btn btn-success" />
+                                                </div>
+                                            </div>
+                                        }
+                                        else if (ViewBag.totalsubj == 6)
+                                        {
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_1, "Subject 1", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_1, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_2, "Subject 2", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_2", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_2, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_3, "Subject 3", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_3", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_3, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_4, "Subject 4", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_4", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_4, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_5, "Subject 5", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_5", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_5, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_5, "Subject 6", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_6", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_6, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="col-md-offset-2 col-md-10">
+                                                    <input type="submit" value="Save" class="btn btn-success" />
+                                                </div>
+                                            </div>
+
+                                        }
+                                        else if (ViewBag.totalsubj == 7)
+                                        {
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_1, "Subject 1", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_1, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_2, "Subject 2", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_2", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_2, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_3, "Subject 3", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_3", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_3, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_4, "Subject 4", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_4", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_4, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_5, "Subject 5", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_5", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_5, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.subject_5, "Subject 6", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("subject_6", new SelectList(ViewBag.subj, "subject_name", "subject_name"), "Select Subject", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.subject_6, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="col-md-offset-2 col-md-10">
+                                                    <input type="submit" value="Save" class="btn btn-success" />
+                                                </div>
+                                            </div>
+
+
+                                        }
+
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_3, "Subject 3", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_3", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_3, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
-
-    }
-    else if (ViewBag.totalsub == 4)
-    {
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_1, "Subject 1", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_1, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_2, "Subject 2", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_2", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_2, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_3, "Subject 3", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_3", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_3, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_4, "Subject 4", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_4", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_4, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
-
-    }
-    else if (ViewBag.totalsub == 5)
-    {
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_1, "Subject 1", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_1, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_2, "Subject 2", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_2", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_2, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_3, "Subject 3", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_3", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_3, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_4, "Subject 4", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_4", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_4, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_5, "Subject 5", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_5", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_5, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
-    }
-    else if (ViewBag.totalsubj == 6)
-    {
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_1, "Subject 1", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_1, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_2, "Subject 2", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_2", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_2, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_3, "Subject 3", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_3", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_3, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_4, "Subject 4", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_4", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_4, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_5, "Subject 5", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_5", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_5, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_5, "Subject 6", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_6", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_6, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
-
-    }
-    else if (ViewBag.totalsubj == 7)
-    {
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_1, "Subject 1", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_1, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_2, "Subject 2", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_2", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_2, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_3, "Subject 3", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_3", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_3, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_4, "Subject 4", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_4", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_4, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_5, "Subject 5", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_5", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_5, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.subject_5, "Subject 6", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("subject_6", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
-                @Html.ValidationMessageFor(model => model.subject_6, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
-
-
-    }
+    </div>
 </div>
-}
+    <!-- Basic Tables end -->

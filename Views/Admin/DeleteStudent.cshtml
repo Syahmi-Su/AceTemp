@@ -5,86 +5,115 @@
     Layout = "~/Views/Shared/navBarAdmin.cshtml";
 }
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Student</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.student_name)
-        </dt>
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
 
-        <dd>
-            @Html.DisplayFor(model => model.student_name)
-        </dd>
+    th, td {
+        padding: 5px;
+        text-align: left;
+    }
+</style>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.student_cname)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.student_cname)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.student_package)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.student_package)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.student_dob)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.student_dob)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.student_gender)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.student_gender)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.student_category)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.student_category)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.student_year)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.student_year)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.parent_ic)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.parent_ic)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Confirm Delete" class="btn btn-warning" style="margin:auto;display:block;" onclick="return confirm('Student Deleted successfully !!');" />
-
+<div class="app-content content">
+    <div class="content-wrapper">
+        <div class="content-wrapper-before"></div>
+        <div class="content-header row">
+            <div class="content-header-left col-md-4 col-12 mb-2">
+                <h3 class="content-header-title">Students</h3>
+            </div>
+            <div class="content-header-right col-md-8 col-12">
+                <div class="breadcrumbs-top float-md-right">
+                    <div class="breadcrumb-wrapper mr-1">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="/Admin/StudentList">Students</a>
+                            </li>
+                            <li class="breadcrumb-item active">
+                                Manage Students <i class="la la-long-arrow-right"></i> Delete Student
+                            </li>
+                        </ol>
+                    </div>
+                </div>
             </div>
         </div>
-    }
+        <div class="content-body">
+            <!-- Basic Tables start -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Delete Student</h4>
+                            <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                            <div class="heading-elements">
+                                <ul class="list-inline mb-0">
+                                    <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                    <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                    <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card-content collapse show">
+                            <div class="card-body">
+                                <h3 style="text-align:center">Are you sure you want to delete this?</h3>
+                                <div>
+                                    <hr />
+                                    <table style="width:100%">
+                                        <tr>
+                                            <th>@Html.DisplayNameFor(model => model.student_name)</th>
+                                            <td>@Html.DisplayFor(model => model.student_name)</td>
+                                        </tr>
+                                        <tr>
+                                            <th>@Html.DisplayNameFor(model => model.student_cname):</th>
+                                            <td>@Html.DisplayFor(model => model.student_cname)</td>
+                                        </tr>
+                                        <tr>
+                                            <th>@Html.DisplayNameFor(model => model.student_package)</th>
+                                            <td> @Html.DisplayFor(model => model.student_package)</td>
+                                        </tr>
+                                        <tr>
+                                            <th>@Html.DisplayNameFor(model => model.student_dob)</th>
+                                            <td> @Html.DisplayFor(model => model.student_dob)</td>
+                                        </tr>
+                                        <tr>
+                                            <th>@Html.DisplayNameFor(model => model.student_gender)</th>
+                                            <td> @Html.DisplayFor(model => model.student_gender)</td>
+                                        </tr>
+                                        <tr>
+                                            <th>@Html.DisplayNameFor(model => model.student_category)</th>
+                                            <td> @Html.DisplayFor(model => model.student_category)</td>
+                                        </tr>
+                                        <tr>
+                                            <th>@Html.DisplayNameFor(model => model.student_year)</th>
+                                            <td> @Html.DisplayFor(model => model.student_year)</td>
+                                        </tr>
+                                        <tr>
+                                            <th>@Html.DisplayNameFor(model => model.parent_ic)</th>
+                                            <td> @Html.DisplayFor(model => model.parent_ic)</td>
+                                        </tr>
+                                    </table>
+
+                                    @using (Html.BeginForm())
+                                    {
+                                        @Html.AntiForgeryToken()
+
+                                        <div class="form-actions no-color">
+                                            <div class="col-md-offset-2  text-center">
+                                                <input type="submit" value="Confirm Delete" class="btn btn-danger" onclick="return confirm('Student Deleted successfully !!');" />
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<!-- Basic Tables end -->
