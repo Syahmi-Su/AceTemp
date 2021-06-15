@@ -20,8 +20,7 @@
     <meta name="keywords" content="admin template, Chameleon admin template, dashboard template, gradient admin template, responsive admin template, webapp, eCommerce dashboard, analytic dashboard">
     <meta name="author" content="ThemeSelect">
     <title> Admin - Pusat Tuisyen Madani </title>
-    <link rel="apple-touch-icon" href="~/Content/theme-assets/images/logo/ACElogo-triangle.png">
-    <link rel="shortcut icon" type="image/x-icon" href="~/Content/theme-assets/images/logo/ACElogo-triangle.ico">
+    <link rel="shortcut icon" type="image/png" href="~/Content/theme-assets/images/logo/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700" rel="stylesheet">
     <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
     <!-- BEGIN VENDOR CSS-->
@@ -59,7 +58,7 @@
                         <li class="dropdown dropdown-notification nav-item">
                             <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-mail">             </i></a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <div class="arrow_box_right"><a class="dropdown-item" href="#"><i class="ft-book"></i> Read Mail</a><a class="dropdown-item" href="#"><i class="ft-bookmark"></i> Read Later</a><a class="dropdown-item" href="#"><i class="ft-check-square"></i> Mark all Read       </a></div>
+                                <div class="arrow_box_right"><a class="dropdown-item" href="/Outstanding/Index"><i class="la la-envelope"></i> Send Email</a></div>
                             </div>
                         </li>
                         <li class="dropdown dropdown-user nav-item">
@@ -67,7 +66,7 @@
                             <div class="dropdown-menu dropdown-menu-right">
                                 <div class="arrow_box_right">
                                     <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><span class="user-name text-bold-700 ml-1">Admin</span></span></a>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="ft-user"></i> Edit Profile</a><a class="dropdown-item" href="#"><i class="ft-mail"></i> My Inbox</a><a class="dropdown-item" href="#"><i class="ft-check-square"></i> Task</a><a class="dropdown-item" href="#"><i class="ft-message-square"></i> Chats</a>
+
                                     <div class="dropdown-divider"></div><a class="dropdown-item" href="@Url.Action("Logout","Login")"><i class="ft-power"></i> Logout</a>
                                 </div>
                             </div>
@@ -81,14 +80,10 @@
     <!-- ///////////////////////////START SIDEBAR/////////////////////////////////////////////////-->
     <div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true" data-img="~/Content/theme-assets/images/backgrounds/02.jpg">
         <div class="navbar-header">
-            <ul class="nav navbar-nav flex-row">
+            <ul class="nav navbar-nav flex-row" style="height: 100px; width: 200px; padding-left: 35px;">
                 <li class="nav-item mr-auto">
                     <a class="navbar-brand" href="/Admin/AdminDashboard">
-                        <img class="brand-logo" src="~/Content/theme-assets/images/logo/ACElogo-triangle.png" />
-                        <h3 class="brand-text">
-                            PUSAT TUISYEN <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            MADANI
-                        </h3>
+                        <img class="brand-logo" style="height:80px; width:160px;" src="/Content/theme-assets/images/logo/ACElogo-triangle.png">
                     </a>
                 </li>
                 <li class="nav-item d-md-none"><a class="nav-link close-navbar"><i class="ft-x"></i></a></li>
@@ -210,85 +205,85 @@
                                     {
                                         @Html.AntiForgeryToken()
 
-                                    <div class="form-horizontal">
-                                        <hr />
-                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.student_ic, "Student IC", htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.student_ic, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.student_ic, "", new { @class = "text-danger" })
+                                        <div class="form-horizontal">
+                                            <hr />
+                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.student_ic, "Student IC", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.student_ic, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.student_ic, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.student_name, "Student Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.student_name, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.student_name, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.student_cname, "Student Name (Chinese)", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.student_cname, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.student_cname, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.student_gender, "Gender", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownListFor(model => model.student_gender, new SelectList(new[] { "Male", "Female" }), "Select Gender", new { @class = "form-control" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.student_dob, "Date of Birth", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.student_dob, "{0:dd/MM/yyyy}", new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.student_category, "Category", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownListFor(model => model.student_category, new SelectList(new[] { "Primary", "Secondary" }), "Select Category", new { @class = "form-control" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.student_year, "Study Year", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownListFor(model => model.student_year, new SelectList(new[] { "Primary 1", "Primary 2", "Primary 3", "Primary 4", "Primary 5", "Primary 6", "Form 1", "Form 2", "Form 3", "Form 4", "Form 5" }), "Select Study Year", new { @class = "form-control" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.student_package, "Student Package", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("student_package", new SelectList(ViewBag.packs, "package_id", "package_desc"), "Select Student Package", new { @class = "form-control" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.parent_ic, "Parent IC", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("parent_ic", new SelectList(ViewBag.data, "parents_ic", "parents_name"), "Select Parent", new { @class = "form-control" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="col-md-offset-2 col-md-10">
+                                                    <input type="submit" value="Next" style="margin:auto;display:block;" class="btn btn-warning" onclick="return confirm('Are you sure want to save proceed ?');" />
+                                                    &nbsp;
+                                                    <!--<input type="submit" href="/Admin/StudentList" value="Cancel" style="margin:auto;display:block;" class="btn btn-danger" />-->
+                                                </div>
                                             </div>
                                         </div>
-
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.student_name, "Student Name", htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.student_name, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.student_name, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.student_cname, "Student Name (Chinese)", htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.student_cname, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.student_cname, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.student_gender, "Gender", htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.DropDownListFor(model => model.student_gender, new SelectList(new[] { "Male", "Female" }), "Select Gender", new { @class = "form-control" })
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.student_dob, "Date of Birth", htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.student_dob, "{0:dd/MM/yyyy}", new { htmlAttributes = new { @class = "form-control", @type = "date" } })
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.student_category, "Category", htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.DropDownListFor(model => model.student_category, new SelectList(new[] { "Primary", "Secondary" }), "Select Category", new { @class = "form-control" })
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.student_year, "Study Year", htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.DropDownListFor(model => model.student_year, new SelectList(new[] { "Primary 1", "Primary 2", "Primary 3", "Primary 4", "Primary 5", "Primary 6", "Form 1", "Form 2", "Form 3", "Form 4", "Form 5" }), "Select Study Year", new { @class = "form-control" })
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.student_package, "Student Package", htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.DropDownList("student_package", new SelectList(ViewBag.packs, "package_id", "package_desc"), "Select Student Package", new { @class = "form-control" })
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.parent_ic, "Parent IC", htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.DropDownList("parent_ic", new SelectList(ViewBag.data, "parents_ic", "parents_name"), "Select Parent", new { @class = "form-control" })
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <div class="col-md-offset-2 col-md-10">
-                                                <input type="submit" value="Next" style="margin:auto;display:block;" class="btn btn-warning" onclick="return confirm('Are you sure want to save changes?');" />
-                                                &nbsp;
-                                                <!--<input type="submit" href="/Admin/StudentList" value="Cancel" style="margin:auto;display:block;" class="btn btn-danger" />-->
-                                            </div>
-                                        </div>
-                                    </div>
                                     }
                                 </div>
                             </div>
@@ -296,6 +291,7 @@
                     </div>
                 </div>
             </div>
+            <a style="float:left;" class="btn btn-outline-purple btn-sm" href="@Url.Action("StudentList", "Admin")">BACK TO LIST</a>
         </div>
     </div>
     <!-- Basic Tables end -->
@@ -313,33 +309,13 @@
     </footer>
 
     <!-- ///////////////////////////END FOOTER/////////////////////////////////////////////////-->
-    <!-- BEGIN VENDOR JS-->
     <script src="~/Content/theme-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
-    <!-- BEGIN VENDOR JS-->
-    <!-- BEGIN PAGE VENDOR JS-->
-    <script src="~/Content/theme-assets/vendors/js/charts/chartist.min.js" type="text/javascript"></script>
-    <!-- END PAGE VENDOR JS-->
-    <!-- BEGIN CHAMELEON  JS-->
     <script src="~/Content/theme-assets/js/core/app-menu-lite.js" type="text/javascript"></script>
     <script src="~/Content/theme-assets/js/core/app-lite.js" type="text/javascript"></script>
-    <!-- END CHAMELEON  JS-->
-    <!-- BEGIN PAGE LEVEL JS-->
-    <script src="~/Content/theme-assets/js/scripts/pages/dashboard-lite.js" type="text/javascript"></script>
-    <!-- END PAGE LEVEL JS-->
-    <!-- ///////////////////////////start JS from ASSETS/////////////////////////////////////////////////-->
     <script src="~/Content/assets/js/modernizr.min.js"></script>
     <script src="~/Content/assets/js/jquery.min.js"></script>
     <script src="~/Content/assets/js/moment.min.js"></script>
 
-    <script src="~/Content/assets/js/popper.min.js"></script>
-    <script src="~/Content/assets/js/bootstrap.min.js"></script>
-
-    <script src="~/Content/assets/js/detect.js"></script>
-    <script src="~/Content/assets/js/fastclick.js"></script>
-    <script src="~/Content/assets/js/jquery.blockUI.js"></script>
-    <script src="~/Content/assets/js/jquery.nicescroll.js"></script>-->
-    <!-- App js -->
-    <script src="~/Content/assets/js/admin.js"></script>
 
     <!-- BEGIN Java Script for this page -->
     <script src="~/Content/assets/plugins/chart.js/Chart.min.js"></script>

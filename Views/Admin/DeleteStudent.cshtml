@@ -45,7 +45,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Delete Student</h4>
+                            <h4 class="card-title">Delete Student Details</h4>
                             <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                             <div class="heading-elements">
                                 <ul class="list-inline mb-0">
@@ -59,7 +59,7 @@
 
                         <div class="card-content collapse show">
                             <div class="card-body">
-                                <h3 style="text-align:center">Are you sure you want to delete this?</h3>
+                                <h3 style="color:red">Are you sure you want to DELETE this student ?</h3>
                                 <div>
                                     <hr />
                                     <table style="width:100%">
@@ -103,7 +103,7 @@
 
                                         <div class="form-actions no-color">
                                             <div class="col-md-offset-2  text-center">
-                                                <input type="submit" value="Confirm Delete" class="btn btn-danger" onclick="return confirm('Student Deleted successfully !!');" />
+                                                <input type="submit" value="Confirm Delete" class="btn btn-danger" style="margin:auto;display:block;" onclick="return confirm('Are you sure want to delete this?');" />
                                             </div>
                                         </div>
                                     }
@@ -114,6 +114,7 @@
                 </div>
             </div>
         </div>
+        <a style="float:left;" class="btn btn-outline-purple btn-sm" href="@Url.Action("StudentList", "Admin")">BACK TO LIST</a>
     </div>
 </div>
 <!-- Basic Tables end -->
