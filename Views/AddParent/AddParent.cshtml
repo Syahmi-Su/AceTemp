@@ -1,6 +1,7 @@
 ﻿@model AceTC.Models.Parent
 
 @{ Layout = null;}
+
 @{
     ViewBag.Title = "AddParent";
 
@@ -9,7 +10,6 @@
         Response.Redirect("~/Login/Index");
     }
 }
-
 
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
@@ -22,7 +22,7 @@
     <meta name="author" content="ThemeSelect">
     <title> Admin - Pusat Tuisyen Madani </title>
     <link rel="apple-touch-icon" href="~/Content/theme-assets/images/logo/ACElogo-triangle.png">
-    <link rel="shortcut icon" type="image/x-icon" href="~/Content/theme-assets/images/logo/ACElogo-triangle.ico">
+    <link rel="shortcut icon" type="image/png" href="~/Content/theme-assets/images/logo/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700" rel="stylesheet">
     <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
     <!-- BEGIN VENDOR CSS-->
@@ -40,6 +40,21 @@
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
     <!-- END Custom CSS-->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $(document).tooltip();
+        });
+    </script>
+    <style>
+        label {
+            display: inline-block;
+            width: 5em;
+        }
+    </style>
 </head>
 
 
@@ -205,90 +220,99 @@
                                 </div>
                             </div>
 
-                            <div class="card-header">
-                            </div>
                             <div class="card-content collapse show">
                                 <div class="card-body">
                                     @using (Html.BeginForm())
                                     {
                                         @Html.AntiForgeryToken()
 
+                                        <div class="form-horizontal">
+                                            <h4>Parent</h4>
+                                            <hr />
 
-                                    <div class="form-horizontal">
-                                        <h4>Parent</h4>
-                                        <hr />
-                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.parents_ic, "Parent IC", htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.parents_ic, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.parents_ic, "", new { @class = "text-danger" })
+                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.parents_ic, "Parent IC", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.parents_ic, new { htmlAttributes = new { @class = "form-control", title = " *input IC Numbers with dash '-' eg: XXXXXX-XX-XXXX" } })
+                                                    @Html.ValidationMessageFor(model => model.parents_ic, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
 
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.parents_name, "Parent Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.parents_name, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.parents_name, "", new { @class = "text-danger" })
+
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.parents_pass, "Password", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.parents_pass, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.parents_pass, "", new { @class = "text-danger" })
+
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.confirmPass, "Confirm Password", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.confirmPass, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.confirmPass, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.parents_phone, "Parent Contact Number", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.parents_phone, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.parents_phone, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.parents_email, "Parent Email", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.parents_email, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.parents_email, "", new { @class = "text-danger" })
+
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.parents_address, "Parent Address", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.parents_address, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.parents_address, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+
+                                            @if (ViewBag.msg != null)
+                                            {
+                                                <div class="alert alert-success"> @ViewBag.msg </div>
+                                            }
+
+
+                                            @if (ViewBag.Error != null)
+                                            {
+                                                <div class="alert alert-danger">  @ViewBag.Error  </div>
+                                            }
+
+
+
+                                            <div class="form-group">
+                                                <div class="col-md-offset-2 col-md-10">
+                                                    <input type="submit" value="Create Parent" style="margin:auto;display:block;" class="btn btn-info" onclick="return confirm('Are you sure want to submit?');" />
+                                                </div>
                                             </div>
                                         </div>
-
-
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.parents_name, "Parent Name", htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.parents_name, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.parents_name, "", new { @class = "text-danger" })
-
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.parents_pass, "Password", htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.parents_pass, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.parents_pass, "", new { @class = "text-danger" })
-
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.confirmPass, "Confirm Password", htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.confirmPass, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.confirmPass, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.parents_phone, "Parent Contact Number", htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.parents_phone, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.parents_phone, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.parents_email, "Parent Email", htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.parents_email, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.parents_email, "", new { @class = "text-danger" })
-
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.parents_address, "Parent Address", htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.parents_address, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.parents_address, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <div class="col-md-offset-2 col-md-10">
-                                                <input type="submit" value="Create Parent" style="margin:auto;display:block;" class="btn btn-info" onclick="return confirm('Are you sure want to submit?');" />
-                                            </div>
-                                        </div>
-                                    </div>
                                     }
                                 </div>
                             </div>
@@ -312,34 +336,24 @@
         </div>
     </footer>
 
-    <!-- ///////////////////////////END FOOTER/////////////////////////////////////////////////-->
-    <!-- BEGIN VENDOR JS-->
+    <script src="~/Scripts/jquery-1.11.3.min.js"></script>
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    <link href="~/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+
+    <script src="https://lipis.github.io/bootstrap-sweetalert/lib/sweet-alert.js"></script>
+    <link href="~/Content/sweetalert/sweet-alert.css" rel="stylesheet" />
+
     <script src="~/Content/theme-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
-    <!-- BEGIN VENDOR JS-->
-    <!-- BEGIN PAGE VENDOR JS-->
-    <script src="~/Content/theme-assets/vendors/js/charts/chartist.min.js" type="text/javascript"></script>
-    <!-- END PAGE VENDOR JS-->
-    <!-- BEGIN CHAMELEON  JS-->
     <script src="~/Content/theme-assets/js/core/app-menu-lite.js" type="text/javascript"></script>
     <script src="~/Content/theme-assets/js/core/app-lite.js" type="text/javascript"></script>
-    <!-- END CHAMELEON  JS-->
-    <!-- BEGIN PAGE LEVEL JS-->
-    <script src="~/Content/theme-assets/js/scripts/pages/dashboard-lite.js" type="text/javascript"></script>
-    <!-- END PAGE LEVEL JS-->
-    <!-- ///////////////////////////start JS from ASSETS/////////////////////////////////////////////////-->
     <script src="~/Content/assets/js/modernizr.min.js"></script>
     <script src="~/Content/assets/js/jquery.min.js"></script>
     <script src="~/Content/assets/js/moment.min.js"></script>
 
-    <script src="~/Content/assets/js/popper.min.js"></script>
-    <script src="~/Content/assets/js/bootstrap.min.js"></script>
-
-    <script src="~/Content/assets/js/detect.js"></script>
-    <script src="~/Content/assets/js/fastclick.js"></script>
-    <script src="~/Content/assets/js/jquery.blockUI.js"></script>
-    <script src="~/Content/assets/js/jquery.nicescroll.js"></script>-->
-    <!-- App js -->
-    <script src="~/Content/assets/js/admin.js"></script>
 
     <!-- BEGIN Java Script for this page -->
     <script src="~/Content/assets/plugins/chart.js/Chart.min.js"></script>
@@ -349,8 +363,6 @@
     <script src="~/Content/assets/plugins/counterup/jquery.counterup.min.js"></script>
     dataTabled data
     <script src="~/Content/assets/data/data_datatables.js"></script>
-    <!-- ///////////////////////////end JS from ASSETS/////////////////////////////////////////////////-->
-
 
 
 </body>

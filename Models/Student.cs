@@ -11,17 +11,39 @@ namespace AceTC.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Student
     {
+        [Required(ErrorMessage = "Student IC Required")]
+        [StringLength(14, MinimumLength = 14, ErrorMessage = "Please enter IC number with dash *eg : XXXXX-XX-XXXX")]
+        [DisplayName("Student IC")]
         public string student_ic { get; set; }
+
+        [Required(ErrorMessage = "Student Name Required")]
+        [DisplayName("Student Name")]
         public string student_name { get; set; }
+
+        [DisplayName("Student Name (Chinese)")]
         public string student_cname { get; set; }
+
+        [DisplayName("Package")]
         public int student_package { get; set; }
+
+        [DisplayName("Date of Birth")]
         public System.DateTime student_dob { get; set; }
+
+        [DisplayName("Student Gender")]
         public string student_gender { get; set; }
+
+        [DisplayName("Student Category")]
         public string student_category { get; set; }
+
+        [DisplayName("Student Year")]
         public string student_year { get; set; }
+
+        [DisplayName("Parent IC")]
         public string parent_ic { get; set; }
     }
 }

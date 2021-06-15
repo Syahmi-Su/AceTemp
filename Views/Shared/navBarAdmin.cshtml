@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -98,7 +97,7 @@
 
                     </ul>
                 </li>
-                <li class="nav-item">
+                <li class="active">
                     <a href="#"><i class="la la-group"></i><span class="menu-title" data-i18n="">Students</span></a>
                     <ul class="list-unstyled">
                         <li>
@@ -106,7 +105,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class=" nav-item">
+                <li class="nav-item">
                     <a href="#"><i class="la la-leanpub"></i><span class="menu-title" data-i18n="">Subjects</span></a>
                     <ul class="list-unstyled">
                         <li>
@@ -114,7 +113,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class=" active">
+                <li class=" nav-item">
                     <a href="#"><i class="la la-files-o"></i><span class="menu-title" data-i18n="">Tuition Packages</span></a>
                     <ul class="list-unstyled">
                         <li>
@@ -153,66 +152,9 @@
     </div>
     <!-- ///////////////////////////END SIDEBAR/////////////////////////////////////////////////-->
 
-    <div class="app-content content">
-        <div class="content-wrapper">
-            <div class="content-wrapper-before"></div>
-            <div class="content-header row">
-                <div class="content-header-left col-md-4 col-12 mb-2">
-                    <h3 class="content-header-title">Outstanding</h3>
-                </div>
-                <div class="content-header-right col-md-8 col-12">
-                    <div class="breadcrumbs-top float-md-right">
-                        <div class="breadcrumb-wrapper mr-1">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="/Outstanding/Index">Outstanding</a>
-                                </li>
-                                <li class="breadcrumb-item active">
-                                    Manage Outstanding Payment
-                                </li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="content-body">
-                <!-- Basic Tables start -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Outstanding Payment Details</h4>
-                                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
-                                <div class="heading-elements">
-                                    <ul class="list-inline mb-0">
-                                        <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
-                                        <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
-                                        <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
 
-                                    </ul>
-                                </div>
-                            </div>
+    @RenderBody()
 
-                            <div class="card-header">
-                                <button class="btn btn-success btn-sm" onclick="javascript: fnExcelReport('dataTable', 'data')" style="float: right;"><i class="la la-file-excel-o"></i>&nbsp; Download</button>
-                            </div>
-                            <div class="card-content collapse show">
-                                <div class="card-body">
-                                    <div class="card-content collapse show">
-                                        <div class="card-body">
-
-                                            @RenderBody()
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                                </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>    <!-- Basic Tables end -->
     <!-- ///////////////////////////START FOOTER/////////////////////////////////////////////////-->
 
 
@@ -264,6 +206,9 @@
     dataTabled data
     <script src="~/Content/assets/data/data_datatables.js"></script>
     <!-- ///////////////////////////end JS from ASSETS/////////////////////////////////////////////////-->
+
+
+
 </body>
 </html>
 
