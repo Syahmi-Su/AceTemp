@@ -75,7 +75,7 @@
                         <li class="dropdown dropdown-notification nav-item">
                             <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-mail">             </i></a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <div class="arrow_box_right"><a class="dropdown-item" href="#"><i class="ft-book"></i> Read Mail</a><a class="dropdown-item" href="#"><i class="ft-bookmark"></i> Read Later</a><a class="dropdown-item" href="#"><i class="ft-check-square"></i> Mark all Read       </a></div>
+                                <div class="arrow_box_right"><a class="dropdown-item" href="/Outstanding/Index"><i class="la la-envelope"></i> Send Email</a></div>
                             </div>
                         </li>
                         <li class="dropdown dropdown-user nav-item">
@@ -83,7 +83,7 @@
                             <div class="dropdown-menu dropdown-menu-right">
                                 <div class="arrow_box_right">
                                     <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><span class="user-name text-bold-700 ml-1">Admin</span></span></a>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="ft-user"></i> Edit Profile</a><a class="dropdown-item" href="#"><i class="ft-mail"></i> My Inbox</a><a class="dropdown-item" href="#"><i class="ft-check-square"></i> Task</a><a class="dropdown-item" href="#"><i class="ft-message-square"></i> Chats</a>
+
                                     <div class="dropdown-divider"></div><a class="dropdown-item" href="@Url.Action("Logout","Login")"><i class="ft-power"></i> Logout</a>
                                 </div>
                             </div>
@@ -97,14 +97,10 @@
     <!-- ///////////////////////////START SIDEBAR/////////////////////////////////////////////////-->
     <div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true" data-img="~/Content/theme-assets/images/backgrounds/02.jpg">
         <div class="navbar-header">
-            <ul class="nav navbar-nav flex-row">
+            <ul class="nav navbar-nav flex-row" style="height: 100px; width: 200px; padding-left: 35px;">
                 <li class="nav-item mr-auto">
                     <a class="navbar-brand" href="/Admin/AdminDashboard">
-                        <img class="brand-logo" src="~/Content/theme-assets/images/logo/ACElogo-triangle.png" />
-                        <h3 class="brand-text">
-                            PUSAT TUISYEN <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            MADANI
-                        </h3>
+                        <img class="brand-logo" style="height:80px; width:160px;" src="/Content/theme-assets/images/logo/ACElogo-triangle.png">
                     </a>
                 </li>
                 <li class="nav-item d-md-none"><a class="nav-link close-navbar"><i class="ft-x"></i></a></li>
@@ -233,6 +229,7 @@
                                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                                             <div class="form-group">
                                                 @Html.LabelFor(model => model.parents_ic, "Parent IC", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <small class="text-muted">eg:<i style="color:red"> XXXXXX-XX-XXXX</i></small>
                                                 <div class="col-md-10">
                                                     @Html.EditorFor(model => model.parents_ic, new { htmlAttributes = new { @class = "form-control", title = " *input IC Numbers with dash '-' eg: XXXXXX-XX-XXXX" } })
                                                     @Html.ValidationMessageFor(model => model.parents_ic, "", new { @class = "text-danger" })
@@ -278,6 +275,7 @@
 
                                             <div class="form-group">
                                                 @Html.LabelFor(model => model.parents_email, "Parent Email", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <small class="text-muted">eg:<i style="color:red"> someone@example.com</i></small>
                                                 <div class="col-md-10">
                                                     @Html.EditorFor(model => model.parents_email, new { htmlAttributes = new { @class = "form-control" } })
                                                     @Html.ValidationMessageFor(model => model.parents_email, "", new { @class = "text-danger" })
@@ -320,6 +318,7 @@
                     </div>
                 </div>
             </div>
+            <a style="float:left;" class="btn btn-outline-purple btn-sm" href="@Url.Action("ParentList", "Admin")">BACK TO LIST</a>
         </div>
     </div>
     <!-- Basic Tables end -->
@@ -353,6 +352,8 @@
     <script src="~/Content/assets/js/modernizr.min.js"></script>
     <script src="~/Content/assets/js/jquery.min.js"></script>
     <script src="~/Content/assets/js/moment.min.js"></script>
+
+
 
 
     <!-- BEGIN Java Script for this page -->
