@@ -16,7 +16,11 @@ namespace AceTC.Models
 
     public partial class Parent
     {
+        [Required(ErrorMessage = "Parent IC Required")]
+        [StringLength(14, MinimumLength = 14, ErrorMessage = "Please enter IC number with dash *eg : XXXXX-XX-XXXX")]
         public string parents_ic { get; set; }
+
+        [Required(ErrorMessage = "Parent Name Required")]
         public string parents_name { get; set; }
 
         [Required(ErrorMessage = "Please Enter Password")]
@@ -24,15 +28,21 @@ namespace AceTC.Models
         [DisplayName("Password")]
         public string parents_pass { get; set; }
 
-        [Required(ErrorMessage = "Password Not Match!")]
+        [Required(ErrorMessage = "Confirm Password Required")]
         [DataType(DataType.Password)]
         [DisplayName("Confirm Password")]
         [Compare("parents_pass", ErrorMessage = "The entered passwords do not match.")]
         public string confirmPass { get; set; }
 
-        
+        [Display(Name = "Email address")]
+        [Required(ErrorMessage = "The email address is required")]
+        [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string parents_email { get; set; }
+
+        [Required(ErrorMessage = "Parent contact number required")]
         public string parents_phone { get; set; }
+
+        [Required(ErrorMessage = "Parent address required")]
         public string parents_address { get; set; }
     }
 }
