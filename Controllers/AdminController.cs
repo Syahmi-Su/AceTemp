@@ -107,7 +107,7 @@ namespace AceTC.Controllers
             var fee = p.package_price;
 
             Payment pay = db.Payments.Where(x => x.student_ic == student.student_ic).FirstOrDefault();
-            pay.payment_fee = p.package_price;
+            pay.payment_fee =fee ;
             pay.ref_num = "ACE";
             pay.status_id = 1;
             pay.confirmation_date = DateTime.Now;

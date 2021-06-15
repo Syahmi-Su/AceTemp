@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "editStudentList";
-    Layout = "~/Views/Shared/navBar.cshtml";
+    Layout = "~/Views/Shared/navBarAdmin.cshtml";
 }
 
 
@@ -20,7 +20,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_1, "Subject 1", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_1, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -36,7 +36,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_1, "Subject 1", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_1, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -44,7 +44,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_2, "Subject 2", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_2", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_2", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_2, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -60,7 +60,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_1, "Subject 1", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_1, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -68,7 +68,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_2, "Subject 2", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_2", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_2", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_2, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -76,7 +76,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_3, "Subject 3", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_3", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_3", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_3, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -93,7 +93,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_1, "Subject 1", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_1, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -101,7 +101,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_2, "Subject 2", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_2", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_2", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_2, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -109,7 +109,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_3, "Subject 3", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_3", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_3", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_3, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -117,7 +117,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_4, "Subject 4", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_4", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_4", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_4, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -134,7 +134,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_1, "Subject 1", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_1, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -142,7 +142,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_2, "Subject 2", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_2", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_2", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_2, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -150,7 +150,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_3, "Subject 3", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_3", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_3", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_3, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -158,7 +158,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_4, "Subject 4", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_4", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_4", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_4, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -166,7 +166,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_5, "Subject 5", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_5", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_5", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_5, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -182,7 +182,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_1, "Subject 1", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_1, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -190,7 +190,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_2, "Subject 2", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_2", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_2", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_2, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -198,7 +198,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_3, "Subject 3", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_3", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_3", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_3, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -206,7 +206,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_4, "Subject 4", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_4", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_4", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_4, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -214,7 +214,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_5, "Subject 5", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_5", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_5", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_5, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -222,7 +222,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_5, "Subject 6", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_6", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_6", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_6, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -239,7 +239,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_1, "Subject 1", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_1", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_1, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -247,7 +247,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_2, "Subject 2", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_2", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_2", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_2, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -255,7 +255,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_3, "Subject 3", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_3", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_3", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_3, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -263,7 +263,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_4, "Subject 4", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_4", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_4", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_4, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -271,7 +271,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_5, "Subject 5", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_5", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_5", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_5, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -279,7 +279,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subject_5, "Subject 6", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("subject_6", new SelectList(ViewBag.subj, "subject_code", "subject_name"))
+                @Html.DropDownList("subject_6", new SelectList(ViewBag.subj, "subject_name", "subject_name"))
                 @Html.ValidationMessageFor(model => model.subject_6, "", new { @class = "text-danger" })
             </div>
         </div>
