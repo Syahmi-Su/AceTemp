@@ -223,9 +223,11 @@
                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                                         @Html.HiddenFor(model => model.confirmation_id)
                                         @Html.HiddenFor(model => model.filename)
+                                        @Html.HiddenFor(model => model.payment_feedetails)
+
 
                                         <div class="form-group">
-                                            @Html.LabelFor(model => model.parent_ic, "Parent IC", htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.LabelFor(model => model.parent_ic, "Parent Name", htmlAttributes: new { @class = "control-label col-md-2" })
                                             <div class="col-md-10">
                                                 @Html.DropDownList("parent_ic", new SelectList(ViewBag.data, "parents_ic", "parents_name"))
                                             </div>
@@ -240,7 +242,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            @Html.LabelFor(model => model.payment_fee, "Payment Fee", htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.LabelFor(model => model.payment_fee, "Payment Fee (RM)", htmlAttributes: new { @class = "control-label col-md-2" })
                                             <div class="col-md-10">
                                                 @Html.EditorFor(model => model.payment_fee, new { htmlAttributes = new { @class = "form-control" } })
                                                 @Html.ValidationMessageFor(model => model.payment_fee, "", new { @class = "text-danger" })
@@ -283,14 +285,6 @@
                                             @Html.LabelFor(model => model.payment_detail, "Payment Details", htmlAttributes: new { @class = "control-label col-md-2" })
                                             <div class="col-md-10">
                                                 @Html.DropDownList("payment_detail", new SelectList(ViewBag.packs, "package_desc", "package_desc"))
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.payment_feedetails, "Month Fee", htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.payment_feedetails, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.payment_feedetails, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
 
