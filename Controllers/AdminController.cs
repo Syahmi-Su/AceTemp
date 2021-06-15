@@ -25,12 +25,12 @@ namespace AceTC.Controllers
                 int totstud = (from tot in entity.Students select tot.student_ic).Count();
                 int primarystud = (from tot in entity.Students where tot.student_category == "Primary" select tot.student_ic).Count();
                 int secondarystud = (from tot in entity.Students where tot.student_category == "Secondary" select tot.student_ic).Count();
-                int totsubj = (from tot in entity.Subjects select tot.subject_code).Count();
-                int totpack = (from tot in entity.Packages select tot.package_id).Count();
-                int totouts = (from tot in entity.Outstandings select tot.O_ID).Count();
+                int totsubj = (from tot in entity.Outstandings select tot.O_ID).Count();
+                var totpack = entity.Payments.Where(x => x.status_id == 1 || x.status_id == 7).Sum(y => y.payment_fee);
+                int totouts = (from tot in entity.Payments where (tot.status_id == 2) select tot.confirmation_id).Count();
                 int pendpay = (from tot in entity.Payments where (tot.status_id == 1||tot.status_id == 4) select tot.confirmation_id).Count();
 
-                var ppaytotal = entity.Payments.Where(x => x.status_id == 2).Sum(y => y.payment_fee);
+                var ppaytotal = entity.Payments.Where(x => x.status_id == 7 || x.status_id == 2).Sum(y => y.payment_fee);
                 
 
                 ViewData["totalstudents"] = totstud;
