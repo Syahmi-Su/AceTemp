@@ -119,7 +119,7 @@ namespace AceTC.Controllers
         }
 
 
-        public ActionResult ApprovalAll ()
+        public ActionResult ApprovalAll()
         {
             AceDBEntities db = new AceDBEntities();
             List<Student> studentlist = db.Students.ToList();
@@ -130,14 +130,31 @@ namespace AceTC.Controllers
             var multiple = from o in studentlist
                            join s in package on o.student_package equals s.package_id
                            join p in parent on o.parent_ic equals p.parents_ic
-                           select new MultipleClass { packagedetails = s, studentdetails = o , parentdetails = p};
+                           select new MultipleClass { packagedetails = s, studentdetails = o, parentdetails = p };
+
+
+
+
+
+
+            /*  return RedirectToAction("Index", "Outstanding");*/
+
+            return View(multiple);
+        }
+
+        [HttpPost]
+        [ActionName("ApprovalAll")]
+        public ActionResult ConfirmApprove()
+        {
+            AceDBEntities db = new AceDBEntities();
+            List<Student> studentlist = db.Students.ToList();
+            List<Package> package = db.Packages.ToList();
+            List<Payment> paymentlist = db.Payments.ToList();
 
             var generate = from s in studentlist
                            join p in package on s.student_package equals p.package_id
                            join py in paymentlist on s.student_ic equals py.student_ic
                            select new MultipleClass { packagedetails = p, studentdetails = s, paymentdetails = py };
-
-
 
             DateTime nextMonth = DateTime.Now.AddMonths(1);
             DateTime todayDate = DateTime.Now;
@@ -152,7 +169,7 @@ namespace AceTC.Controllers
                 newpay.O_month = DateTime.Now;
                 newpay.O_pID = oldpay.studentdetails.parent_ic;
                 newpay.O_fees = oldpay.paymentdetails.payment_fee;
-                newpay.O_remark = "test ";
+                newpay.O_remark = "Monthly Payment";
                 newpay.O_month = nextMonth;
                 newpay.O_status = 1;
 
@@ -162,59 +179,13 @@ namespace AceTC.Controllers
 
 
             }
-          /*  return RedirectToAction("Index", "Outstanding");*/
-
-            return View(multiple);
-        }
-    
-/*    [HttpPost]
-    public ActionResult ApprovalAll()
-        {
-            AceDBEntities db = new AceDBEntities();
-            List<Student> studentlist = db.Students.ToList();
-            List<Parent> parent = db.Parents.ToList();
-            List<Package> package = db.Packages.ToList();
-            List<Payment> paymentlist = db.Payments.ToList();
-
-             var generate = from s in studentlist
-                            join p in package on s.student_package equals p.package_id
-                            join py in paymentlist on s.student_ic equals py.student_ic
-                            select new MultipleClass { packagedetails = p, studentdetails = s, paymentdetails = py };
-
-            
-            
-            DateTime nextMonth = DateTime.Now.AddMonths(1);
-            DateTime todayDate = DateTime.Now;
-            DateTime payDate = new DateTime(todayDate.Year, todayDate.Month, 14);
-            int result = DateTime.Compare(todayDate, payDate);
 
 
-            foreach (var oldpay in generate)
-            {
-                
-                Outstanding newpay = new Outstanding();
-                newpay.O_month = DateTime.Now;
-                newpay.O_pID = oldpay.parentdetails.parents_ic;
-                newpay.O_fees = oldpay.paymentdetails.payment_fee;
-                newpay.O_remark = "test ";
-                newpay.O_month = nextMonth;
-                newpay.O_status = 1;
-
-
-                db.Outstandings.Add(newpay);
-                db.SaveChanges();
-
-
-            }
             return RedirectToAction("Index", "Outstanding");
 
-            return View();
-        }*/
 
-
-
-
-
-
+        }
     }
+
+  
 }

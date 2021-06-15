@@ -19,14 +19,6 @@ namespace AceTC.Controllers
 
         public ActionResult AdminDashboard()
         {
-            //AceDBEntities entity = new AceDBEntities();
-            //CountClass cnt = new CountClass()
-            //{
-            //    studentcount = entity.Students.Count(),
-            //    packagecount = entity.Packages.Count(),
-            //    paymentcount = entity.Payments.Count(),
-            //};
-            //return View(cnt);
 
             using (AceDBEntities entity = new AceDBEntities())
             {
@@ -38,6 +30,8 @@ namespace AceTC.Controllers
                 int totouts = (from tot in entity.Outstandings select tot.O_ID).Count();
                 int pendpay = (from tot in entity.Payments where tot.status_id == 1 select tot.confirmation_id).Count();
 
+                var ppaytotal = entity.Payments.Where(x => x.status_id == 2).Sum(y => y.payment_fee);
+                
 
                 ViewData["totalstudents"] = totstud;
                 var totalstudents = ViewData["totalstudents"];
@@ -57,7 +51,7 @@ namespace AceTC.Controllers
                 ViewData["totaloutstandings"] = totouts;
                 var totaloutstandings = ViewData["totaloutstandings"];
 
-                ViewData["pendingpayment"] = pendpay;
+                ViewData["payment"] = ppaytotal;
                 var pendingpayment = ViewData["pendingpayment"];
 
             }

@@ -10,11 +10,14 @@
     }
 }
 
+
+
 <input type="submit" value="Save" class="btn btn-default" />
 <br />
 <br />
 <p class="card-text"></p>
 <p><span class="text-bold-600"></span></p>
+
 <div class="table-responsive">
     <table id="dataTable" class="table table-bordered table-hover display" style="width:100%">
         <thead>
@@ -30,23 +33,47 @@
             @foreach (var student in Model)
             {
 
-            <tr>
-                <td>@student.parentdetails.parents_name</td>
-                <td>@student.studentdetails.student_name</td>
-                @if (@student.studentdetails.student_cname == null)
-                {
-                    <td>N/A</td>
-                }
-                else
-                {
-                    <td>@student.studentdetails.student_cname</td>
-                }
-                <td>@student.packagedetails.package_desc</td>
-                <td>@student.packagedetails.package_price</td>
-            </tr>
+                <tr>
+                    <td>@student.parentdetails.parents_name</td>
+                    <td>@student.studentdetails.student_name</td>
+                    @if (@student.studentdetails.student_cname == null)
+                    {
+                        <td>N/A</td>
+                    }
+                    else
+                    {
+                        <td>@student.studentdetails.student_cname</td>
+                    }
+                    <td>@student.packagedetails.package_desc</td>
+                    <td>@student.packagedetails.package_price</td>
+                </tr>
 
             }
 
         </tbody>
     </table>
+    @using (Html.BeginForm("ApprovalAll", "Outstanding", FormMethod.Post, new { enctype = "multipart/form-data", id = "CreateReportForm" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <div class="col-md-offset-2  text-center">
+                <h6 style="text-align:center">Click confirm to generate new bill for next month</h6>
+                <input type="submit" value="Yes" class="btn btn-success" id="buttonYes" onclick="return confirm('Bill Generated Succesfully');" />
+                <input type="submit" value="Cancel" class="btn btn-danger" id="buttonCancel" />
+            </div>
+        </div>
+    }
 </div>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#buttonYes").click(function () {
+            $('form#CreateReportForm').attr({ action: "OutstandingController/ConfrimApprove" });
+        });
+        $("#buttonCancel").click(function () {
+            $('form#CreateReportForm').attr({ action: "OutstandingController/Index" });
+        });
+    });
+
+</script>
