@@ -144,7 +144,7 @@
                     <a href="#"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Outstanding</span></a>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="/Oustanding/Index">Manage <br />Outstanding <br />Payment</a>
+                            <a href="/Outstanding/Index">Manage <br />Outstanding <br />Payment</a>
                         </li>
                     </ul>
                 </li>
@@ -158,17 +158,17 @@
             <div class="content-wrapper-before"></div>
             <div class="content-header row">
                 <div class="content-header-left col-md-4 col-12 mb-2">
-                    <h3 class="content-header-title">Tuition Packages</h3>
+                    <h3 class="content-header-title">Outstanding</h3>
                 </div>
                 <div class="content-header-right col-md-8 col-12">
                     <div class="breadcrumbs-top float-md-right">
                         <div class="breadcrumb-wrapper mr-1">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
-                                    <a href="/Admin/PackageList">Tuition Packages</a>
+                                    <a href="/Outstanding/Index">Outstanding</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Manage Tuition Packages
+                                    Manage Outstanding Payment
                                 </li>
                             </ol>
                         </div>
@@ -176,11 +176,43 @@
                 </div>
             </div>
             <div class="content-body">
-                @RenderBody();
+                <!-- Basic Tables start -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Outstanding Payment Details</h4>
+                                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                                <div class="heading-elements">
+                                    <ul class="list-inline mb-0">
+                                        <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                        <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                        <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card-header">
+                                <button class="btn btn-success btn-sm" onclick="javascript: fnExcelReport('dataTable', 'data')" style="float: right;"><i class="la la-file-excel-o"></i>&nbsp; Download</button>
+                            </div>
+                            <div class="card-content collapse show">
+                                <div class="card-body">
+                                    <div class="card-content collapse show">
+                                        <div class="card-body">
+
+                                            @RenderBody()
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                </div>
+                    </div>
+                </div>
             </div>
+
         </div>
-    </div>
-    <!-- Basic Tables end -->
+    </div>    <!-- Basic Tables end -->
     <!-- ///////////////////////////START FOOTER/////////////////////////////////////////////////-->
 
 
