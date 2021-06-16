@@ -40,7 +40,7 @@ namespace AceTC.Controllers
             pay.student_ic = student.student_ic;
             pay.parent_ic = student.parent_ic;
             pay.payment_fee = p.package_price;
-            pay.ref_num = "ACE";
+            pay.ref_num = "ACE" + pay.confirmation_id;
             pay.status_id = 1;
             pay.confirmation_date = DateTime.Now;
             pay.payment_date = DateTime.Now;

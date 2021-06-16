@@ -143,8 +143,7 @@ namespace AceTC.Controllers
         }
 
         [HttpPost]
-        [ActionName("ApprovalAll")]
-        public ActionResult ConfirmApprove()
+        public ActionResult ApprovalAll(string submitButton)
         {
             AceDBEntities db = new AceDBEntities();
             List<Student> studentlist = db.Students.ToList();
@@ -161,27 +160,34 @@ namespace AceTC.Controllers
             DateTime payDate = new DateTime(todayDate.Year, todayDate.Month, 14);
             int result = DateTime.Compare(todayDate, payDate);
 
-
-            foreach (var oldpay in generate)
+            if(submitButton == "Yes")
             {
+                foreach (var oldpay in generate)
+                {
 
-                Outstanding newpay = new Outstanding();
-                newpay.O_month = DateTime.Now;
-                newpay.O_pID = oldpay.studentdetails.parent_ic;
-                newpay.O_fees = oldpay.paymentdetails.payment_fee;
-                newpay.O_remark = "Monthly Payment";
-                newpay.O_month = nextMonth;
-                newpay.O_status = 1;
+                    Outstanding newpay = new Outstanding();
+                    newpay.O_month = DateTime.Now;
+                    newpay.O_pID = oldpay.studentdetails.parent_ic;
+                    newpay.O_fees = oldpay.paymentdetails.payment_fee;
+                    newpay.O_remark = "Monthly Payment";
+                    newpay.O_month = nextMonth;
+                    newpay.O_status = 1;
 
 
-                db.Outstandings.Add(newpay);
-                db.SaveChanges();
+                    db.Outstandings.Add(newpay);
+                    db.SaveChanges();
 
+
+                }
+                return RedirectToAction("Index", "Outstanding");
 
             }
+            else
+                return RedirectToAction("Index", "Outstanding");
 
 
-            return RedirectToAction("Index", "Outstanding");
+
+
 
 
         }
