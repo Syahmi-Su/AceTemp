@@ -187,7 +187,6 @@
                                                     <th>Package Taken</th>
                                                     <th>Date Issued</th>
                                                     <th>Payment Date</th>
-                                                    <th>Month</th>
                                                     <th>Fee (RM)</th>
                                                     <th>Status</th>
                                                     <th>Payment Proof</th>
@@ -207,7 +206,6 @@
                                                     <td>@student.paymentdetails.payment_detail</td>
                                                     <td>@student.paymentdetails.confirmation_date.ToShortDateString()</td>
                                                     <td>@student.paymentdetails.payment_date.ToShortDateString()</td>
-                                                    <td>@student.paymentdetails.payment_feedetails</td>
                                                     @if (result < 0 || result == 0)
                                                     {
                                                         double price = student.paymentdetails.payment_fee - 20;
@@ -294,8 +292,6 @@
                     title: "Date Issued"
                 }, {
                     title: "Payment Date"
-                }, {
-                    title: "Month"
                 }, {
                     title: "Fee (RM)"
                 }, {

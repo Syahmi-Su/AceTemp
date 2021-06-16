@@ -213,7 +213,6 @@
                                                     <th>Ref Num</th>
                                                     <th>Payment Date</th>
                                                     <th>Payment Detail</th>
-                                                    <th>Month</th>
                                                     <th>Payment Fee (RM)</th>
                                                     <th>Proof</th>
                                                     <th>Status</th>
@@ -232,7 +231,6 @@
                                                     <td>@payment.paymentdetails.ref_num</td>
                                                     <td>@payment.paymentdetails.payment_date.ToShortDateString()</td>
                                                     <td>@payment.studentregister.subject_1 &nbsp;@payment.studentregister.subject_2 &nbsp;@payment.studentregister.subject_3 &nbsp;@payment.studentregister.subject_4 &nbsp;@payment.studentregister.subject_5 &nbsp;@payment.studentregister.subject_6 &nbsp;@payment.studentregister.subject_7 &nbsp;</td>                                                    
-                                                    <td>@payment.paymentdetails.payment_feedetails</td>
                                                     <td>@payment.paymentdetails.payment_fee</td>
                                                     @if (payment.paymentdetails.filename == null)
                                                     {
@@ -319,8 +317,6 @@
                     title: "Payment Date"
                 }, {
                     title: "Payment Detail"
-                }, {
-                    title: "Month"
                 }, {
                     title: "Payment Fee"
                 }, {

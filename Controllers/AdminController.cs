@@ -54,8 +54,18 @@ namespace AceTC.Controllers
                 ViewData["payment"] = ppaytotal;
                 var pendingpayment = ViewData["pendingpayment"];
 
+                List<Outstanding> outs = entity.Outstandings.ToList();
+                List<Status> stats = entity.Status.ToList();
+
+                var stattable = from o in outs
+                                join s in stats on o.O_status equals s.status_id
+                                select new MultipleClass { statusdetails = s, outstandingdetails = o };
+
+                return View(stattable);
+
             }
-            return View();
+
+
         }
 
         // GET: STUDENT
