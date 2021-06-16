@@ -242,15 +242,15 @@
                                         </table>
                                     </div>
 <div>
-    @using (Html.BeginForm("ApprovalAll", "Outstanding", FormMethod.Post, new { enctype = "multipart/form-data", id = "CreateReportForm" }))
+    @using (Html.BeginForm("ApprovalAll", "Outstanding", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
             <div class="col-md-offset-2  text-center">
                 <h6 style="text-align:center">Click confirm to generate new bill for next month</h6>
-                <input type="submit" value="Yes" class="btn btn-success" id="buttonYes" onclick="return confirm('Bill Generated Succesfully');" />
-                <input type="submit" value="Cancel" class="btn btn-danger" id="buttonCancel" />
+                <input type="submit" name="submitButton" value="Yes" class="btn btn-success" id="buttonYes" onclick="return confirm('Bill Generated Succesfully');" />
+                <input type="submit" name="submitButton" value="Cancel" class="btn btn-danger" id="buttonCancel" />
             </div>
         </div>
     }
@@ -325,10 +325,10 @@
 
     $(document).ready(function () {
         $("#buttonYes").click(function () {
-            $('form#CreateReportForm').attr({ action: "OutstandingController/ConfrimApprove" });
+            $('form#CreateReportForm').attr({ action: "Outstanding/ApprovalAll" });
         });
         $("#buttonCancel").click(function () {
-            $('form#CreateReportForm').attr({ action: "OutstandingController/Index" });
+            $('form#CreateReportForm').attr({ action: "Outstanding/Index" });
         });
     });
 
