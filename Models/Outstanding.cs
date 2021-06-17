@@ -20,5 +20,6 @@ namespace AceTC.Models
         public double O_fees { get; set; }
         public string O_remark { get; set; }
         public int O_status { get; set; }
+        public string O_stu { get; set; }
     }
 }

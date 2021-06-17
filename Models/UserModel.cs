@@ -17,5 +17,6 @@ namespace AceTC.Models
         public string Password { get; set; }
 
         public string LoginErrorMsg { get; set; }
+        public string Status { get; set; }
     }
 }
