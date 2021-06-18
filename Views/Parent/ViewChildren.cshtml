@@ -127,7 +127,7 @@
                     <a href="#"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">User Manual</span></a>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="/Parent/ParentManual">Manual</a>
+                            <a href="@Url.Action("GetPdf", "Parent", new { fileName = "ParentManual.pdf" })" target="_blank">Manual</a>
                         </li>
                     </ul>
                 </li>
@@ -191,6 +191,8 @@
                                             <tbody>
                                                 @foreach (var item in Model)
                                                 {
+                                                    if (item.studentdetails.student_status == "Active")
+                                                    {
                                                     <tr>
                                                         <td>@item.studentdetails.student_ic</td>
                                                         <td>@item.studentdetails.student_name</td>
@@ -206,6 +208,7 @@
                                                         <td>@item.packagedetails.package_desc</td>
                                                         <td><a class='btn btn-info' href='@Url.Action("ViewChildrenDetails", "Parent", new { id = item.studentdetails.student_ic })'>View Details</a></td>
                                                     </tr>
+                                                    }
                                                 }
                                             </tbody>
                                         </table>

@@ -4454,6 +4454,7 @@
     <Content Include="assetslp\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="assetslp\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="assetslp\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\files\ParentManual.pdf" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -200,85 +200,92 @@
                                     {
                         @Html.AntiForgeryToken()
 
-                                        <div class="form-horizontal">
-                                            <hr />
-                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.student_ic, "Student IC", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.EditorFor(model => model.student_ic, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.ValidationMessageFor(model => model.student_ic, "", new { @class = "text-danger" })
-                                                </div>
+                                    <div class="form-horizontal">
+                                        <hr />
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.student_ic, "Student IC", htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-10">
+                                                @Html.EditorFor(model => model.student_ic, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.student_ic, "", new { @class = "text-danger" })
                                             </div>
+                                        </div>
 
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.student_name, "Student Name", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.EditorFor(model => model.student_name, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.ValidationMessageFor(model => model.student_name, "", new { @class = "text-danger" })
-                                                </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.student_name, "Student Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-10">
+                                                @Html.EditorFor(model => model.student_name, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.student_name, "", new { @class = "text-danger" })
                                             </div>
+                                        </div>
 
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.student_cname, "Student Name (Chinese)", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.EditorFor(model => model.student_cname, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.ValidationMessageFor(model => model.student_cname, "", new { @class = "text-danger" })
-                                                </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.student_cname, "Student Name (Chinese)", htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-10">
+                                                @Html.EditorFor(model => model.student_cname, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.student_cname, "", new { @class = "text-danger" })
                                             </div>
+                                        </div>
 
 
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.student_gender, "Gender", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.DropDownListFor(model => model.student_gender, new SelectList(new[] { "Male", "Female" }), "Select Gender", new { @class = "form-control" })
-                                                </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.student_gender, "Gender", htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-10">
+                                                @Html.DropDownListFor(model => model.student_gender, new SelectList(new[] { "Male", "Female" }), "Select Gender", new { @class = "form-control" })
                                             </div>
+                                        </div>
 
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.student_dob, "Date of Birth", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.EditorFor(model => model.student_dob, "{0:dd/MM/yyyy}", new { htmlAttributes = new { @class = "form-control", @type = "date" } })
-                                                </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.student_dob, "Date of Birth", htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-10">
+                                                @Html.EditorFor(model => model.student_dob, "{0:dd/MM/yyyy}", new { htmlAttributes = new { @class = "form-control", @type = "date" } })
                                             </div>
+                                        </div>
 
 
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.student_category, "Category", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.DropDownListFor(model => model.student_category, new SelectList(new[] { "Primary", "Secondary" }), "Select Category", new { @class = "form-control" })
-                                                </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.student_category, "Category", htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-10">
+                                                @Html.DropDownListFor(model => model.student_category, new SelectList(new[] { "Primary", "Secondary" }), "Select Category", new { @class = "form-control" })
                                             </div>
+                                        </div>
 
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.student_year, "Study Year", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.DropDownListFor(model => model.student_year, new SelectList(new[] { "Primary 1", "Primary 2", "Primary 3", "Primary 4", "Primary 5", "Primary 6", "Form 1", "Form 2", "Form 3", "Form 4", "Form 5" }), "Select Study Year", new { @class = "form-control" })
-                                                </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.student_year, "Study Year", htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-10">
+                                                @Html.DropDownListFor(model => model.student_year, new SelectList(new[] { "Primary 1", "Primary 2", "Primary 3", "Primary 4", "Primary 5", "Primary 6", "Form 1", "Form 2", "Form 3", "Form 4", "Form 5" }), "Select Study Year", new { @class = "form-control" })
                                             </div>
+                                        </div>
 
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.student_package, "Student Package", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.DropDownList("student_package", new SelectList(ViewBag.packs, "package_id", "package_desc"), "Select Student Package", new { @class = "form-control" })
-                                                </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.student_package, "Student Package", htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-10">
+                                                @Html.DropDownList("student_package", new SelectList(ViewBag.packs, "package_id", "package_desc"), "Select Student Package", new { @class = "form-control" })
                                             </div>
+                                        </div>
 
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.parent_ic, "Parent IC", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.DropDownList("parent_ic", new SelectList(ViewBag.data, "parents_ic", "parents_name"), "Select Parent", new { @class = "form-control" })
-                                                </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.parent_ic, "Parent IC", htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-10">
+                                                @Html.DropDownList("parent_ic", new SelectList(ViewBag.data, "parents_ic", "parents_name"), "Select Parent", new { @class = "form-control" })
                                             </div>
+                                        </div>
 
-                                            <div class="form-group">
-                                                <div class="col-md-offset-2 col-md-10">
-                                                    <input type="submit" value="Next" style="margin:auto;display:block;" class="btn btn-warning" onclick="return confirm('Are you sure want to save changes?');" />
-                                                    &nbsp;
-                                                    <!--<input type="submit" href="/Admin/StudentList" value="Cancel" style="margin:auto;display:block;" class="btn btn-danger" />-->
-                                                </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.student_status, "Status", htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-10">
+                                                @Html.DropDownListFor(model => model.student_status, new SelectList(new[] { "Active", "Inactive" }), "Select Status", new { @class = "form-control" })
                                             </div>
-                                        </div>}
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-offset-2 col-md-10">
+                                                <input type="submit" value="Next" style="margin:auto;display:block;" class="btn btn-warning" onclick="return confirm('Are you sure want to save changes?');" />
+                                                &nbsp;
+                                                <!--<input type="submit" href="/Admin/StudentList" value="Cancel" style="margin:auto;display:block;" class="btn btn-danger" />-->
+                                            </div>
+                                        </div>
+                                    </div>}
                                 </div>
                             </div>
                         </div>

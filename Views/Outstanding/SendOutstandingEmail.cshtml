@@ -61,7 +61,7 @@
                                 <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">             <span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><i></i></span></a>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <div class="arrow_box_right">
-                                        <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><span class="user-name text-bold-700 ml-1">Admin</span></span></a>
+                                        <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><span class="user-name text-bold-700 ml-1">Hi, @Session["admin_id"].ToString()</span></span></a>
 
                                         <div class="dropdown-divider"></div><a class="dropdown-item" href="@Url.Action("Logout","Login")"><i class="ft-power"></i> Logout</a>
                                     </div>

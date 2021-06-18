@@ -22,6 +22,7 @@
           <Property Name="O_fees" Type="float" Nullable="false" />
           <Property Name="O_remark" Type="nvarchar" MaxLength="250" Nullable="false" />
           <Property Name="O_status" Type="int" Nullable="false" />
+          <Property Name="O_stu" Type="nvarchar" MaxLength="14" Nullable="false" />
         </EntityType>
         <EntityType Name="Package">
           <Key>
@@ -43,6 +44,7 @@
           <Property Name="parents_email" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="parents_phone" Type="nvarchar" MaxLength="11" Nullable="false" />
           <Property Name="parents_address" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="parents_status" Type="nvarchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="Payment">
           <Key>
@@ -80,6 +82,7 @@
           <Property Name="student_category" Type="nvarchar" MaxLength="11" Nullable="false" />
           <Property Name="student_year" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="parent_ic" Type="nvarchar" MaxLength="14" Nullable="false" />
+          <Property Name="student_status" Type="nvarchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="studRegister">
           <Key>
@@ -118,34 +121,16 @@
     <edmx:ConceptualModels>
       <Schema Namespace="AceDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="AceDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Admins" EntityType="AceDBModel.Admin" />
-          <EntitySet Name="Outstandings" EntityType="AceDBModel.Outstanding" />
           <EntitySet Name="Packages" EntityType="AceDBModel.Package" />
-          <EntitySet Name="Parents" EntityType="AceDBModel.Parent" />
           <EntitySet Name="Payments" EntityType="AceDBModel.Payment" />
           <EntitySet Name="Status" EntityType="AceDBModel.Status" />
-          <EntitySet Name="Students" EntityType="AceDBModel.Student" />
           <EntitySet Name="studRegisters" EntityType="AceDBModel.studRegister" />
           <EntitySet Name="Subjects" EntityType="AceDBModel.Subject" />
+          <EntitySet Name="Outstandings" EntityType="AceDBModel.Outstanding" />
+          <EntitySet Name="Parents" EntityType="AceDBModel.Parent" />
+          <EntitySet Name="Students" EntityType="AceDBModel.Student" />
+          <EntitySet Name="Admins" EntityType="AceDBModel.Admin" />
         </EntityContainer>
-        <EntityType Name="Admin">
-          <Key>
-            <PropertyRef Name="admin_id" />
-          </Key>
-          <Property Name="admin_id" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="admin_pass" Type="String" Nullable="false" MaxLength="258" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Outstanding">
-          <Key>
-            <PropertyRef Name="O_ID" />
-          </Key>
-          <Property Name="O_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="O_month" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="O_pID" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
-          <Property Name="O_fees" Type="Double" Nullable="false" />
-          <Property Name="O_remark" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="O_status" Type="Int32" Nullable="false" />
-        </EntityType>
         <EntityType Name="Package">
           <Key>
             <PropertyRef Name="package_id" />
@@ -155,17 +140,6 @@
           <Property Name="package_category" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="total_subject" Type="Int32" Nullable="false" />
           <Property Name="package_price" Type="Double" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Parent">
-          <Key>
-            <PropertyRef Name="parents_ic" />
-          </Key>
-          <Property Name="parents_ic" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
-          <Property Name="parents_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="parents_pass" Type="String" Nullable="false" MaxLength="257" FixedLength="false" Unicode="true" />
-          <Property Name="parents_email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="parents_phone" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
-          <Property Name="parents_address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Payment">
           <Key>
@@ -190,20 +164,6 @@
           <Property Name="status_id" Type="Int32" Nullable="false" />
           <Property Name="status_desc" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Student">
-          <Key>
-            <PropertyRef Name="student_ic" />
-          </Key>
-          <Property Name="student_ic" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
-          <Property Name="student_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="student_cname" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="student_package" Type="Int32" Nullable="false" />
-          <Property Name="student_dob" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="student_gender" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="student_category" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
-          <Property Name="student_year" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="parent_ic" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="studRegister">
           <Key>
             <PropertyRef Name="studreg_ic" />
@@ -225,32 +185,58 @@
           <Property Name="subject_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="subject_type" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="Outstanding">
+          <Key>
+            <PropertyRef Name="O_ID" />
+          </Key>
+          <Property Name="O_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="O_month" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="O_pID" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="O_fees" Type="Double" Nullable="false" />
+          <Property Name="O_remark" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="O_status" Type="Int32" Nullable="false" />
+          <Property Name="O_stu" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Parent">
+          <Key>
+            <PropertyRef Name="parents_ic" />
+          </Key>
+          <Property Name="parents_ic" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="parents_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="parents_pass" Type="String" Nullable="false" MaxLength="257" FixedLength="false" Unicode="true" />
+          <Property Name="parents_email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="parents_phone" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="parents_address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="parents_status" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="student_ic" />
+          </Key>
+          <Property Name="student_ic" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="student_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="student_cname" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="student_package" Type="Int32" Nullable="false" />
+          <Property Name="student_dob" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="student_gender" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="student_category" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="student_year" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="parent_ic" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="student_status" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="admin_id" />
+          </Key>
+          <Property Name="admin_id" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="admin_pass" Type="String" Nullable="false" MaxLength="258" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="AceDBModelStoreContainer" CdmEntityContainer="AceDBEntities">
-          <EntitySetMapping Name="Admins">
-            <EntityTypeMapping TypeName="AceDBModel.Admin">
-              <MappingFragment StoreEntitySet="Admin">
-                <ScalarProperty Name="admin_pass" ColumnName="admin_pass" />
-                <ScalarProperty Name="admin_id" ColumnName="admin_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Outstandings">
-            <EntityTypeMapping TypeName="AceDBModel.Outstanding">
-              <MappingFragment StoreEntitySet="Outstanding">
-                <ScalarProperty Name="O_status" ColumnName="O_status" />
-                <ScalarProperty Name="O_remark" ColumnName="O_remark" />
-                <ScalarProperty Name="O_fees" ColumnName="O_fees" />
-                <ScalarProperty Name="O_pID" ColumnName="O_pID" />
-                <ScalarProperty Name="O_month" ColumnName="O_month" />
-                <ScalarProperty Name="O_ID" ColumnName="O_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Packages">
             <EntityTypeMapping TypeName="AceDBModel.Package">
               <MappingFragment StoreEntitySet="Package">
@@ -259,18 +245,6 @@
                 <ScalarProperty Name="package_category" ColumnName="package_category" />
                 <ScalarProperty Name="package_desc" ColumnName="package_desc" />
                 <ScalarProperty Name="package_id" ColumnName="package_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Parents">
-            <EntityTypeMapping TypeName="AceDBModel.Parent">
-              <MappingFragment StoreEntitySet="Parents">
-                <ScalarProperty Name="parents_address" ColumnName="parents_address" />
-                <ScalarProperty Name="parents_phone" ColumnName="parents_phone" />
-                <ScalarProperty Name="parents_email" ColumnName="parents_email" />
-                <ScalarProperty Name="parents_pass" ColumnName="parents_pass" />
-                <ScalarProperty Name="parents_name" ColumnName="parents_name" />
-                <ScalarProperty Name="parents_ic" ColumnName="parents_ic" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -299,21 +273,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Students">
-            <EntityTypeMapping TypeName="AceDBModel.Student">
-              <MappingFragment StoreEntitySet="Student">
-                <ScalarProperty Name="parent_ic" ColumnName="parent_ic" />
-                <ScalarProperty Name="student_year" ColumnName="student_year" />
-                <ScalarProperty Name="student_category" ColumnName="student_category" />
-                <ScalarProperty Name="student_gender" ColumnName="student_gender" />
-                <ScalarProperty Name="student_dob" ColumnName="student_dob" />
-                <ScalarProperty Name="student_package" ColumnName="student_package" />
-                <ScalarProperty Name="student_cname" ColumnName="student_cname" />
-                <ScalarProperty Name="student_name" ColumnName="student_name" />
-                <ScalarProperty Name="student_ic" ColumnName="student_ic" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="studRegisters">
             <EntityTypeMapping TypeName="AceDBModel.studRegister">
               <MappingFragment StoreEntitySet="studRegister">
@@ -334,6 +293,56 @@
                 <ScalarProperty Name="subject_type" ColumnName="subject_type" />
                 <ScalarProperty Name="subject_name" ColumnName="subject_name" />
                 <ScalarProperty Name="subject_code" ColumnName="subject_code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Outstandings">
+            <EntityTypeMapping TypeName="AceDBModel.Outstanding">
+              <MappingFragment StoreEntitySet="Outstanding">
+                <ScalarProperty Name="O_stu" ColumnName="O_stu" />
+                <ScalarProperty Name="O_status" ColumnName="O_status" />
+                <ScalarProperty Name="O_remark" ColumnName="O_remark" />
+                <ScalarProperty Name="O_fees" ColumnName="O_fees" />
+                <ScalarProperty Name="O_pID" ColumnName="O_pID" />
+                <ScalarProperty Name="O_month" ColumnName="O_month" />
+                <ScalarProperty Name="O_ID" ColumnName="O_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Parents">
+            <EntityTypeMapping TypeName="AceDBModel.Parent">
+              <MappingFragment StoreEntitySet="Parents">
+                <ScalarProperty Name="parents_status" ColumnName="parents_status" />
+                <ScalarProperty Name="parents_address" ColumnName="parents_address" />
+                <ScalarProperty Name="parents_phone" ColumnName="parents_phone" />
+                <ScalarProperty Name="parents_email" ColumnName="parents_email" />
+                <ScalarProperty Name="parents_pass" ColumnName="parents_pass" />
+                <ScalarProperty Name="parents_name" ColumnName="parents_name" />
+                <ScalarProperty Name="parents_ic" ColumnName="parents_ic" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="AceDBModel.Student">
+              <MappingFragment StoreEntitySet="Student">
+                <ScalarProperty Name="student_status" ColumnName="student_status" />
+                <ScalarProperty Name="parent_ic" ColumnName="parent_ic" />
+                <ScalarProperty Name="student_year" ColumnName="student_year" />
+                <ScalarProperty Name="student_category" ColumnName="student_category" />
+                <ScalarProperty Name="student_gender" ColumnName="student_gender" />
+                <ScalarProperty Name="student_dob" ColumnName="student_dob" />
+                <ScalarProperty Name="student_package" ColumnName="student_package" />
+                <ScalarProperty Name="student_cname" ColumnName="student_cname" />
+                <ScalarProperty Name="student_name" ColumnName="student_name" />
+                <ScalarProperty Name="student_ic" ColumnName="student_ic" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="AceDBModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="admin_pass" ColumnName="admin_pass" />
+                <ScalarProperty Name="admin_id" ColumnName="admin_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

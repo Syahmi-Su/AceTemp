@@ -64,7 +64,7 @@
                             <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">             <span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><i></i></span></a>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <div class="arrow_box_right">
-                                    <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><span class="user-name text-bold-700 ml-1">Admin</span></span></a>
+                                    <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><span class="user-name text-bold-700 ml-1">Hi, @Session["admin_id"].ToString()</span></span></a>
 
                                     <div class="dropdown-divider"></div><a class="dropdown-item" href="@Url.Action("Logout","Login")"><i class="ft-power"></i> Logout</a>
                                 </div>
@@ -221,6 +221,7 @@
 
                                                     <th>Package Name</th>
                                                     <th>Guardian</th>
+                                                    <th>Status</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -228,31 +229,39 @@
                                                 @foreach (var student in Model)
                                                 {
 
-                                                    <tr>
-                                                        <td>@student.studentdetails.student_ic</td>
-                                                        <td>@student.studentdetails.student_name</td>
-                                                        @if (@student.studentdetails.student_cname == null)
-                                                        {
-                                                            <td>N/A</td>
-                                                        }
-                                                        else
-                                                        {
-                                                            <td>@student.studentdetails.student_cname</td>
-                                                        }
+                                                <tr>
+                                                    <td>@student.studentdetails.student_ic</td>
+                                                    <td>@student.studentdetails.student_name</td>
+                                                    @if (@student.studentdetails.student_cname == null)
+                                                    {
+                                                        <td>N/A</td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>@student.studentdetails.student_cname</td>
+                                                    }
 
-                                                        <td>@student.studentdetails.student_gender</td>
-                                                        <td>@student.studentdetails.student_dob.ToShortDateString()</td>
-                                                        <td>@student.studentdetails.student_category</td>
-                                                        <td>@student.studentdetails.student_year</td>
+                                                    <td>@student.studentdetails.student_gender</td>
+                                                    <td>@student.studentdetails.student_dob.ToShortDateString()</td>
+                                                    <td>@student.studentdetails.student_category</td>
+                                                    <td>@student.studentdetails.student_year</td>
 
-                                                        <td>@student.packagedetails.package_desc</td>
-                                                        <td>@student.parentdetails.parents_name</td>
-                                                        <td>
-                                                            @Html.ActionLink(" Edit", "EditStudentDetails", new { id = student.studentdetails.student_ic }, new { @class = "btn btn-warning fas fa-edit" })
-                                                            &nbsp;&nbsp;
-                                                            @Html.ActionLink(" Delete", "DeleteStudent", new { id = student.studentdetails.student_ic }, new { @class = "btn btn-danger fas fa-trash-alt" })
-                                                        </td>
-                                                    </tr>
+                                                    <td>@student.packagedetails.package_desc</td>
+                                                    <td>@student.parentdetails.parents_name</td>
+                                                    @if (student.studentdetails.student_status == "Active")
+                                                    {
+                                                        <td style='color:green;'><b>@student.studentdetails.student_status</b></td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td style='color:red;'><b>@student.studentdetails.student_status</b></td>
+                                                    }
+                                                    <td>
+                                                        @Html.ActionLink(" Edit", "EditStudentDetails", new { id = student.studentdetails.student_ic }, new { @class = "btn btn-warning fas fa-edit" })
+                                                        &nbsp;&nbsp;
+                                                        @Html.ActionLink(" Delete", "DeleteStudent", new { id = student.studentdetails.student_ic }, new { @class = "btn btn-danger fas fa-trash-alt" })
+                                                    </td>
+                                                </tr>
 
                                                 }
 
@@ -321,6 +330,8 @@
                     title: "Package Name"
                 }, {
                     title: "Guardian"
+                }, {
+                    title: "Status"
                 }, {
                     title: "Action"
                 }]
