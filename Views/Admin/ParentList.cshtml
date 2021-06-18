@@ -219,24 +219,33 @@
                                                     <th>Email</th>
                                                     <th>Phone Number</th>
                                                     <th>Address</th>
+                                                    <th>Status</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 @foreach (var parent in Model)
                                                 {
-                                                    <tr>
-                                                        <td>@parent.parents_ic</td>
-                                                        <td>@parent.parents_name</td>
-                                                        <td>@parent.parents_email</td>
-                                                        <td>@parent.parents_phone</td>
-                                                        <td>@parent.parents_address</td>
-                                                        <td>
-                                                            @Html.ActionLink(" Edit", "EditParentDetails", new { id = parent.parents_ic }, new { @class = "btn btn-warning fas fa-edit" })
-                                                            &nbsp;
-                                                            @Html.ActionLink(" Delete", "DeleteParent", new { id = parent.parents_ic }, new { @class = "btn btn-danger fas fa-trash-alt" })
-                                                        </td>
-                                                    </tr>
+                                                <tr>
+                                                    <td>@parent.parents_ic</td>
+                                                    <td>@parent.parents_name</td>
+                                                    <td>@parent.parents_email</td>
+                                                    <td>@parent.parents_phone</td>
+                                                    <td>@parent.parents_address</td>
+                                                    @if (parent.parents_status=="Active")
+                                                    {
+                                                        <td style='color:green;'><b>@parent.parents_status</b></td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td style='color:red;'><b>@parent.parents_status</b></td>
+                                                    }
+                                                    <td>
+                                                        @Html.ActionLink(" Edit", "EditParentDetails", new { id = parent.parents_ic }, new { @class = "btn btn-warning fas fa-edit" })
+                                                        &nbsp;
+                                                        @Html.ActionLink(" Delete", "DeleteParent", new { id = parent.parents_ic }, new { @class = "btn btn-danger fas fa-trash-alt" })
+                                                    </td>
+                                                </tr>
                                                 }
 
                                             </tbody>
@@ -298,6 +307,8 @@
                     title: "Phone Number"
                 }, {
                     title: "Address"
+                }, {
+                    title: "Status"
                 }, {
                     title: "Action"
                 }

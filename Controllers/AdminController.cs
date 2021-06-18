@@ -52,7 +52,7 @@ namespace AceTC.Controllers
                 var totaloutstandings = ViewData["totaloutstandings"];
 
                 ViewData["payment"] = ppaytotal;
-                var pendingpayment = ViewData["pendingpayment"];
+               var pendingpayment = ViewData["payment"];
 
                 List<Outstanding> outs = entity.Outstandings.ToList();
                 List<Status> stats = entity.Status.ToList();

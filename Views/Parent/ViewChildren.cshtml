@@ -191,6 +191,8 @@
                                             <tbody>
                                                 @foreach (var item in Model)
                                                 {
+                                                    if (item.studentdetails.student_status == "Active")
+                                                    {
                                                     <tr>
                                                         <td>@item.studentdetails.student_ic</td>
                                                         <td>@item.studentdetails.student_name</td>
@@ -206,6 +208,7 @@
                                                         <td>@item.packagedetails.package_desc</td>
                                                         <td><a class='btn btn-info' href='@Url.Action("ViewChildrenDetails", "Parent", new { id = item.studentdetails.student_ic })'>View Details</a></td>
                                                     </tr>
+                                                    }
                                                 }
                                             </tbody>
                                         </table>

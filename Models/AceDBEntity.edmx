@@ -121,7 +121,6 @@
     <edmx:ConceptualModels>
       <Schema Namespace="AceDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="AceDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Admins" EntityType="AceDBModel.Admin" />
           <EntitySet Name="Packages" EntityType="AceDBModel.Package" />
           <EntitySet Name="Payments" EntityType="AceDBModel.Payment" />
           <EntitySet Name="Status" EntityType="AceDBModel.Status" />
@@ -130,14 +129,8 @@
           <EntitySet Name="Outstandings" EntityType="AceDBModel.Outstanding" />
           <EntitySet Name="Parents" EntityType="AceDBModel.Parent" />
           <EntitySet Name="Students" EntityType="AceDBModel.Student" />
+          <EntitySet Name="Admins" EntityType="AceDBModel.Admin" />
         </EntityContainer>
-        <EntityType Name="Admin">
-          <Key>
-            <PropertyRef Name="admin_id" />
-          </Key>
-          <Property Name="admin_id" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="admin_pass" Type="String" Nullable="false" MaxLength="258" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="Package">
           <Key>
             <PropertyRef Name="package_id" />
@@ -231,20 +224,19 @@
           <Property Name="parent_ic" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
           <Property Name="student_status" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="admin_id" />
+          </Key>
+          <Property Name="admin_id" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="admin_pass" Type="String" Nullable="false" MaxLength="258" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="AceDBModelStoreContainer" CdmEntityContainer="AceDBEntities">
-          <EntitySetMapping Name="Admins">
-            <EntityTypeMapping TypeName="AceDBModel.Admin">
-              <MappingFragment StoreEntitySet="Admin">
-                <ScalarProperty Name="admin_pass" ColumnName="admin_pass" />
-                <ScalarProperty Name="admin_id" ColumnName="admin_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Packages">
             <EntityTypeMapping TypeName="AceDBModel.Package">
               <MappingFragment StoreEntitySet="Package">
@@ -343,6 +335,14 @@
                 <ScalarProperty Name="student_cname" ColumnName="student_cname" />
                 <ScalarProperty Name="student_name" ColumnName="student_name" />
                 <ScalarProperty Name="student_ic" ColumnName="student_ic" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="AceDBModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="admin_pass" ColumnName="admin_pass" />
+                <ScalarProperty Name="admin_id" ColumnName="admin_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

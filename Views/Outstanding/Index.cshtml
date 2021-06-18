@@ -68,7 +68,7 @@
                             <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">             <span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><i></i></span></a>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <div class="arrow_box_right">
-                                    <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><span class="user-name text-bold-700 ml-1">Admin</span></span></a>
+                                    <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><span class="user-name text-bold-700 ml-1">Hi, @Session["admin_id"].ToString()</span></span></a>
 
                                     <div class="dropdown-divider"></div><a class="dropdown-item" href="@Url.Action("Logout","Login")"><i class="ft-power"></i> Logout</a>
                                 </div>
@@ -218,7 +218,8 @@
                                                 <tr>
                                                     <th>ID</th>
                                                     <th>Month Issued</th>
-                                                    <th>Parent IC</th>
+                                                    <th>Student Name</th>
+                                                    <th>Parent Name</th>
                                                     <th>Outstanding Fees</th>
                                                     <th>Remark</th>
                                                     <th>Status</th>
@@ -229,19 +230,20 @@
                                                 @foreach (var outstanding in Model)
                                                 {
 
-                                                    <tr>
-                                                        <td>@outstanding.outstandingdetails.O_ID</td>
-                                                        <td>@outstanding.outstandingdetails.O_month.ToString("MMMM / yyyy")</td>
-                                                        <td>@outstanding.outstandingdetails.O_pID</td>
-                                                        <td>@outstanding.outstandingdetails.O_fees</td>
-                                                        <td>@outstanding.outstandingdetails.O_remark</td>
-                                                        <td>@outstanding.statusdetails.status_desc</td>
-                                                        <td>
-                                                            @Html.ActionLink(" Approval", "ApprovalOutstanding", new { id = outstanding.outstandingdetails.O_ID }, new { @class = "btn btn-warning fas fa-trash-alt" })
-                                                            &nbsp;
-                                                            @Html.ActionLink(" Send Email", "SendOutstandingEmail", new { id = outstanding.outstandingdetails.O_ID }, new { @class = "btn btn-light fas fa-trash-alt" })
-                                                        </td>
-                                                    </tr>
+                                                <tr>
+                                                    <td>@outstanding.outstandingdetails.O_ID</td>
+                                                    <td>@outstanding.outstandingdetails.O_month.ToString("MMMM / yyyy")</td>
+                                                    <td>@outstanding.studentdetails.student_name</td>
+                                                    <td>@outstanding.parentdetails.parents_name</td>
+                                                    <td>@outstanding.outstandingdetails.O_fees</td>
+                                                    <td>@outstanding.outstandingdetails.O_remark</td>
+                                                    <td>@outstanding.statusdetails.status_desc</td>
+                                                    <td>
+                                                        @Html.ActionLink(" Approval", "ApprovalOutstanding", new { id = outstanding.outstandingdetails.O_ID }, new { @class = "btn btn-warning fas fa-trash-alt" })
+                                                        &nbsp;
+                                                        @Html.ActionLink(" Send Email", "SendOutstandingEmail", new { id = outstanding.outstandingdetails.O_ID }, new { @class = "btn btn-light fas fa-trash-alt" })
+                                                    </td>
+                                                </tr>
 
                                                 }
 
@@ -300,7 +302,9 @@
                 }, {
                     title: "Month"
                 }, {
-                    title: "Parent"
+                    title: "Student Name"
+                }, {
+                    title: "Parent Name"
                 }, {
                     title: "Fees"
                 }, {

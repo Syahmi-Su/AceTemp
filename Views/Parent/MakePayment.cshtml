@@ -198,7 +198,7 @@
                                                     DateTime todayDate = DateTime.Now;
                                                     DateTime payDate = new DateTime(todayDate.Year, todayDate.Month, 14);
                                                     int result = DateTime.Compare(todayDate, payDate);
-                                                    if (student.statusdetails.status_id == 1 && student.paymentdetails.filename == null)
+                                                    if (student.statusdetails.status_id == 1 && student.paymentdetails.filename == null && student.studentdetails.student_status=="Active")
                                                     {
                                                 <tr>
                                                     <td>@student.paymentdetails.ref_num</td>
