@@ -11,13 +11,22 @@ namespace AceTC.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
+
     public partial class Package
     {
         public int package_id { get; set; }
+
+        [Required(ErrorMessage = "Package descriptions required")]
         public string package_desc { get; set; }
+
+        [Required(ErrorMessage = "Package category required")]
         public string package_category { get; set; }
         public int total_subject { get; set; }
+
+        [Required(ErrorMessage = "Package price required")]
         public double package_price { get; set; }
     }
 }
