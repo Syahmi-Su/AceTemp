@@ -139,9 +139,11 @@ namespace AceTC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "confirmation_id,student_ic,parent_ic,package_id,payment_fee,ref_num,status_id,confirmation_date,payment_date,payment_detail,payment_feedetailss,filename,meal_fee,transport_fee,first_register,lower_discount")] Payment p)
         {
-            double total = p.payment_fee + p.transport_fee + p.first_register + p.meal_fee;
             double discount = (100 - p.lower_discount) / 100;
-            p.payment_fee = total * discount;
+            double discountfee = p.payment_fee * discount;
+            double total = discountfee + p.transport_fee + p.first_register + p.meal_fee;
+            
+            p.payment_fee = total;
             p.confirmation_date = DateTime.Now;
 
             if (ModelState.IsValid)
@@ -239,13 +241,40 @@ namespace AceTC.Controllers
 
             try
             {
-                // TODO: Add update logic here
-                using (AceDBEntities entity = new AceDBEntities())
+                if(payment.status_id == 10)
                 {
-                    entity.Entry(payment).State = EntityState.Modified;
-                    entity.SaveChanges();
+                    Payment newpay = new Payment();
+                    newpay.student_ic = payment.student_ic;
+                    newpay.parent_ic = payment.parent_ic;
+                    newpay.payment_fee = payment.meal_fee;
+                    newpay.ref_num = payment.ref_num;
+                    newpay.status_id = 10;
+                    newpay.confirmation_date = payment.confirmation_date;
+                    newpay.payment_date = DateTime.Now;
+                    newpay.payment_detail = payment.payment_detail;
+                    newpay.payment_feedetails = "00";
+                    payment.status_id = 1;
+                    db.Payments.Add(newpay);
+
+/*                    db.Payments.Remove(payment);*/
+                    db.SaveChanges();
+                    return RedirectToAction("ApprovalList", "Payment");
                 }
-                return RedirectToAction("ApprovalList", "Payment");
+                else
+                {
+                    using (AceDBEntities entity = new AceDBEntities())
+                    {
+
+                        entity.Entry(payment).State = EntityState.Modified;
+                        /*                    Outstanding outs = entity.Outstandings.Where(x => x.O_stu == payment.student_ic).FirstOrDefault();
+                                            db.Outstandings.Remove(outs);*/
+                        entity.SaveChanges();
+                    }
+
+                    db.SaveChanges();
+                    return RedirectToAction("ApprovalList", "Payment");
+                }
+
             }
             catch
             {

@@ -676,8 +676,8 @@ C:\Users\User\Documents\GitHub\AceTemp\bin\roslyn\System.Xml.XPath.XDocument.dll
 C:\Users\User\Documents\GitHub\AceTemp\bin\roslyn\vbc.exe
 C:\Users\User\Documents\GitHub\AceTemp\bin\roslyn\vbc.rsp
 C:\Users\User\Documents\GitHub\AceTemp\bin\roslyn\VBCSCompiler.exe
-C:\Users\User\Documents\GitHub\AceTemp\obj\Debug\AceTC.csprojAssemblyReference.cache
 C:\Users\User\Documents\GitHub\AceTemp\obj\Debug\AceTC.csproj.CoreCompileInputs.cache
 C:\Users\User\Documents\GitHub\AceTemp\obj\Debug\AceTC.csproj.CopyComplete
 C:\Users\User\Documents\GitHub\AceTemp\obj\Debug\AceTC.dll
 C:\Users\User\Documents\GitHub\AceTemp\obj\Debug\AceTC.pdb
+C:\Users\User\Documents\GitHub\AceTemp\obj\Debug\AceTC.csproj.AssemblyReference.cache
