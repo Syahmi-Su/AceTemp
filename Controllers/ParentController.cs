@@ -28,10 +28,11 @@ namespace AceTC.Controllers
             string uid = Session["parents_ic"].ToString();
             List<Student> studentpackage = entity.Students.Where(a => a.parent_ic.Equals(uid)).ToList();
             List<Package> packagename = entity.Packages.ToList();
+            List<Outstanding> outstandingamount = entity.Outstandings.ToList();
             var jointable = from s in studentpackage
-                            join p in packagename on s.student_package equals p.package_id into table1
-                            from p in table1.DefaultIfEmpty()
-                            select new JoinClass { studentdetails = s, packagedetails = p };
+                            join p in packagename on s.student_package equals p.package_id
+                            join o in outstandingamount on s.student_ic equals o.O_stu
+                            select new JoinClass { studentdetails = s, packagedetails = p, outstandinglist = o };
 
             // var list = entity.Students.Where(a => a.parent_ic.Equals(uid));
             //return View(entity.Students.ToList());
