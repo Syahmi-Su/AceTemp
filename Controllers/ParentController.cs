@@ -183,6 +183,12 @@ namespace AceTC.Controllers
 
         }
 
+        public ActionResult GetPdf(string fileName)
+        {
+            string filePath = "~/Content/files/" + fileName;
+            return File(filePath, "application/pdf");
+        }
+
     }
 
 }

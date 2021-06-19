@@ -18,9 +18,11 @@ namespace AceTC.Controllers
             Outstanding addo = new Outstanding();
 
             var par = db.Parents.ToList();
-            if (par != null)
+            var st = db.Students.ToList();
+            if (par != null& st!=null)
             {
                 ViewBag.data = par;
+                ViewBag.stu = st;
 
             }
 

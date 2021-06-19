@@ -20,10 +20,14 @@ namespace AceTC.Controllers
             AceDBEntities entity = new AceDBEntities();
             List<Outstanding> outs = entity.Outstandings.ToList();
             List<Status> stats = entity.Status.ToList();
+            List<Student> stu = entity.Students.ToList();
+            List<Parent> par = entity.Parents.ToList();
 
             var stattable = from o in outs
                             join s in stats on o.O_status equals s.status_id
-                            select new MultipleClass { statusdetails = s, outstandingdetails = o };
+                            join st in stu on o.O_stu equals st.student_ic
+                            join p in par on o.O_pID equals p.parents_ic
+                            select new MultipleClass { statusdetails = s, outstandingdetails = o, studentdetails = st, parentdetails = p };
             return View(stattable);
         }
 
@@ -172,6 +176,7 @@ namespace AceTC.Controllers
                     newpay.O_remark = "Monthly Payment";
                     newpay.O_month = nextMonth;
                     newpay.O_status = 1;
+                    newpay.O_stu = oldpay.studentdetails.student_ic;
 
 
                     db.Outstandings.Add(newpay);

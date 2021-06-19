@@ -17,6 +17,7 @@
     <Property Name="O_fees" Type="float" Nullable="false" />
     <Property Name="O_remark" Type="nvarchar" MaxLength="250" Nullable="false" />
     <Property Name="O_status" Type="int" Nullable="false" />
+    <Property Name="O_stu" Type="nvarchar" MaxLength="14" Nullable="false" />
   </EntityType>
   <EntityType Name="Package">
     <Key>
@@ -38,6 +39,7 @@
     <Property Name="parents_email" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="parents_phone" Type="nvarchar" MaxLength="11" Nullable="false" />
     <Property Name="parents_address" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="parents_status" Type="nvarchar" MaxLength="10" Nullable="false" />
   </EntityType>
   <EntityType Name="Payment">
     <Key>
@@ -75,6 +77,7 @@
     <Property Name="student_category" Type="nvarchar" MaxLength="11" Nullable="false" />
     <Property Name="student_year" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="parent_ic" Type="nvarchar" MaxLength="14" Nullable="false" />
+    <Property Name="student_status" Type="nvarchar" MaxLength="10" Nullable="false" />
   </EntityType>
   <EntityType Name="studRegister">
     <Key>

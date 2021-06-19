@@ -125,6 +125,7 @@
                                             </span>
 
                                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                            
 
                                             <div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
                                                 @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "input100", @type = "text" } })
@@ -139,7 +140,7 @@
                                                 <span class="focus-input100" data-placeholder="Password"></span>
                                             </div>
 
-                                            <div >
+                                            <div>
                                                 <div>
                                                     <label class="field-validation-error" color="red">@Html.DisplayFor(model => model.LoginErrorMsg)</label>
                                                 </div>

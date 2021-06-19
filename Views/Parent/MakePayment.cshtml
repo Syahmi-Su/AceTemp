@@ -128,7 +128,7 @@
                     <a href="#"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">User Manual</span></a>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="/Parent/ParentManual">Manual</a>
+                            <a href="@Url.Action("GetPdf", "Parent", new { fileName = "ParentManual.pdf" })" target="_blank">Manual</a>
                         </li>
                     </ul>
                 </li>
@@ -198,7 +198,7 @@
                                                     DateTime todayDate = DateTime.Now;
                                                     DateTime payDate = new DateTime(todayDate.Year, todayDate.Month, 14);
                                                     int result = DateTime.Compare(todayDate, payDate);
-                                                    if (student.statusdetails.status_id == 1 && student.paymentdetails.filename == null)
+                                                    if (student.statusdetails.status_id == 1 && student.paymentdetails.filename == null && student.studentdetails.student_status=="Active")
                                                     {
                                                 <tr>
                                                     <td>@student.paymentdetails.ref_num</td>

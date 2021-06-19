@@ -18,7 +18,7 @@ namespace AceTC.Models
     {
         [Required(ErrorMessage = "Parent IC Required")]
         [StringLength(14, MinimumLength = 14, ErrorMessage = "Please enter IC number with dash *eg : XXXXX-XX-XXXX")]
-        
+
         [Display(Name = "Parent IC", Description = "Title for your entry")]
         public string parents_ic { get; set; }
 
@@ -46,5 +46,6 @@ namespace AceTC.Models
 
         [Required(ErrorMessage = "Parent address required")]
         public string parents_address { get; set; }
+        public string parents_status { get; set; }
     }
 }
