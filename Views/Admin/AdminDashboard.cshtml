@@ -18,6 +18,8 @@
     var totalpackages = ViewData["totalpackages"];
     var totaloutstandings = ViewData["totaloutstandings"];
     var pendingpayment = ViewData["payment"];
+    var paypend = ViewData["ppayment"];
+
 }
 
 <!DOCTYPE html>
@@ -276,6 +278,64 @@
                 </div>
 
                 <div class="content-body">
+                    <section id="chartjs-pie-charts">
+                        <div class="row">
+                            <!-- Simple Pie Chart -->
+                            <div class="col-md-6 col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Total Student Registered by Category</h4>
+                                        <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                                        <div class="heading-elements">
+                                            <ul class="list-inline mb-0">
+                                                <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                                <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                                <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                                <li><a data-action="close"><i class="ft-x"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-content collapse show">
+                                        <div class="card-body">
+                                            <div class="height-400">
+                                                <canvas id="simple-pie-chart"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Simple Doughnut Chart -->
+                            <div class="col-md-6 col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Count Payment Paid and Pending</h4>
+                                        <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                                        <div class="heading-elements">
+                                            <ul class="list-inline mb-0">
+                                                <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                                <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                                <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                                <li><a data-action="close"><i class="ft-x"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-content collapse show">
+                                        <div class="card-body">
+                                            <div class="height-400">
+                                                <canvas id="simple-doughnut-chart"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- // Pie charts section end -->
+
+                </div>
+
+                <div class="content-body">
                     <!-- Basic Tables start -->
                     <div class="row">
                         <div class="col-12">
@@ -310,37 +370,37 @@
                                                         <th>Outstanding Fees</th>
                                                         <th>Remark</th>
                                                         <th>Status</th>
-@*                                                        <th>Action</th>*@
+                                                        @*                                                        <th>Action</th>*@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     @if (Model.Count() == 0)
                                                     {
-                                                    <tr>
-                                                        <td colspan="9"><div style="text-align: center">No record Found</div></td>
-                                                    </tr>
+                                                        <tr>
+                                                            <td colspan="9"><div style="text-align: center">No record Found</div></td>
+                                                        </tr>
                                                     }
                                                     else
                                                     {
-                                                       foreach (var outstanding in Model)
-                                                       {
+                                                        foreach (var outstanding in Model)
+                                                        {
 
-                                                                <tr>
-                                                                    <td>@outstanding.outstandingdetails.O_ID</td>
-                                                                    <td>@outstanding.outstandingdetails.O_month.ToString("MMMM / yyyy")</td>
-                                                                    <td>@outstanding.outstandingdetails.O_pID</td>
-                                                                    <td>@outstanding.outstandingdetails.O_fees</td>
-                                                                    <td>@outstanding.outstandingdetails.O_remark</td>
-                                                                    <td>@outstanding.statusdetails.status_desc</td>
-@*                                                                    <td>
+                                                            <tr>
+                                                                <td>@outstanding.outstandingdetails.O_ID</td>
+                                                                <td>@outstanding.outstandingdetails.O_month.ToString("MMMM / yyyy")</td>
+                                                                <td>@outstanding.outstandingdetails.O_pID</td>
+                                                                <td>@outstanding.outstandingdetails.O_fees</td>
+                                                                <td>@outstanding.outstandingdetails.O_remark</td>
+                                                                <td>@outstanding.statusdetails.status_desc</td>
+                                                                @*                                                                    <td>
                                                                         @Html.ActionLink(" Approval", "ApprovalOutstanding", new { id = outstanding.outstandingdetails.O_ID }, new { @class = "btn btn-warning fas fa-trash-alt" })
                                                                         &nbsp;
                                                                         @Html.ActionLink(" Send Email", "SendOutstandingEmail", new { id = outstanding.outstandingdetails.O_ID }, new { @class = "btn btn-light fas fa-trash-alt" })
                                                                     </td>*@
-                                                                </tr>
+                                                            </tr>
 
-                                                       }
-                                                      
+                                                        }
+
                                                     }
 
                                                 </tbody>
@@ -358,36 +418,113 @@
             </div>
         </div>
 
-
-        <!-- ///////////////////////////START FOOTER/////////////////////////////////////////////////-->
-
-        <div class="container-fluid">
-            <footer class="footer footer-static footer-light navbar-border navbar-shadow">
-                <div class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
-                    <p class="mt-50 mx-auto footer-text col-lg-12">
-                        Copyright &copy;
-                        <script>document.write(new Date().getFullYear());</script> All rights reserved | Pusat Tuisyen Madani
-                    </p>
-
-                </div>
-            </footer>
-        </div>
+    </div>
 
 
-        <!-- ///////////////////////////END FOOTER/////////////////////////////////////////////////-->
-        <!-- BEGIN VENDOR JS-->
-        <script src="~/Content/theme-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
-        <!-- BEGIN VENDOR JS-->
-        <!-- BEGIN PAGE VENDOR JS-->
-        <script src="~/Content/theme-assets/vendors/js/charts/chartist.min.js" type="text/javascript"></script>
-        <!-- END PAGE VENDOR JS-->
-        <!-- BEGIN CHAMELEON  JS-->
-        <script src="~/Content/theme-assets/js/core/app-menu-lite.js" type="text/javascript"></script>
-        <script src="~/Content/theme-assets/js/core/app-lite.js" type="text/javascript"></script>
-        <!-- END CHAMELEON  JS-->
-        <!-- BEGIN PAGE LEVEL JS-->
-        <script src="~/Content/theme-assets/js/scripts/pages/dashboard-lite.js" type="text/javascript"></script>
-        <!-- END PAGE LEVEL JS-->
+    <!-- ///////////////////////////START FOOTER/////////////////////////////////////////////////-->
+
+    <div class="container-fluid">
+        <footer class="footer footer-static footer-light navbar-border navbar-shadow">
+            <div class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
+                <p class="mt-50 mx-auto footer-text col-lg-12">
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | Pusat Tuisyen Madani
+                </p>
+
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- BEGIN VENDOR JS-->
+    <script src="~/Content/theme-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
+    <!-- BEGIN VENDOR JS-->
+    <!-- BEGIN PAGE VENDOR JS-->
+    <script src="~/Content/theme-assets/vendors/js/charts/chart.min.js" type="text/javascript"></script>
+    <!-- END PAGE VENDOR JS-->
+    <!-- BEGIN CHAMELEON  JS-->
+    <script src="~/Content/theme-assets/js/core/app-menu-lite.js" type="text/javascript"></script>
+    <script src="~/Content/theme-assets/js/core/app-lite.js" type="text/javascript"></script>
+    <!-- END CHAMELEON  JS-->
+
+    <script>
+        // Pie chart
+        // ------------------------------
+        $(window).on("load", function () {
+
+            //Get the context of the Chart canvas element we want to select
+            var ctx = $("#simple-pie-chart");
+
+            // Chart Options
+            var chartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                responsiveAnimationDuration: 500,
+            };
+
+            // Chart Data
+            var chartData = {
+                labels: ["Primary", "Secondary"],
+                datasets: [{
+                    label: "My First dataset",
+                    data: [@primarystudents,@secondarystudents],
+                    backgroundColor: ['#FF9149', '#1E9FF2', ],
+                }]
+            };
+
+            var config = {
+                type: 'pie',
+
+                // Chart Options
+                options: chartOptions,
+
+                data: chartData
+            };
+
+            // Create the chart
+            var pieSimpleChart = new Chart(ctx, config);
+        });
+    </script>
+
+    <script>
+        // Doughnut chart
+        // ------------------------------
+        $(window).on("load", function () {
+
+            //Get the context of the Chart canvas element we want to select
+            var ctx = $("#simple-doughnut-chart");
+
+            // Chart Options
+            var chartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                responsiveAnimationDuration: 500,
+            };
+
+            // Chart Data
+            var chartData = {
+                labels: ["Paid", "Pending"],
+                datasets: [{
+                    label: "My First dataset",
+                    data: [@totaloutstandings,@paypend],
+                    backgroundColor: ['#28D094', '#FF4961'],
+                }]
+            };
+
+            var config = {
+                type: 'doughnut',
+
+                // Chart Options
+                options: chartOptions,
+
+                data: chartData
+            };
+
+            // Create the chart
+            var doughnutSimpleChart = new Chart(ctx, config);
+
+        });
+    </script>
 
 </body>
 </html>
