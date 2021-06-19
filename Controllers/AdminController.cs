@@ -31,9 +31,7 @@ namespace AceTC.Controllers
                 int pendpay = (from tot in entity.Payments where (tot.status_id == 1||tot.status_id == 4) select tot.confirmation_id).Count();
 
                 var ppaytotal = entity.Payments.Where(x => x.status_id == 7 || x.status_id == 2).Sum(y => y.payment_fee);
-
-                ViewData["ppayment"] = pendpay;
-                var paypend = ViewData["ppayment"];
+                
 
                 ViewData["totalstudents"] = totstud;
                 var totalstudents = ViewData["totalstudents"];
@@ -66,6 +64,7 @@ namespace AceTC.Controllers
                 return View(stattable);
 
             }
+
 
         }
 
@@ -111,7 +110,7 @@ namespace AceTC.Controllers
                 ViewBag.packs = pack;
             }
 
-            return View(stud);
+                return View(stud);
         }
 
         [HttpPost]
@@ -175,6 +174,13 @@ namespace AceTC.Controllers
             return RedirectToAction("StudentList", "Admin");
         }
 
+
+
+
+
+
+
+
         public ActionResult DeleteStudent(string id)
         {
             AceDBEntities entity = new AceDBEntities();
@@ -195,6 +201,8 @@ namespace AceTC.Controllers
             entity.SaveChanges();
             return RedirectToAction("StudentList", "Admin");
         }
+
+
 
         // GET: PARENT
         public ActionResult ParentList()

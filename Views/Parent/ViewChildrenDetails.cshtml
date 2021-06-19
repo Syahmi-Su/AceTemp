@@ -277,7 +277,7 @@
                                                         <dl>
                                                             @foreach (var pack in Model)
                                                             {
-                                                                if (@pack.packagedetails.total_subject == 1)
+                                                                if (@pack.packagedetails.total_subject == 2)
                                                                 {
                                                                     <dd>
                                                                         <b>Subject 1</b> : @pack.studsubjdetails.subject_1
@@ -337,7 +337,7 @@
                                                                         <b>Subject 4</b> : @pack.studsubjdetails.subject_5
                                                                     </dd>
                                                                 }
-                                                                else if (@pack.packagedetails.total_subject == 6)
+                                                                else if (@pack.packagedetails.total_subject == 5)
                                                                 {
                                                                     <dd>
                                                                         <b>Subject 1</b> : @pack.studsubjdetails.subject_1
