@@ -1,7 +1,8 @@
-﻿@model AceTC.Models.Parent
+﻿@model IEnumerable<AceTC.Models.Parent>
+
 @{ Layout = null;}
 @{
-    ViewBag.Title = "EditParentDetails";
+    ViewBag.Title = "InActiveParent";
 
     if (Session["admin_id"] == null)
     {
@@ -149,7 +150,7 @@
                     <a href="#"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Outstanding</span></a>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="/Oustanding/AddOutstanding">Manage <br />Outstanding <br />Payment</a>
+                            <a href="/Outstanding/Index">Manage <br />Outstanding <br />Payment</a>
                         </li>
                     </ul>
                 </li>
@@ -157,6 +158,7 @@
         </div>
     </div>
     <!-- ///////////////////////////END SIDEBAR/////////////////////////////////////////////////-->
+
 
     <div class="app-content content">
         <div class="content-wrapper">
@@ -173,7 +175,7 @@
                                     <a href="/Admin/ParentList">Parents</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Manage Parents <i class="la la-long-arrow-right"></i> Edit Parent
+                                    Manage Parents <i class="la la-long-arrow-right"></i> InActive Parent
                                 </li>
                             </ol>
                         </div>
@@ -186,7 +188,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Edit Parent Details</h4>
+                                <h4 class="card-title">InActive Parent Details</h4>
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                 <div class="heading-elements">
                                     <ul class="list-inline mb-0">
@@ -199,98 +201,50 @@
                             </div>
 
                             <div class="card-header">
+                                <button class="btn btn-success btn-sm" onclick="javascript: fnExcelReport('dataTable', 'data')" style="float: right;"><i class="la la-file-excel-o"></i>&nbsp; Download</button>
                             </div>
                             <div class="card-content collapse show">
                                 <div class="card-body">
-                                    @using (Html.BeginForm())
-                                    {
-                                        @Html.AntiForgeryToken()
+                                    
+                                    <p class="card-text"></p>
+                                    <p><span class="text-bold-600"></span></p>
+                                    <div class="table-responsive">
+                                        <table id="dataTable" class="table table-bordered table-hover display" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Parent IC</th>
+                                                    <th>Parent Name</th>
+                                                    <th>Email</th>
+                                                    <th>Phone Number</th>
+                                                    <th>Address</th>
+                                                    <th>Parent Status</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var parent in Model)
+                                                {
+                                                    if (parent.isActive == "Inactive")
+                                                    {
+                                                        <tr>
+                                                            <td>@parent.parents_ic</td>
+                                                            <td>@parent.parents_name</td>
+                                                            <td>@parent.parents_email</td>
+                                                            <td>@parent.parents_phone</td>
+                                                            <td>@parent.parents_address</td>
+                                                            <td style='color:red;'>@parent.isActive</td>
+                                                            <td>
+                                                                @Html.ActionLink(" Edit", "EditParentDetails", new { id = parent.parents_ic }, new { @class = "btn btn-warning fas fa-edit" })
+                                                                &nbsp;
+                                                                @*@Html.ActionLink(" Delete", "DeleteParent", new { id = parent.parents_ic }, new { @class = "btn btn-danger fas fa-trash-alt" })*@
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                }
 
-
-                                    <div class="form-horizontal">
-                                        <h4>Parent</h4>
-                                        <hr />
-                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.parents_ic, "Parent IC", htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.parents_ic, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.parents_ic, "", new { @class = "text-danger" })
-
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.parents_name, "Parent Name", htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.parents_name, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.parents_name, "", new { @class = "text-danger" })
-
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.parents_pass, "Password", htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.parents_pass, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.parents_pass, "", new { @class = "text-danger" })
-
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.confirmPass, "Confirmation Password", htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.confirmPass, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.confirmPass, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.parents_phone, "Phone Number", htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.parents_phone, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.parents_phone, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.parents_email, "Email", htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.parents_email, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.parents_email, "", new { @class = "text-danger" })
-
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.parents_address, "Address", htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.parents_address, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.parents_address, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.isActive, "Parent Active's Status", htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.DropDownListFor(model => model.isActive, new SelectList(new[] { "Active", "Inactive" }), "Select Parent Active's Status", new { @class = "form-control" })
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <div class="col-md-offset-2 col-md-10">
-                                                <input type="submit" value="Save Changes" style="margin:auto;display:block;" class="btn btn-warning" onclick="return confirm('Are you sure want to save changes?');" />
-                                                &nbsp;
-                                                <!--<input type="submit" href="/Admin/ParentList" value="Cancel" style="margin:auto;display:block;" class="btn btn-danger" />-->
-                                            </div>
-                                        </div>
+                                            </tbody>
+                                        </table>
                                     </div>
-                                    }
                                 </div>
                             </div>
                         </div>
@@ -333,6 +287,64 @@
     <script src="~/Content/assets/data/data_datatables.js"></script>
 
 
+    <script>
+        $(document).on('ready', function () {
+            // data-tables
+            $('#dataTable').DataTable({
+                //    data:dataSet,
+                columns: [{
+                    title: "Parent IC"
+                }, {
+                    title: "Parent Name"
+                }, {
+                    title: "Email"
+                }, {
+                    title: "Phone Number"
+                }, {
+                    title: "Address"
+                },{
+                    title: "Parent Status"
+                }, {
+                    title: "Action"
+                }
+                ]
+            });
+
+            // counter-up
+            $('.counter').counterUp({
+                delay: 10,
+                time: 600
+            });
+        });
+    </script>
+    <!-- Charts data -->
+    <script src="~/Content/FileSaver.js"></script>
+    <script>
+        function fnExcelReport(id, name) {
+            var tab_text = '<html xmlns: x="urn:schemas-microsoft-com:office:excel">';
+            tab_text = tab_text + '<head><xml><x: ExcelWorkbook><x: ExcelWorksheets><x: ExcelWorksheet>';
+            tab_text = tab_text + '<x: Name>Test Sheet</x: Name>';
+            tab_text = tab_text + '<x: WorksheetOptions><x: Panes></x: Panes></x: WorksheetOptions ></x: ExcelWorksheet > ';
+            tab_text = tab_text + '</x:ExcelWorksheets></x:ExcelWorkbook></xml></head><body>';
+            tab_text = tab_text + "<table border='1px' style='color:black'>";
+
+
+            var exportTable = $('#' + id).clone();
+            //         exportTable.find('th').last().remove();
+            exportTable.find('input').each(function (index, elem) { $(elem).remove(); });
+            exportTable.find('a').each(function (index, elem) { $(elem).remove(); });
+
+            tab_text = tab_text + exportTable.html();
+            tab_text = tab_text + '</table></body></html>';
+            var fileName = "Demo" + '.xls';
+
+            //Save the file
+            var blob = new Blob([tab_text], { type: "application/vnd.ms-excel;charset=utf-8" })
+            window.saveAs(blob, fileName);
+        }
+    </script>
 
 </body>
 </html>
+
+
