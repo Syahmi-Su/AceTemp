@@ -12,5 +12,6 @@ namespace AceTC.Models
         public studRegister studsubjdetails { get; set; }
 
         public Subject subjectlist { get; set; }
+        public Outstanding outstandinglist { get; set; }
     }
 }

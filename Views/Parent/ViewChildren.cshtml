@@ -158,6 +158,23 @@
                     </div>
                 </div>
             </div>
+
+
+            @foreach (var item in Model)
+            {
+                if (item.outstandinglist.O_status == 1)
+                {
+        <div class="alert alert-danger">
+            <h3><a href="#"> <img src="~/Content/assets/images/warning.gif" alt="logo" style="width:70px" class="align-content-center"></a><strong>OUTSTANDING!</strong></h3>
+
+            <h4>You still owe RM @item.outstandinglist.O_fees for @item.outstandinglist.O_month.ToString("MMMM-yyyy") under @item.studentdetails.student_name</h4>
+            <h4>This notification will be removed once the payment is accepted!</h4>
+        </div>
+                }
+            }
+
+
+
             <div class="content-body">
                 <!-- Basic Tables start -->
                 <div class="row">
@@ -193,21 +210,21 @@
                                                 {
                                                     if (item.studentdetails.student_status == "Active")
                                                     {
-                                                    <tr>
-                                                        <td>@item.studentdetails.student_ic</td>
-                                                        <td>@item.studentdetails.student_name</td>
+                                                        <tr>
+                                                            <td>@item.studentdetails.student_ic</td>
+                                                            <td>@item.studentdetails.student_name</td>
 
-                                                        @if (item.studentdetails.student_cname == null)
-                                                        {
-                                                            <td>N/A</td>
-                                                        }
-                                                        else
-                                                        {
-                                                            <td>@item.studentdetails.student_cname</td>
-                                                        }
-                                                        <td>@item.packagedetails.package_desc</td>
-                                                        <td><a class='btn btn-info' href='@Url.Action("ViewChildrenDetails", "Parent", new { id = item.studentdetails.student_ic })'>View Details</a></td>
-                                                    </tr>
+                                                            @if (item.studentdetails.student_cname == null)
+                                                            {
+                                                                <td>N/A</td>
+                                                            }
+                                                            else
+                                                            {
+                                                                <td>@item.studentdetails.student_cname</td>
+                                                            }
+                                                            <td>@item.packagedetails.package_desc</td>
+                                                            <td><a class='btn btn-info' href='@Url.Action("ViewChildrenDetails", "Parent", new { id = item.studentdetails.student_ic })'>View Details</a></td>
+                                                        </tr>
                                                     }
                                                 }
                                             </tbody>
