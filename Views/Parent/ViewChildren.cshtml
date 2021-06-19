@@ -78,11 +78,10 @@
     <!-- ///////////////////////////START SIDEBAR/////////////////////////////////////////////////-->
     <div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true" data-img="~/Content/theme-assets/images/backgrounds/02.jpg">
         <div class="navbar-header">
-            <ul class="nav navbar-nav flex-row">
+            <ul class="nav navbar-nav flex-row" style="height: 100px; width: 200px; padding-left: 35px;">
                 <li class="nav-item mr-auto">
-                    <a class="navbar-brand" href="/Parent/ViewChildren">
-                        <img class="brand-logo" style="width: 80%;display: block; margin-left: auto; margin-right: auto;" src="~/Content/theme-assets/images/logo/ACElogo-triangle.png" />
-
+                    <a class="navbar-brand" href="/Admin/AdminDashboard">
+                        <img class="brand-logo" style="height:80px; width:160px;" src="/Content/theme-assets/images/logo/ACElogo-triangle.png">
                     </a>
                 </li>
                 <li class="nav-item d-md-none"><a class="nav-link close-navbar"><i class="ft-x"></i></a></li>
@@ -185,6 +184,7 @@
                                                     <th>Name</th>
                                                     <th>Chinese Name</th>
                                                     <th>Tuition Package</th>
+                                                    <th>Student Status</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -204,6 +204,7 @@
                                                             <td>@item.studentdetails.student_cname</td>
                                                         }
                                                         <td>@item.packagedetails.package_desc</td>
+                                                        <td style='color:red;'>@item.studentdetails.isActive</td>
                                                         <td><a class='btn btn-info' href='@Url.Action("ViewChildrenDetails", "Parent", new { id = item.studentdetails.student_ic })'>View Details</a></td>
                                                     </tr>
                                                 }
@@ -261,6 +262,8 @@
                     title: "Chinese Name"
                 }, {
                     title: "Tuition Package"
+                }, {
+                    title: "Student Status"
                 }, {
                     title: "Action"
                 }]
