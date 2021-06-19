@@ -48,10 +48,20 @@ namespace AceTC.Controllers
             string p_details = p.package_category + "/ " + p.package_desc;
             pay.payment_detail = p_details;
 
+            Outstanding outs = new Outstanding();
+            DateTime nextMonth = DateTime.Now;
+            outs.O_month = nextMonth;
+            outs.O_pID = student.parent_ic;
+            outs.O_fees = p.package_price;
+            outs.O_remark = "Monthly Payment";
+            outs.O_status = 1;
+            outs.O_stu = studentIC;
+
             using (AceDBEntities db = new AceDBEntities())
             {
                 db.Payments.Add(pay);
                 db.Students.Add(student);
+                db.Outstandings.Add(outs);
                 db.SaveChanges();
             }
             ModelState.Clear();
