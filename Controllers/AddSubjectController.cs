@@ -9,6 +9,7 @@ namespace AceTC.Controllers
 {
     public class AddSubjectController : Controller
     {
+        AceDBEntities db = new AceDBEntities();
         // GET: AddSubject
         public ActionResult AddSubject()
         {
@@ -19,14 +20,40 @@ namespace AceTC.Controllers
         [HttpPost]
         public ActionResult AddSubject(Subject subject)
         {
-            using (AceDBEntities db = new AceDBEntities())
+            //using (AceDBEntities db = new AceDBEntities())
+            //{
+            //    db.Subjects.Add(subject);
+            //    db.SaveChanges();
+            //}
+            //ModelState.Clear();
+            //ViewBag.SuccessMessage = "Add Subject Successfully. ";
+            //return RedirectToAction("SubjectList", "Admin");
+
+            try
             {
-                db.Subjects.Add(subject);
-                db.SaveChanges();
+                if (ModelState.IsValid)
+                {
+                    db.Subjects.Add(subject);
+                    db.SaveChanges();
+
+                    ViewBag.msg = "Add Subject Successfully. ";
+
+                    return RedirectToAction("SubjectList", "Admin");
+                }
+                else
+                {
+
+                    return View();
+                }
+
             }
-            ModelState.Clear();
-            ViewBag.SuccessMessage = "Add Subject Successfully. ";
-            return RedirectToAction("SubjectList", "Admin");
+            catch (Exception)
+            {
+                ViewBag.Error = "Subject with subject's code already exist.";
+
+                return View();
+
+            }
         }
     }
 }

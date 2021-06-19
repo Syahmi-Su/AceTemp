@@ -11,11 +11,18 @@ namespace AceTC.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Subject
     {
+        [Required(ErrorMessage = "Subject code required")]
         public string subject_code { get; set; }
+
+        [Required(ErrorMessage = "Subject name required")]
         public string subject_name { get; set; }
+
+        [Required(ErrorMessage = "Subject type required")]
         public string subject_type { get; set; }
     }
 }
