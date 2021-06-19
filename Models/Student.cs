@@ -11,9 +11,7 @@ namespace AceTC.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Student
     {
         public string student_ic { get; set; }
@@ -25,36 +23,6 @@ namespace AceTC.Models
         public string student_category { get; set; }
         public string student_year { get; set; }
         public string parent_ic { get; set; }
-        public string isActive { get; set; }
-
-        //[Required(ErrorMessage = "Student IC Required")]
-        //[StringLength(14, MinimumLength = 14, ErrorMessage = "Please enter IC number with dash *eg : XXXXX-XX-XXXX")]
-        //[Display(Name = "Student IC", Description = "Title for your entry")]
-        //public string student_ic { get; set; }
-
-        //[Required(ErrorMessage = "Student Name Required")]
-        //public string student_name { get; set; }
-        //public string student_cname { get; set; }
-
-        //[Required(ErrorMessage = "Student Tuition Package Required")]
-        //public int student_package { get; set; }
-
-        //[Required(ErrorMessage = "Student Date Of Birth Required")]
-        //public System.DateTime student_dob { get; set; }
-
-        //[Required(ErrorMessage = "Student Gender Required")]
-        //public string student_gender { get; set; }
-
-        //[Required(ErrorMessage = "Student Category Required")]
-        //public string student_category { get; set; }
-
-        //[Required(ErrorMessage = "Student Study Year Required")]
-        //public string student_year { get; set; }
-
-        //[Required(ErrorMessage = "Parent IC Required")]
-        //public string parent_ic { get; set; }
-
-        //[Required(ErrorMessage = "Student Active's Status Required")]
-        //public string isActive { get; set; }
+        public string student_status { get; set; }
     }
 }

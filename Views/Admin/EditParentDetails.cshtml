@@ -276,9 +276,9 @@
                                         </div>
 
                                         <div class="form-group">
-                                            @Html.LabelFor(model => model.isActive, "Parent Active's Status", htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.LabelFor(model => model.parents_status, "Parent Active's Status", htmlAttributes: new { @class = "control-label col-md-2" })
                                             <div class="col-md-10">
-                                                @Html.DropDownListFor(model => model.isActive, new SelectList(new[] { "Active", "Inactive" }), "Select Parent Active's Status", new { @class = "form-control" })
+                                                @Html.DropDownListFor(model => model.parents_status, new SelectList(new[] { "Active", "Inactive" }), "Select Parent Active's Status", new { @class = "form-control" })
                                             </div>
                                         </div>
 

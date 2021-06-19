@@ -227,7 +227,7 @@
                                             <tbody>
                                                 @foreach (var student in Model)
                                                 {
-                                                    if (student.studentdetails.isActive == "Inactive")
+                                                    if (student.studentdetails.student_status == "Inactive")
                                                     {
                                                         <tr>
                                                             <td>@student.studentdetails.student_ic</td>
@@ -248,7 +248,7 @@
 
                                                             <td>@student.packagedetails.package_desc</td>
                                                             <td>@student.parentdetails.parents_name</td>
-                                                            <td style='color:red;'>@student.studentdetails.isActive</td>
+                                                            <td style='color:red;'>@student.studentdetails.student_status</td>
                                                             <td>
                                                                 @Html.ActionLink(" Edit", "EditStudentDetails", new { id = student.studentdetails.student_ic }, new { @class = "btn btn-warning fas fa-edit" })
                                                                 &nbsp;&nbsp;
