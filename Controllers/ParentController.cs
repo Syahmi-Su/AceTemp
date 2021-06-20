@@ -133,7 +133,7 @@ namespace AceTC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult editPassword([Bind(Include = "parents_ic,parents_name,parents_pass,confirmPass,parents_email,parents_phone,parents_address")] Parent parent)
+        public ActionResult editPassword([Bind(Include = "parents_ic,parents_name,parents_pass,confirmPass,parents_email,parents_phone,parents_address,parents_status")] Parent parent)
         {
             string uid = Session["parents_ic"].ToString();
             AceDBEntities entity = new AceDBEntities();

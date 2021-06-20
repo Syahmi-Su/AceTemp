@@ -680,4 +680,4 @@ C:\Users\User\Documents\GitHub\AceTemp\obj\Debug\AceTC.csproj.CoreCompileInputs.
 C:\Users\User\Documents\GitHub\AceTemp\obj\Debug\AceTC.csproj.CopyComplete
 C:\Users\User\Documents\GitHub\AceTemp\obj\Debug\AceTC.dll
 C:\Users\User\Documents\GitHub\AceTemp\obj\Debug\AceTC.pdb
-C:\Users\User\Documents\GitHub\AceTemp\obj\Debug\AceTC.csproj.AssemblyReference.cache
+C:\Users\User\Documents\GitHub\AceTemp\obj\Debug\AceTC.csprojAssemblyReference.cache
