@@ -85,6 +85,21 @@ namespace AceTC.Controllers
             return View(multipletable);
         }
 
+        public ActionResult InActiveStudent()
+        {
+            AceDBEntities entity = new AceDBEntities();
+            List<Student> studentparent = entity.Students.ToList();
+            List<Parent> parentname = entity.Parents.ToList();
+            List<Package> packagename = entity.Packages.ToList();
+
+            var multipletable = from s in studentparent
+                                join p in parentname on s.parent_ic equals p.parents_ic
+                                join pc in packagename on s.student_package equals pc.package_id
+                                select new MultipleClass { studentdetails = s, parentdetails = p, packagedetails = pc };
+
+            return View(multipletable);
+        }
+
         public ActionResult EditStudentDetails(string id)
         {
             AceDBEntities entity = new AceDBEntities();
@@ -184,6 +199,12 @@ namespace AceTC.Controllers
 
         // GET: PARENT
         public ActionResult ParentList()
+        {
+            AceDBEntities plist = new AceDBEntities();
+            return View(from Parent in plist.Parents select Parent);
+        }
+
+        public ActionResult InActiveParent()
         {
             AceDBEntities plist = new AceDBEntities();
             return View(from Parent in plist.Parents select Parent);
