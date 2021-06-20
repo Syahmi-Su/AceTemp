@@ -256,11 +256,11 @@
                                                     {
                                                         <td style='color:red;'><b>@student.studentdetails.student_status</b></td>
                                                     }
-                                                    <td>
-                                                        @Html.ActionLink(" Edit", "EditStudentDetails", new { id = student.studentdetails.student_ic }, new { @class = "btn btn-warning fas fa-edit" })
-                                                        &nbsp;&nbsp;
-                                                        @Html.ActionLink(" Delete", "DeleteStudent", new { id = student.studentdetails.student_ic }, new { @class = "btn btn-danger fas fa-trash-alt" })
-                                                    </td>
+                                                <td>
+                                                    @Html.ActionLink(" Edit", "EditStudentDetails", new { id = student.studentdetails.student_ic }, new { @class = "btn btn-warning fas fa-edit" })
+                                                    &nbsp;&nbsp;
+                                                    @*@Html.ActionLink(" Delete", "DeleteStudent", new { id = student.studentdetails.student_ic }, new { @class = "btn btn-danger fas fa-trash-alt" })*@
+                                                </td>
                                                 </tr>
 
                                                 }

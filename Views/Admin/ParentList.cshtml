@@ -240,11 +240,11 @@
                                                     {
                                                         <td style='color:red;'><b>@parent.parents_status</b></td>
                                                     }
-                                                    <td>
-                                                        @Html.ActionLink(" Edit", "EditParentDetails", new { id = parent.parents_ic }, new { @class = "btn btn-warning fas fa-edit" })
-                                                        &nbsp;
-                                                        @Html.ActionLink(" Delete", "DeleteParent", new { id = parent.parents_ic }, new { @class = "btn btn-danger fas fa-trash-alt" })
-                                                    </td>
+                                                <td>
+                                                    @Html.ActionLink(" Edit", "EditParentDetails", new { id = parent.parents_ic }, new { @class = "btn btn-warning fas fa-edit" })
+                                                    &nbsp;
+                                                    @*@Html.ActionLink(" Delete", "DeleteParent", new { id = parent.parents_ic }, new { @class = "btn btn-danger fas fa-trash-alt" })*@
+                                                </td>
                                                 </tr>
                                                 }
 
