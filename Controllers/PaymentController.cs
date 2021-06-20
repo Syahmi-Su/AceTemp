@@ -241,7 +241,7 @@ namespace AceTC.Controllers
 
             try
             {
-                if(payment.status_id == 10)
+/*                if(payment.status_id == 10)
                 {
                     Payment newpay = new Payment();
                     newpay.student_ic = payment.student_ic;
@@ -255,13 +255,13 @@ namespace AceTC.Controllers
                     newpay.payment_feedetails = "00";
                     payment.status_id = 1;
                     db.Payments.Add(newpay);
-
-/*                    db.Payments.Remove(payment);*/
+*/
+/*                    db.Payments.Remove(payment);*//*
                     db.SaveChanges();
                     return RedirectToAction("ApprovalList", "Payment");
-                }
-                else
-                {
+*//*                }
+                else*/
+                /*{*/
                     using (AceDBEntities entity = new AceDBEntities())
                     {
 
@@ -273,7 +273,7 @@ namespace AceTC.Controllers
 
                     db.SaveChanges();
                     return RedirectToAction("ApprovalList", "Payment");
-                }
+               /* }*/
 
             }
             catch
