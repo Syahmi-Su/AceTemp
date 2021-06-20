@@ -1,12 +1,13 @@
-﻿@model AceTC.Models.Student
+﻿@model IEnumerable<AceTC.Models.MultipleClass>
 @{ Layout = null;}
-@{ ViewBag.Title = "EditStudentDetails";
+@{
+    ViewBag.Title = "InActiveStudent";
 
-                if (Session["admin_id"] == null)
-                {
-                    Response.Redirect("~/Login/Index");
-                } }
-
+    if (Session["admin_id"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
 
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
@@ -53,12 +54,17 @@
                     </ul>
 
                     <ul class="nav navbar-nav float-right">
-
+                        <li class="dropdown dropdown-notification nav-item">
+                            <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-mail">             </i></a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <div class="arrow_box_right"><a class="dropdown-item" href="/Outstanding/Index"><i class="la la-envelope"></i> Send Email</a></div>
+                            </div>
+                        </li>
                         <li class="dropdown dropdown-user nav-item">
                             <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">             <span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><i></i></span></a>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <div class="arrow_box_right">
-                                    <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><span class="user-name text-bold-700 ml-1">Hi, @Session["admin_id"].ToString()</span></span></a>
+                                    <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><span class="user-name text-bold-700 ml-1">Admin</span></span></a>
 
                                     <div class="dropdown-divider"></div><a class="dropdown-item" href="@Url.Action("Logout","Login")"><i class="ft-power"></i> Logout</a>
                                 </div>
@@ -143,7 +149,7 @@
                     <a href="#"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Outstanding</span></a>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="/Oustanding/AddOutstanding">Manage <br />Outstanding <br />Payment</a>
+                            <a href="/Outstanding/Index">Manage <br />Outstanding <br />Payment</a>
                         </li>
                     </ul>
                 </li>
@@ -167,7 +173,7 @@
                                     <a href="/Admin/StudentList">Students</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Manage Students <i class="la la-long-arrow-right"></i> Edit Student
+                                    Manage Students <i class="la la-long-arrow-right"></i> InActive Student
                                 </li>
                             </ol>
                         </div>
@@ -180,7 +186,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Edit Student Details</h4>
+                                <h4 class="card-title">InActive Student Details</h4>
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                 <div class="heading-elements">
                                     <ul class="list-inline mb-0">
@@ -192,98 +198,71 @@
                                 </div>
                             </div>
 
+                            <div class="card-header">
+                                <button class="btn btn-success btn-sm" onclick="javascript: fnExcelReport('dataTable', 'data')" style="float: right;"><i class="la la-file-excel-o"></i>&nbsp; Download</button>
+                            </div>
                             <div class="card-content collapse show">
                                 <div class="card-body">
-                                    @using (Html.BeginForm())
-                                    {
-                                        @Html.AntiForgeryToken()
 
-                                        <div class="form-horizontal">
-                                            <hr />
-                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.student_ic, "Student IC", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.EditorFor(model => model.student_ic, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.ValidationMessageFor(model => model.student_ic, "", new { @class = "text-danger" })
-                                                </div>
-                                            </div>
+                                    <p class="card-text"></p>
+                                    <p><span class="text-bold-600"></span></p>
+                                    <div class="table-responsive">
+                                        <table id="dataTable" class="table table-bordered table-hover display" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Student IC</th>
+                                                    <th>Student Name</th>
+                                                    <th>Student Name (Chinese)</th>
+                                                    <th>Gender</th>
+                                                    <th>Date of Birth</th>
+                                                    <th>Category</th>
+                                                    <th>Study Year</th>
 
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.student_name, "Student Name", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.EditorFor(model => model.student_name, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.ValidationMessageFor(model => model.student_name, "", new { @class = "text-danger" })
-                                                </div>
-                                            </div>
+                                                    <th>Package Name</th>
+                                                    <th>Guardian</th>
+                                                    <th>Student Status</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var student in Model)
+                                                {
+                                                    if (student.studentdetails.student_status == "Inactive")
+                                                    {
+                                                        <tr>
+                                                            <td>@student.studentdetails.student_ic</td>
+                                                            <td>@student.studentdetails.student_name</td>
+                                                            @if (@student.studentdetails.student_cname == null)
+                                                            {
+                                                                <td>N/A</td>
+                                                            }
+                                                            else
+                                                            {
+                                                                <td>@student.studentdetails.student_cname</td>
+                                                            }
 
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.student_cname, "Student Name (Chinese)", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.EditorFor(model => model.student_cname, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.ValidationMessageFor(model => model.student_cname, "", new { @class = "text-danger" })
-                                                </div>
-                                            </div>
+                                                            <td>@student.studentdetails.student_gender</td>
+                                                            <td>@student.studentdetails.student_dob.ToShortDateString()</td>
+                                                            <td>@student.studentdetails.student_category</td>
+                                                            <td>@student.studentdetails.student_year</td>
 
+                                                            <td>@student.packagedetails.package_desc</td>
+                                                            <td>@student.parentdetails.parents_name</td>
+                                                            <td style='color:red;'>@student.studentdetails.student_status</td>
+                                                            <td>
+                                                                @Html.ActionLink(" Edit", "EditStudentDetails", new { id = student.studentdetails.student_ic }, new { @class = "btn btn-warning fas fa-edit" })
+                                                                &nbsp;&nbsp;
+                                                                @*@Html.ActionLink(" Delete", "DeleteStudent", new { id = student.studentdetails.student_ic }, new { @class = "btn btn-danger fas fa-trash-alt" })*@
+                                                            </td>
+                                                        </tr>
 
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.student_gender, "Gender", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.DropDownListFor(model => model.student_gender, new SelectList(new[] { "Male", "Female" }), "Select Gender", new { @class = "form-control" })
-                                                </div>
-                                            </div>
+                                                    }
 
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.student_dob, "Date of Birth", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.EditorFor(model => model.student_dob, "{0:dd/MM/yyyy}", new { htmlAttributes = new { @class = "form-control", @type = "date" } })
-                                                </div>
-                                            </div>
+                                                }
 
-
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.student_category, "Category", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.DropDownListFor(model => model.student_category, new SelectList(new[] { "Primary", "Secondary" }), "Select Category", new { @class = "form-control" })
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.student_year, "Study Year", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.DropDownListFor(model => model.student_year, new SelectList(new[] { "Primary 1", "Primary 2", "Primary 3", "Primary 4", "Primary 5", "Primary 6", "Form 1", "Form 2", "Form 3", "Form 4", "Form 5" }), "Select Study Year", new { @class = "form-control" })
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.student_package, "Student Package", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.DropDownList("student_package", new SelectList(ViewBag.packs, "package_id", "package_desc"), "Select Student Package", new { @class = "form-control" })
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.parent_ic, "Parent IC", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.DropDownList("parent_ic", new SelectList(ViewBag.data, "parents_ic", "parents_name"), "Select Parent", new { @class = "form-control" })
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.student_status, "Status", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.DropDownListFor(model => model.student_status, new SelectList(new[] { "Active", "Inactive" }), "Select Status", new { @class = "form-control" })
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <div class="col-md-offset-2 col-md-10">
-                                                    <input type="submit" value="Next" style="margin:auto;display:block;" class="btn btn-warning" onclick="return confirm('Are you sure want to save changes?');" />
-                                                    &nbsp;
-                                                    <!--<input type="submit" href="/Admin/StudentList" value="Cancel" style="margin:auto;display:block;" class="btn btn-danger" />-->
-                                                </div>
-                                            </div>
-                                        </div>}
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -293,7 +272,6 @@
             <a style="float:left;" class="btn btn-outline-purple btn-sm" href="@Url.Action("StudentList", "Admin")">BACK TO LIST</a>
         </div>
     </div>
-    <!-- Basic Tables end -->
     <!-- ///////////////////////////START FOOTER/////////////////////////////////////////////////-->
 
 
@@ -307,6 +285,7 @@
         </div>
     </footer>
 
+    <!-- ///////////////////////////END FOOTER/////////////////////////////////////////////////-->
     <script src="~/Content/theme-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
     <script src="~/Content/theme-assets/js/core/app-menu-lite.js" type="text/javascript"></script>
     <script src="~/Content/theme-assets/js/core/app-lite.js" type="text/javascript"></script>
@@ -315,17 +294,79 @@
     <script src="~/Content/assets/js/moment.min.js"></script>
 
 
-
     <!-- BEGIN Java Script for this page -->
     <script src="~/Content/assets/plugins/chart.js/Chart.min.js"></script>
     <script src="~/Content/assets/plugins/datatables/datatables.min.js"></script>
     <!-- Counter-Up-->
     <script src="~/Content/assets/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
     <script src="~/Content/assets/plugins/counterup/jquery.counterup.min.js"></script>
-
+    dataTabled data
     <script src="~/Content/assets/data/data_datatables.js"></script>
 
+    <script>
+        $(document).on('ready', function () {
+            // data-tables
+            $('#dataTable').DataTable({
+                //    data:dataSet,
+                columns: [{
+                    title: "Student IC"
+                }, {
+                    title: "Student Name"
+                }, {
+                    title: "Student Name (Chinese)"
+                }, {
+                    title: "Gender"
+                }, {
+                    title: "Date of Birth"
+                }, {
+                    title: "Category"
+                }, {
+                    title: "Study Year"
+                }, {
+                    title: "Package Name"
+                }, {
+                    title: "Guardian"
+                }, {
+                    title: "Student Status"
+                }, {
+                    title: "Action"
+                }]
+            });
 
+            // counter-up
+            $('.counter').counterUp({
+                delay: 10,
+                time: 600
+            });
+        });
+    </script>
+    <!-- Charts data -->
+    <script src="~/Content/FileSaver.js"></script>
+    <script>
+        function fnExcelReport(id, name) {
+            var tab_text = '<html xmlns: x="urn:schemas-microsoft-com:office:excel">';
+            tab_text = tab_text + '<head><xml><x: ExcelWorkbook><x: ExcelWorksheets><x: ExcelWorksheet>';
+            tab_text = tab_text + '<x: Name>Test Sheet</x: Name>';
+            tab_text = tab_text + '<x: WorksheetOptions><x: Panes></x: Panes></x: WorksheetOptions ></x: ExcelWorksheet > ';
+            tab_text = tab_text + '</x:ExcelWorksheets></x:ExcelWorkbook></xml></head><body>';
+            tab_text = tab_text + "<table border='1px' style='color:black'>";
+
+
+            var exportTable = $('#' + id).clone();
+            //         exportTable.find('th').last().remove();
+            exportTable.find('input').each(function (index, elem) { $(elem).remove(); });
+            exportTable.find('a').each(function (index, elem) { $(elem).remove(); });
+
+            tab_text = tab_text + exportTable.html();
+            tab_text = tab_text + '</table></body></html>';
+            var fileName = "Demo" + '.xls';
+
+            //Save the file
+            var blob = new Blob([tab_text], { type: "application/vnd.ms-excel;charset=utf-8" })
+            window.saveAs(blob, fileName);
+        }
+    </script>
 
 </body>
 </html>
+

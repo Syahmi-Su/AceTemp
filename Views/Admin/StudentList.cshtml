@@ -204,6 +204,7 @@
                             <div class="card-content collapse show">
                                 <div class="card-body">
                                     <button style="float:left;" class="btn btn-info btn-sm" onclick="location.href='@Url.Action("AddStudent", "AddStudent")';return false;"><i class="ft-plus"></i>&nbsp;Add Student</button>&nbsp;&nbsp;
+                                    <button type="button" class="btn btn-danger btn-sm" onclick="location.href='@Url.Action("InActiveStudent", "Admin")';return false;"><i class="ft-trash-2"></i>&nbsp;InActive Student</button>&nbsp;&nbsp;
                                     <br /><br />
                                     <p class="card-text"></p>
                                     <p><span class="text-bold-600"></span></p>
@@ -228,40 +229,38 @@
                                             <tbody>
                                                 @foreach (var student in Model)
                                                 {
+                                                    if (student.studentdetails.student_status == "Active")
+                                                    {
+                                                        <tr>
+                                                            <td>@student.studentdetails.student_ic</td>
+                                                            <td>@student.studentdetails.student_name</td>
+                                                            @if (@student.studentdetails.student_cname == null)
+                                                            {
+                                                                <td>N/A</td>
+                                                            }
+                                                            else
+                                                            {
+                                                                <td>@student.studentdetails.student_cname</td>
+                                                            }
 
-                                                <tr>
-                                                    <td>@student.studentdetails.student_ic</td>
-                                                    <td>@student.studentdetails.student_name</td>
-                                                    @if (@student.studentdetails.student_cname == null)
-                                                    {
-                                                        <td>N/A</td>
-                                                    }
-                                                    else
-                                                    {
-                                                        <td>@student.studentdetails.student_cname</td>
+                                                            <td>@student.studentdetails.student_gender</td>
+                                                            <td>@student.studentdetails.student_dob.ToShortDateString()</td>
+                                                            <td>@student.studentdetails.student_category</td>
+                                                            <td>@student.studentdetails.student_year</td>
+
+                                                            <td>@student.packagedetails.package_desc</td>
+                                                            <td>@student.parentdetails.parents_name</td>
+                                                            <td style='color:green;'>@student.studentdetails.student_status</td>
+                                                            <td>
+                                                                @Html.ActionLink(" Edit", "EditStudentDetails", new { id = student.studentdetails.student_ic }, new { @class = "btn btn-warning fas fa-edit" })
+                                                                &nbsp;&nbsp;
+                                                                @*@Html.ActionLink(" Delete", "DeleteStudent", new { id = student.studentdetails.student_ic }, new { @class = "btn btn-danger fas fa-trash-alt" })*@
+                                                            </td>
+                                                        </tr>
+
                                                     }
 
-                                                    <td>@student.studentdetails.student_gender</td>
-                                                    <td>@student.studentdetails.student_dob.ToShortDateString()</td>
-                                                    <td>@student.studentdetails.student_category</td>
-                                                    <td>@student.studentdetails.student_year</td>
 
-                                                    <td>@student.packagedetails.package_desc</td>
-                                                    <td>@student.parentdetails.parents_name</td>
-                                                    @if (student.studentdetails.student_status == "Active")
-                                                    {
-                                                        <td style='color:green;'><b>@student.studentdetails.student_status</b></td>
-                                                    }
-                                                    else
-                                                    {
-                                                        <td style='color:red;'><b>@student.studentdetails.student_status</b></td>
-                                                    }
-                                                <td>
-                                                    @Html.ActionLink(" Edit", "EditStudentDetails", new { id = student.studentdetails.student_ic }, new { @class = "btn btn-warning fas fa-edit" })
-                                                    &nbsp;&nbsp;
-                                                    @*@Html.ActionLink(" Delete", "DeleteStudent", new { id = student.studentdetails.student_ic }, new { @class = "btn btn-danger fas fa-trash-alt" })*@
-                                                </td>
-                                                </tr>
 
                                                 }
 
