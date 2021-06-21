@@ -29,14 +29,40 @@ namespace AceTC.Controllers
         [HttpPost]
         public ActionResult AddPackage([Bind(Include = "package_id,package_desc,package_category,package_price")] Package package)
         {
-            using (AceDBEntities db = new AceDBEntities())
+            //using (AceDBEntities db = new AceDBEntities())
+            //{
+            //    db.Packages.Add(package);
+            //    db.SaveChanges();
+            //}
+            //ModelState.Clear();
+            //ViewBag.SuccessMessage = "Add Package Successfully. ";
+            //return RedirectToAction("PackageList", "Admin");
+
+            try
             {
-                db.Packages.Add(package);
-                db.SaveChanges();
+                if (ModelState.IsValid)
+                {
+                    db.Packages.Add(package);
+                    db.SaveChanges();
+
+                    ViewBag.msg = "Add Tuition Package Successful. ";
+
+                    return RedirectToAction("PackageList", "Admin");
+                }
+                else
+                {
+
+                    return View();
+                }
+
             }
-            ModelState.Clear();
-            ViewBag.SuccessMessage = "Add Package Successfully. ";
-            return RedirectToAction("PackageList", "Admin");
+            catch (Exception)
+            {
+                ViewBag.Error = "Tuition Package with package id already exist.";
+
+                return View();
+
+            }
         }
     }
 }

@@ -1,13 +1,14 @@
-﻿@model IEnumerable<AceTC.Models.Subject>
+﻿@model IEnumerable<AceTC.Models.Parent>
+
 @{ Layout = null;}
 @{
-    ViewBag.Title = "SubjectList";
+    ViewBag.Title = "InActiveParent";
+
     if (Session["admin_id"] == null)
     {
         Response.Redirect("~/Login/Index");
     }
 }
-
 
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
@@ -20,8 +21,6 @@
     <meta name="author" content="ThemeSelect">
     <title> Admin - Pusat Tuisyen Madani </title>
     <link rel="shortcut icon" type="image/png" href="~/Content/theme-assets/images/logo/favicon.png">
-    @*<link rel="apple-touch-icon" href="~/Content/theme-assets/images/logo/ACElogo-triangle.png">
-    <link rel="shortcut icon" type="image/x-icon" href="~/Content/theme-assets/images/logo/ACElogo-triangle.ico">*@
     <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700" rel="stylesheet">
     <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
     <!-- BEGIN VENDOR CSS-->
@@ -66,7 +65,7 @@
                             <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">             <span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><i></i></span></a>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <div class="arrow_box_right">
-                                    <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><span class="user-name text-bold-700 ml-1">Hi, @Session["admin_id"].ToString()</span></span></a>
+                                    <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="~/Content/assets/images/avatars/admin.png" alt="avatar"><span class="user-name text-bold-700 ml-1">Admin</span></span></a>
 
                                     <div class="dropdown-divider"></div><a class="dropdown-item" href="@Url.Action("Logout","Login")"><i class="ft-power"></i> Logout</a>
                                 </div>
@@ -96,7 +95,7 @@
                     <br />
                     <a href="/Admin/AdminDashboard"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="active">
                     <a href="#"><i class="la la-female"></i><span class="menu-title" data-i18n="">Parents</span></a>
                     <ul class="list-unstyled">
                         <li>
@@ -113,7 +112,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="active">
+                <li class="nav-item">
                     <a href="#"><i class="la la-leanpub"></i><span class="menu-title" data-i18n="">Subjects</span></a>
                     <ul class="list-unstyled">
                         <li>
@@ -160,22 +159,23 @@
     </div>
     <!-- ///////////////////////////END SIDEBAR/////////////////////////////////////////////////-->
 
+
     <div class="app-content content">
         <div class="content-wrapper">
             <div class="content-wrapper-before"></div>
             <div class="content-header row">
                 <div class="content-header-left col-md-4 col-12 mb-2">
-                    <h3 class="content-header-title">Subjects</h3>
+                    <h3 class="content-header-title">Parents</h3>
                 </div>
                 <div class="content-header-right col-md-8 col-12">
                     <div class="breadcrumbs-top float-md-right">
                         <div class="breadcrumb-wrapper mr-1">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
-                                    <a href="/Admin/SubjectList">Subjects</a>
+                                    <a href="/Admin/ParentList">Parents</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Manage Subjects
+                                    Manage Parents <i class="la la-long-arrow-right"></i> InActive Parent
                                 </li>
                             </ol>
                         </div>
@@ -188,7 +188,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Subject Details</h4>
+                                <h4 class="card-title">InActive Parent Details</h4>
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                 <div class="heading-elements">
                                     <ul class="list-inline mb-0">
@@ -205,39 +205,41 @@
                             </div>
                             <div class="card-content collapse show">
                                 <div class="card-body">
-                                    <button style="float:left;" class="btn btn-info btn-sm" onclick="location.href='@Url.Action("AddSubject", "AddSubject")';return false;"><i class="ft-plus"></i>&nbsp;Add Subject</button>&nbsp;&nbsp;
-                                    <br /><br />
+
                                     <p class="card-text"></p>
                                     <p><span class="text-bold-600"></span></p>
                                     <div class="table-responsive">
                                         <table id="dataTable" class="table table-bordered table-hover display" style="width:100%">
                                             <thead>
                                                 <tr>
-                                                    <th>Subject Code</th>
-                                                    <th>Subject Name</th>
-                                                    <th>Subject Type</th>
+                                                    <th>Parent IC</th>
+                                                    <th>Parent Name</th>
+                                                    <th>Email</th>
+                                                    <th>Phone Number</th>
+                                                    <th>Address</th>
+                                                    <th>Parent Status</th>
                                                     <th>Action</th>
-
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach (var subject in Model)
+                                                @foreach (var parent in Model)
                                                 {
-
-                                                    <tr>
-                                                        <td>@subject.subject_code</td>
-                                                        <td>@subject.subject_name</td>
-                                                        <td>@subject.subject_type</td>
-
-                                                        <th>
-                                                            @Html.ActionLink(" Edit", "EditSubjectDetails", new { id = subject.subject_code }, new { @class = "btn btn-warning fas fa-edit" })
-                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                            @Html.ActionLink(" Delete", "DeleteSubject", new { id = subject.subject_code }, new { @class = "btn btn-danger fas fa-trash-alt" })
-                                                        </th>
-
-
-                                                    </tr>
-
+                                                    if (parent.parents_status == "Inactive")
+                                                    {
+                                                        <tr>
+                                                            <td>@parent.parents_ic</td>
+                                                            <td>@parent.parents_name</td>
+                                                            <td>@parent.parents_email</td>
+                                                            <td>@parent.parents_phone</td>
+                                                            <td>@parent.parents_address</td>
+                                                            <td style='color:red;'>@parent.parents_status</td>
+                                                            <td>
+                                                                @Html.ActionLink(" Edit", "EditParentDetails", new { id = parent.parents_ic }, new { @class = "btn btn-warning fas fa-edit" })
+                                                                &nbsp;
+                                                                @*@Html.ActionLink(" Delete", "DeleteParent", new { id = parent.parents_ic }, new { @class = "btn btn-danger fas fa-trash-alt" })*@
+                                                            </td>
+                                                        </tr>
+                                                    }
                                                 }
 
                                             </tbody>
@@ -249,6 +251,7 @@
                     </div>
                 </div>
             </div>
+            <a style="float:left;" class="btn btn-outline-purple btn-sm" href="@Url.Action("ParentList", "Admin")">BACK TO LIST</a>
         </div>
     </div>
     <!-- Basic Tables end -->
@@ -290,15 +293,23 @@
             $('#dataTable').DataTable({
                 //    data:dataSet,
                 columns: [{
-                    title: "Subject Code"
+                    title: "Parent IC"
                 }, {
-                    title: "Subject Name"
+                    title: "Parent Name"
                 }, {
-                    title: "Subject Type"
+                    title: "Email"
+                }, {
+                    title: "Phone Number"
+                }, {
+                    title: "Address"
+                },{
+                    title: "Parent Status"
                 }, {
                     title: "Action"
-                }]
+                }
+                ]
             });
+
             // counter-up
             $('.counter').counterUp({
                 delay: 10,

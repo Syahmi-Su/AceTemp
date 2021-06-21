@@ -82,8 +82,7 @@
             <ul class="nav navbar-nav flex-row" style="height: 100px; width: 200px; padding-left: 35px;">
                 <li class="nav-item mr-auto">
                     <a class="navbar-brand" href="/Admin/AdminDashboard">
-                        <img class="brand-logo" style="width: 80%;display: block; margin-left: auto; margin-right: auto;" src="~/Content/theme-assets/images/logo/ACElogo-triangle.png" />
-
+                        <img class="brand-logo" style="height:80px; width:160px;" src="/Content/theme-assets/images/logo/ACElogo-triangle.png">
                     </a>
                 </li>
                 <li class="nav-item d-md-none"><a class="nav-link close-navbar"><i class="ft-x"></i></a></li>
@@ -207,52 +206,63 @@
                                     {
                                         @Html.AntiForgeryToken()
 
-                                        <div class="form-horizontal">
-                                            <h4>Tuition Package</h4>
-                                            <hr />
-                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.package_id, "Package ID", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.EditorFor(model => model.package_id, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
-                                                    @Html.ValidationMessageFor(model => model.package_id, "", new { @class = "text-danger" })
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.package_desc, "Package Description", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <small class="text-muted">eg:<i style="color:red"> P001,S001</i></small>
-                                                <div class="col-md-10">
-                                                    @Html.EditorFor(model => model.package_desc, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.ValidationMessageFor(model => model.package_desc, "", new { @class = "text-danger" })
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.package_category, "Package Category", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @*@Html.EditorFor(model => model.subject_type, new { htmlAttributes = new { @class = "form-control" } })
-                                                        @Html.ValidationMessageFor(model => model.subject_type, "", new { @class = "text-danger" })*@
-
-                                                    @Html.DropDownListFor(model => model.package_category, new SelectList(new[] { "Primary", "Secondary" }), "Select Package Category", new { @class = "form-control" })
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.package_price, "Package Price (RM)", htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.EditorFor(model => model.package_price, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.ValidationMessageFor(model => model.package_price, "", new { @class = "text-danger" })
-                                                </div>
-                                            </div>
-
-
-                                            <div class="form-group">
-                                                <div class="col-md-offset-2 col-md-10">
-                                                    <input type="submit" value="Create Tuition Package" style="margin:auto;display:block;" class="btn btn-info" onclick="return confirm('Are you sure want to submit?');" />
-                                                </div>
+                                    <div class="form-horizontal">
+                                        <h4>Tuition Package</h4>
+                                        <hr />
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.package_id, "Package ID", htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-10">
+                                                @Html.EditorFor(model => model.package_id, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                @Html.ValidationMessageFor(model => model.package_id, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.package_desc, "Package Description", htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <small class="text-muted">eg:<i style="color:red"> P001,S001</i></small>
+                                            <div class="col-md-10">
+                                                @Html.EditorFor(model => model.package_desc, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.package_desc, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.package_category, "Package Category", htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-10">
+                                                @*@Html.EditorFor(model => model.subject_type, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.subject_type, "", new { @class = "text-danger" })*@
+
+                                                @Html.DropDownListFor(model => model.package_category, new SelectList(new[] { "Primary", "Secondary" }), "Select Package Category", new { @class = "form-control" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.package_price, "Package Price (RM)", htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-10">
+                                                @Html.EditorFor(model => model.package_price, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.package_price, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        @if (ViewBag.msg != null)
+                                        {
+                                            <div class="alert alert-success"> @ViewBag.msg </div>
+                                        }
+
+
+                                        @if (ViewBag.Error != null)
+                                        {
+                                            <div class="alert alert-danger">  @ViewBag.Error  </div>
+                                        }
+
+
+                                        <div class="form-group">
+                                            <div class="col-md-offset-2 col-md-10">
+                                                <input type="submit" value="Create Tuition Package" style="margin:auto;display:block;" class="btn btn-info" onclick="return confirm('Are you sure want to submit?');" />
+                                            </div>
+                                        </div>
+                                    </div>
                                     }
                                 </div>
                             </div>

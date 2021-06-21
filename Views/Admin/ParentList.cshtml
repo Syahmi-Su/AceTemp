@@ -207,6 +207,7 @@
                             <div class="card-content collapse show">
                                 <div class="card-body">
                                     <button style="float:left;" class="btn btn-info btn-sm" onclick="location.href='@Url.Action("AddParent", "AddParent")';return false;"><i class="ft-plus"></i>&nbsp;Add Parent</button>&nbsp;&nbsp;
+                                    <button type="button" class="btn btn-danger btn-sm" onclick="location.href='@Url.Action("InActiveParent", "Admin")';return false;"><i class="ft-trash-2"></i>&nbsp;InActive Parent</button>&nbsp;&nbsp;
                                     <br /><br />
                                     <p class="card-text"></p>
                                     <p><span class="text-bold-600"></span></p>
@@ -226,26 +227,23 @@
                                             <tbody>
                                                 @foreach (var parent in Model)
                                                 {
-                                                <tr>
-                                                    <td>@parent.parents_ic</td>
-                                                    <td>@parent.parents_name</td>
-                                                    <td>@parent.parents_email</td>
-                                                    <td>@parent.parents_phone</td>
-                                                    <td>@parent.parents_address</td>
-                                                    @if (parent.parents_status=="Active")
+                                                    if (parent.parents_status == "Active")
                                                     {
-                                                        <td style='color:green;'><b>@parent.parents_status</b></td>
+                                                        <tr>
+                                                            <td>@parent.parents_ic</td>
+                                                            <td>@parent.parents_name</td>
+                                                            <td>@parent.parents_email</td>
+                                                            <td>@parent.parents_phone</td>
+                                                            <td>@parent.parents_address</td>
+                                                            <td style='color:green;'>@parent.parents_status</td>
+                                                            <td>
+                                                                @Html.ActionLink(" Edit", "EditParentDetails", new { id = parent.parents_ic }, new { @class = "btn btn-warning fas fa-edit" })
+                                                                &nbsp;
+                                                                @*@Html.ActionLink(" Delete", "DeleteParent", new { id = parent.parents_ic }, new { @class = "btn btn-danger fas fa-trash-alt" })*@
+                                                            </td>
+                                                        </tr>
                                                     }
-                                                    else
-                                                    {
-                                                        <td style='color:red;'><b>@parent.parents_status</b></td>
-                                                    }
-                                                    <td>
-                                                        @Html.ActionLink(" Edit", "EditParentDetails", new { id = parent.parents_ic }, new { @class = "btn btn-warning fas fa-edit" })
-                                                        &nbsp;
-                                                        @Html.ActionLink(" Delete", "DeleteParent", new { id = parent.parents_ic }, new { @class = "btn btn-danger fas fa-trash-alt" })
-                                                    </td>
-                                                </tr>
+
                                                 }
 
                                             </tbody>
